@@ -1516,6 +1516,104 @@ code {
 .banner p b { color: var(--led-amber); font-weight: 700; }
 
 /* ============================================================
+   PERSONAS — 3 target user segments
+   ============================================================ */
+.personas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.persona {
+  padding: 30px 28px;
+  position: relative;
+  transition: transform .3s ease;
+}
+.persona:hover { transform: translateY(-4px); }
+.persona.p-individual::after,
+.persona.p-corporate::after,
+.persona.p-attorney::after {
+  content: ''; position: absolute; inset: 0;
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+}
+.persona.p-individual::after { box-shadow: inset 0 0 18px var(--led-amber-glow); }
+.persona.p-corporate::after  { box-shadow: inset 0 0 18px var(--led-cyan-glow); }
+.persona.p-attorney::after   { box-shadow: inset 0 0 18px var(--led-emerald-glow); }
+.persona-head {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 14px;
+}
+.persona-icon {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: var(--bg);
+  box-shadow: var(--shadow-pressed-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+.persona.p-individual .persona-icon { color: var(--led-amber);   text-shadow: 0 0 12px var(--led-amber-glow); }
+.persona.p-corporate  .persona-icon { color: var(--led-cyan);    text-shadow: 0 0 12px var(--led-cyan-glow); }
+.persona.p-attorney   .persona-icon { color: var(--led-emerald); text-shadow: 0 0 12px var(--led-emerald-glow); }
+.persona-head h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-1);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.persona-head .persona-size {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-3);
+  letter-spacing: 0.04em;
+}
+.persona p {
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.persona-needs {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 16px;
+}
+.persona-needs li {
+  font-size: 12.5px;
+  color: var(--text-2);
+  padding: 5px 0;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.55;
+}
+.persona-needs li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  font-size: 9px;
+  top: 8px;
+  color: var(--text-3);
+}
+.persona.p-individual .persona-needs li::before { color: var(--led-amber); }
+.persona.p-corporate  .persona-needs li::before { color: var(--led-cyan); }
+.persona.p-attorney   .persona-needs li::before { color: var(--led-emerald); }
+.persona-mode {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: var(--shadow-pressed-sm);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.persona.p-individual .persona-mode { color: var(--led-amber);   box-shadow: var(--shadow-pressed-sm), 0 0 10px var(--led-amber-glow); }
+.persona.p-corporate  .persona-mode { color: var(--led-cyan);    box-shadow: var(--shadow-pressed-sm), 0 0 10px var(--led-cyan-glow); }
+.persona.p-attorney   .persona-mode { color: var(--led-emerald); box-shadow: var(--shadow-pressed-sm), 0 0 10px var(--led-emerald-glow); }
+
+/* ============================================================
    JURISDICTIONS — KIPO / USPTO / EPO / PCT
    ============================================================ */
 .juris {
@@ -1806,6 +1904,7 @@ code {
   .juris { grid-template-columns: repeat(2, 1fr); }
   .engines { grid-template-columns: repeat(2, 1fr); }
   .meta-grid { grid-template-columns: repeat(3, 1fr); }
+  .personas { grid-template-columns: 1fr; }
   .compet-row { grid-template-columns: 160px repeat(7, 1fr); font-size: 11px; padding: 10px 14px; }
   .meta-card .meta-row { grid-template-columns: 1fr; gap: 14px; text-align: center; }
   .meta-card .meta-score { font-size: 64px; }

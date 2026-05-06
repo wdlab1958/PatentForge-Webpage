@@ -33,6 +33,7 @@
         <div class="nav-label">시작</div>
         <a class="nav-item active" href="#hero" data-target="hero"><i class="dot"></i><span>홈 · 개요</span></a>
         <a class="nav-item" href="#identity" data-target="identity"><i class="dot"></i><span>왜 PatentForge 인가</span></a>
+        <a class="nav-item" href="#personas" data-target="personas"><i class="dot dot-am"></i><span>3 페르소나 (타겟 사용자)</span></a>
       </div>
 
       <div class="nav-group">
@@ -116,8 +117,8 @@
     <section id="hero" class="section section-hero">
       <div class="hero-meta">
         <span class="chip neu-pressed">v3.2 · 2026.05.06</span>
+        <span class="chip neu-pressed">개인 발명가 · 기업 R&amp;D · 변리사 — 3 페르소나 타겟</span>
         <span class="chip neu-pressed">4 Jurisdictions · KIPO·USPTO·EPO·PCT</span>
-        <span class="chip neu-pressed">3 Operating Modes</span>
         <span class="chip neu-pressed">변리사법 §21 단서 준수</span>
         <span class="chip neu-pressed">68 tests pass · $4.53/case</span>
       </div>
@@ -126,8 +127,9 @@
         <span class="text-grad-em">Patent</span><span class="text-grad-am">Forge</span>
       </h1>
       <p class="hero-tagline">
-        한국 발명자의 한 줄 발명 신고를 <b>4개 관할(KIPO·USPTO·EPO·PCT)의 출원 가능 패키지</b>로 한 번에 변환하는<br/>
-        멀티에이전트 특허 플랫폼. <b>3가지 운영 모드</b>로 발명자가 자기 상황에 맞게 선택합니다.
+        <b class="text-am">개인 발명가</b>는 5만원에 셀프 출원하고,
+        <b class="text-cy">기업 R&amp;D 특허 담당자</b>는 영업비밀을 외부로 보내지 않고 사내에서 출원하며,<br/>
+        <b class="text-em">AI 도구 우호적인 변리사</b>는 형식 작업을 시스템에 맡기고 법적 판단에만 집중합니다.
       </p>
       <p class="hero-quote">
         "PatentForge는 변리사가 아니라 도구다. 한국 변리사법 §21 단서('본인이 직접 행하는 경우')에 따라<br/>
@@ -135,11 +137,11 @@
       </p>
 
       <div class="hero-cta">
-        <button class="btn-neu btn-primary" onclick="document.getElementById('jurisdictions').scrollIntoView({behavior:'smooth'})">
-          <span>4-관할 패키지 살펴보기 →</span>
+        <button class="btn-neu btn-primary" onclick="document.getElementById('personas').scrollIntoView({behavior:'smooth'})">
+          <span>당신의 페르소나 찾기 →</span>
         </button>
-        <button class="btn-neu" onclick="document.getElementById('modes').scrollIntoView({behavior:'smooth'})">
-          <span>3 운영 모드 비교</span>
+        <button class="btn-neu" onclick="document.getElementById('jurisdictions').scrollIntoView({behavior:'smooth'})">
+          <span>4-관할 패키지 살펴보기</span>
         </button>
       </div>
 
@@ -177,8 +179,9 @@
         <span class="section-tag">Identity</span>
         <h2>왜 <span class="text-em">PatentForge</span> 인가?</h2>
         <p class="section-lead">
-          PatentForge는 변리사를 대체하는 시스템이 아닙니다. 변리사가 가장 잘하는 일 — <b>법적 판단</b> — 에 시간을 쓰도록 형식 작업을 자동화하는
-          <b>도구(Tooling)</b>입니다. 변리사법 §2 "대리"를 피하기 위해 시스템은 사용자 명의로 출원하지 않고, 법률 효과를 발생시키지 않으며, 위임 계약을 체결하지 않습니다.
+          PatentForge는 변리사를 대체하는 시스템이 아닙니다. <b class="text-am">개인 발명가</b>의 진입 장벽을 200만원 → 5만원으로 낮추고,
+          <b class="text-cy">기업 R&amp;D 특허 담당자</b>의 영업비밀을 사내에 가두며, <b class="text-em">AI 우호 변리사</b>의 형식 작업을 자동화하는 <b>도구(Tooling)</b>입니다.
+          변리사법 §2 "대리"를 피하기 위해 시스템은 사용자 명의로 출원하지 않고, 법률 효과를 발생시키지 않으며, 위임 계약을 체결하지 않습니다.
           <b>변리사법 §21 단서("본인이 직접 행하는 경우")에 따라</b> 발명자가 자기 책임 하에 셀프 출원하는 Mode B도 지원합니다.
         </p>
       </div>
@@ -213,6 +216,87 @@
           <div class="card-icon neu-pressed"><span class="ico-em">◈</span></div>
           <h3>오케스트라 모델</h3>
           <p>LangGraph Supervisor가 12명의 Specialist Agent를 지휘. <code>interrupt_before=["mode_a_review", "mode_b_disclaimer_gate", "mode_c_review"]</code> — 3개 모드 게이트 모두 자동 우회 불가.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PERSONAS — Target Users ===== -->
+    <section id="personas" class="section">
+      <div class="section-head">
+        <span class="section-tag">Target Users · 3 Personas</span>
+        <h2>PatentForge가 만드는 <span class="text-em">3 명의 사용자</span></h2>
+        <p class="section-lead">
+          PatentForge는 모든 발명자를 위한 도구가 아닙니다. 다음 <b>3가지 명확한 페르소나</b>의 일을 가장 잘 돕도록 설계되었으며,
+          각 페르소나는 다른 운영 모드를 선택하고, 다른 산출물을 사용하며, 다른 책임 경계를 가집니다.
+          나머지 사용자(예: 핵심 IP 대형 사건의 사내 법무팀, 분쟁 중인 특허의 무효심판 대응)는 직접 변리사 사무소를 권장합니다.
+        </p>
+      </div>
+
+      <div class="personas">
+        <div class="persona neu-raised p-individual">
+          <div class="persona-head">
+            <div class="persona-icon">👤</div>
+            <div>
+              <h3>개인 발명가</h3>
+              <div class="persona-size">국내 약 13,000~20,000명 · 한국 연 개인 출원 약 30,000건 중 디지털 친화 ~67%</div>
+            </div>
+          </div>
+          <p>학생·연구자·1인 창업가·소상공인 등 자기 발명을 본인 명의로 출원하고 싶지만 변리사 비용 200만원이 부담스러운 발명가. 변리사법 §21 단서를 활용하여 본인이 직접 KIPOnet에 출원합니다.</p>
+          <ul class="persona-needs">
+            <li>저비용 (변리사료 0원, KIPO 출원료 70% 감면)</li>
+            <li>면책 동의서 + 본인 인증으로 법적 보호</li>
+            <li>KIPOnet 셀프 출원 6단계 가이드 PDF 자동 동봉</li>
+            <li>의견제출통지서 수령 시 ResponseAgent 보조</li>
+          </ul>
+          <span class="persona-mode">→ Mode B 셀프 출원</span>
+        </div>
+
+        <div class="persona neu-raised p-corporate">
+          <div class="persona-head">
+            <div class="persona-icon">🏢</div>
+            <div>
+              <h3>기업 R&amp;D 특허 담당자</h3>
+              <div class="persona-size">중견기업 R&amp;D 약 2,000개사 · 대기업 R&amp;D 약 500개사</div>
+            </div>
+          </div>
+          <p>R&amp;D 부서에서 매년 수십~수백 건의 발명을 출원해야 하지만 외부 클라우드에 영업비밀을 노출할 수 없는 기업의 IP 담당자. 사내 변리사 또는 외부 변리사와 협력하되 발명 본문은 절대 외부로 송신하지 않아야 합니다.</p>
+          <ul class="persona-needs">
+            <li>온프레미스 배포 (vLLM 로컬 + Squid 프록시 강제)</li>
+            <li>외부 LLM API 호출 0건 audit 자동 검증</li>
+            <li>법인 명의 출원 + 사내 변리사 등록·승인</li>
+            <li>4-관할 (KIPO+USPTO+EPO+PCT) 일괄 패키지 빌드</li>
+          </ul>
+          <span class="persona-mode">→ Mode C 사내 R&amp;D</span>
+        </div>
+
+        <div class="persona neu-raised p-attorney">
+          <div class="persona-head">
+            <div class="persona-icon">⚖</div>
+            <div>
+              <h3>AI 도구 우호적인 변리사</h3>
+              <div class="persona-size">한국 변리사 약 12,000명 중 AI 친화적 ~30% (약 3,600명)</div>
+            </div>
+          </div>
+          <p>형식 작업(IDF 정형화·선행기술 검색·청구항 단일문장 검증·단락 번호 부여)에 시간을 빼앗기지 않고 <b>법적 판단에만 집중</b>하고 싶은 변리사. AI 도구의 한계를 명확히 인지하면서도 생산성 도구로 적극 활용하려는 사무소.</p>
+          <ul class="persona-needs">
+            <li>측정 가능한 metric만 출력 (정규식·AST·LLM 검증)</li>
+            <li>변리사 검토 페이지에 진보성·실시가능성·강건성 3 점수 표시</li>
+            <li>Hash-chained audit log로 검토 사실 영구 입증</li>
+            <li>사건당 30분~2시간 검토로 처리량 3~5배 향상</li>
+          </ul>
+          <span class="persona-mode">→ Mode A 변리사 협업</span>
+        </div>
+      </div>
+
+      <div class="banner neu-raised warn" style="margin-top: 28px;">
+        <div class="banner-icon">★</div>
+        <div class="banner-body">
+          <h4>이 외 사용자는 누구를 위한 도구가 아닌가?</h4>
+          <p>
+            <b>대형 IP 분쟁 중인 발명</b> · <b>핵심 권리범위가 사업 전략을 좌우하는 사건</b> · <b>무효심판 대응이 필요한 사건</b> 은 PatentForge 단독 사용을 권장하지 않습니다.
+            이런 사건은 도구로 가속할 수 있는 영역이 아닌, <b>변리사 사무소의 법적 전문성과 누적 경험이 결정적인 영역</b>입니다.
+            PatentForge는 이 영역의 변리사 보조 도구로서만 의미가 있으며, 자동 출원이나 셀프 출원은 권장하지 않습니다.
+          </p>
         </div>
       </div>
     </section>
@@ -425,10 +509,12 @@
     <!-- ===== MODES ===== -->
     <section id="modes" class="section">
       <div class="section-head">
-        <span class="section-tag">3 Operating Modes</span>
-        <h2>발명자가 <span class="text-em">자기 상황에 맞는 모드</span>를 선택합니다</h2>
+        <span class="section-tag">3 Operating Modes · 페르소나 매핑</span>
+        <h2>각 페르소나에 맞춰진 <span class="text-em">3가지 운영 모드</span></h2>
         <p class="section-lead">
           한국 변리사법 §21 단서가 허용하는 <b>"본인이 직접 행하는 경우"</b>를 활용하여, PatentForge는 3가지 운영 모드를 제공합니다.
+          모드는 페르소나와 1:1로 매칭됩니다 — <b class="text-em">변리사 = Mode A</b> ·
+          <b class="text-am">개인 발명가 = Mode B</b> · <b class="text-cy">기업 R&amp;D = Mode C</b>.
           사용자가 사건 생성 시점에 모드를 명시적으로 선택하며, 모드별로 워크플로우·HITL 게이트·산출물 표시·법적 책임 분리가 다릅니다.
         </p>
       </div>
@@ -437,51 +523,51 @@
         <div class="mode neu-raised m-a">
           <div class="mode-head">
             <div class="mode-letter">A</div>
-            <span class="mode-tag">RECOMMENDED · DEFAULT</span>
+            <span class="mode-tag">⚖ AI 우호 변리사용</span>
           </div>
           <h3>변리사 협업 모드</h3>
-          <div class="mode-sub">Attorney-Reviewed · 핵심 IP · 권리범위 중요</div>
-          <p>외부 변리사 1인이 검토 후 변리사 명의 또는 본인 명의로 출원. 등록 가능성 약 75%. 핵심 IP·고가치 발명에 적합합니다.</p>
+          <div class="mode-sub">Attorney-Reviewed · 변리사가 도구를 이용하는 모드</div>
+          <p>변리사가 자기 사무소의 작업 처리량을 3~5배 향상시키기 위해 PatentForge를 도구로 사용. 검토는 변리사 본인이 수행하고, 출원도 변리사 또는 의뢰인 명의로 진행됩니다.</p>
           <ul class="mode-meta">
             <li><b class="hi">검토</b><span>변리사 100% 강제 — 우회 불가</span></li>
-            <li><b class="hi">검토료</b><span>50~150만원 (사용자 부담)</span></li>
+            <li><b class="hi">검토료</b><span>변리사 사무소 자체 결정</span></li>
             <li><b class="hi">예상 등록률</b><span>약 75%</span></li>
-            <li><b class="hi">출원 명의</b><span>변리사 또는 본인</span></li>
-            <li><b class="hi">감면</b><span>변리사 할인 (협의)</span></li>
+            <li><b class="hi">출원 명의</b><span>변리사 또는 의뢰인</span></li>
+            <li><b class="hi">변리사 효익</b><span>형식 작업 자동화 → 검토 시간 30분~2시간</span></li>
           </ul>
         </div>
 
         <div class="mode neu-raised m-b">
           <div class="mode-head">
             <div class="mode-letter">B</div>
-            <span class="mode-tag">SELF-FILING · NEW</span>
+            <span class="mode-tag">👤 개인 발명가용</span>
           </div>
           <h3>셀프 출원 모드</h3>
-          <div class="mode-sub">Self-Filing · 방어 출원 · 우선권 확보 · 비용 민감</div>
-          <p>변리사 검토 없이 본인 명의로 KIPOnet 직접 출원. <b>면책 동의서 + 본인 인증 강제.</b> 변리사법 §21 단서로 합법.</p>
+          <div class="mode-sub">Self-Filing · 13K~20K 개인 발명가의 진입 장벽 해소</div>
+          <p>변리사 비용 200만원이 부담스러운 개인 발명가가 본인 명의로 KIPOnet 직접 출원. <b>면책 동의서 + 본인 인증 강제.</b> 변리사법 §21 단서로 합법.</p>
           <ul class="mode-meta">
             <li><b class="hi">검토</b><span>면책 동의서로 우회 (자기 책임)</span></li>
-            <li><b class="hi">검토료</b><span>0원 (변리사 검토 미실시)</span></li>
+            <li><b class="hi">총 비용</b><span>5~10만원 (PatentForge) + KIPO 출원료 13.8만원</span></li>
             <li><b class="hi">예상 등록률</b><span>45~55% (PatentForge 추정)</span></li>
             <li><b class="hi">출원 명의</b><span>본인 (셀프)</span></li>
-            <li><b class="hi">감면</b><span>개인 출원 70% 감면</span></li>
+            <li><b class="hi">감면</b><span>KIPO 개인 70% 감면 자동 적용</span></li>
           </ul>
         </div>
 
         <div class="mode neu-raised m-c">
           <div class="mode-head">
             <div class="mode-letter">C</div>
-            <span class="mode-tag">ENTERPRISE · ON-PREM</span>
+            <span class="mode-tag">🏢 기업 R&amp;D 담당자용</span>
           </div>
           <h3>사내 R&amp;D 모드</h3>
-          <div class="mode-sub">In-House · 영업비밀 0건 송신 · 중견·대기업</div>
-          <p>온프레미스 배포 + 사내 변리사 검토. 외부 LLM API 호출 차단. 영업비밀 외부 송신 0건. 법인 명의 출원 강제.</p>
+          <div class="mode-sub">In-House · 영업비밀 외부 송신 0건 · 중견·대기업</div>
+          <p>R&amp;D 부서의 IP 담당자가 외부 클라우드에 발명을 노출하지 않고 사내 인프라에서 명세서를 생성. <b>vLLM 로컬 + Squid 프록시 강제 차단</b>으로 외부 LLM API 호출 0건 보장.</p>
           <ul class="mode-meta">
             <li><b class="hi">검토</b><span>사내 변리사 강제</span></li>
-            <li><b class="hi">검토료</b><span>사내 인건비</span></li>
+            <li><b class="hi">라이선스</b><span>온프레미스 연 라이선스 (협의)</span></li>
             <li><b class="hi">예상 등록률</b><span>약 70%</span></li>
             <li><b class="hi">출원 명의</b><span>법인 (강제)</span></li>
-            <li><b class="hi">감면</b><span>중소기업 50% 감면</span></li>
+            <li><b class="hi">감면</b><span>KIPO 중소기업 50% 감면 가능</span></li>
           </ul>
         </div>
       </div>
@@ -1701,48 +1787,49 @@
     <!-- ===== MARKET ===== -->
     <section id="market" class="section">
       <div class="section-head">
-        <span class="section-tag">Market Expansion</span>
-        <h2>3-Tier 시장 전략 — Mode B 추가만으로 <span class="text-am">시장 2~3배 확장</span></h2>
+        <span class="section-tag">Market Expansion · 페르소나 시장 규모</span>
+        <h2>3 페르소나 × 정량 시장 = <span class="text-am">한국 연 약 24억원</span></h2>
         <p class="section-lead">
-          기존 Mode A(B2B 변리사 사무소) 시장을 유지하면서, Mode B(개인 발명자)와 Mode C(사내 R&amp;D)를 추가하여 시장 규모를 약 2~3배 확장합니다.
+          Hero에서 정의한 3 페르소나의 정량 시장을 합산. <b>개인 발명가 13K~20K</b>(KIPO 통계 기반) ·
+          <b>기업 R&amp;D 약 2,500개사</b>(중견 2,000 + 대기업 500) · <b>AI 친화 변리사 약 3,600명</b>(변리사 12,000 × 30%).
           국내 경쟁 서비스(Gen-D, 패튼스페이스, Patenty.ai)는 모두 Mode A만 제공 — <b>PatentForge는 한국 유일의 모드 분기형 플랫폼</b>입니다.
         </p>
       </div>
 
       <div class="market">
-        <div class="market-seg neu-raised s-a">
-          <span class="seg-tag">TIER 1 · MODE A</span>
-          <h4>변리사 사무소 (B2B)</h4>
-          <div class="seg-target">한국 변리사 약 12,000명 × 명세서 작성 비율 30%</div>
-          <div class="seg-revenue">월 1.8<small>억원</small></div>
-          <p>잠재 고객 약 3,600명 · ARPU 월 50만원 · 시장 점유율 10% 가정. 핵심 IP·고가치 발명에 집중.</p>
-        </div>
         <div class="market-seg neu-raised s-b">
-          <span class="seg-tag">TIER 2 · MODE B (NEW)</span>
-          <h4>개인 발명자 (B2C)</h4>
-          <div class="seg-target">한국 연 개인 출원 약 30,000건 중 디지털 친화 약 10,000명</div>
-          <div class="seg-revenue">연 1<small>억원</small></div>
-          <p>ARPU 사건당 5만원 · 시장 점유율 20% · 연 1건 가정. 방어 출원·우선권 확보·비용 민감 발명자가 타겟.</p>
+          <span class="seg-tag">PERSONA 1 · MODE B</span>
+          <h4>👤 개인 발명가 (B2C)</h4>
+          <div class="seg-target">국내 13,000~20,000명 (KIPO 연 개인 출원 30,000건 중 디지털 친화)</div>
+          <div class="seg-revenue">연 1.7<small>억원</small></div>
+          <p>ARPU 사건당 5~10만원 · 시장 점유율 20% · 연 1건 가정. 17,000 × 0.20 × 5만원 = <b>약 1.7억원</b>. 진입 장벽 200만원 → 5만원으로 시장 5~10배 확장.</p>
         </div>
         <div class="market-seg neu-raised s-c">
-          <span class="seg-tag">TIER 3 · MODE C (UNIQUE)</span>
-          <h4>중견기업 R&amp;D (B2B Ent.)</h4>
-          <div class="seg-target">한국 중견기업 R&amp;D 보유 약 2,000개사 중 200개 잠재</div>
-          <div class="seg-revenue">연 1<small>억원</small></div>
-          <p>ARPU 연 1,000만원 · 시장 점유율 5% 가정. <b>국내 어떤 경쟁사도 온프레미스 특허 작성 플랫폼 미보유</b> — 강력한 차별화 카드.</p>
+          <span class="seg-tag">PERSONA 2 · MODE C</span>
+          <h4>🏢 기업 R&amp;D (B2B Enterprise)</h4>
+          <div class="seg-target">중견 2,000 + 대기업 500 = 약 2,500개사 (잠재 약 250개)</div>
+          <div class="seg-revenue">연 2.5<small>억원</small></div>
+          <p>ARPU 연 1,000만원 · 시장 점유율 10% 가정. 250 × 0.10 × 1,000만원 = <b>약 2.5억원</b>. <b>국내 어떤 경쟁사도 온프레미스 특허 작성 플랫폼 미보유</b> — 강력한 차별화 카드.</p>
+        </div>
+        <div class="market-seg neu-raised s-a">
+          <span class="seg-tag">PERSONA 3 · MODE A</span>
+          <h4>⚖ AI 우호 변리사 (B2B)</h4>
+          <div class="seg-target">한국 변리사 12,000명 × AI 친화 30% = 약 3,600명</div>
+          <div class="seg-revenue">월 1.8<small>억원</small></div>
+          <p>ARPU 월 50만원 · 시장 점유율 10% · 1년 12개월 = <b>연 약 21.6억원</b>. 형식 작업 자동화로 사무소 처리량 3~5배 향상이 핵심 가치 제안.</p>
         </div>
       </div>
 
       <div class="banner neu-raised warn" style="margin-top: 28px;">
         <div class="banner-icon">★</div>
         <div class="banner-body">
-          <h4>Brian의 기존 인프라와의 시너지 — Mode C가 핵심 차별 자산</h4>
+          <h4>기업 R&amp;D 특허 담당자를 위한 Mode C — 영업비밀 보호 일급 자산</h4>
           <p>
-            <b>A3시큐리티 150개사 B2B 네트워크</b>는 Mode C 직접 영업 채널 ·
-            <b>AEGIS 보안 생태계</b>는 Mode C의 온프레미스 보안 인증 (영업비밀 0건 송신) ·
-            <b>AgentForge 오프라인 어플라이언스</b>는 Mode C의 HW+SW 통합 패키지 ·
-            <b>A3-ARGUS SOC 플랫폼</b>은 Mode C 사용자 기업의 통합 보안 서비스.
-            A3시큐리티의 보안 평판 + PatentForge의 명세서 품질 결합은 중견기업 R&amp;D 시장의 강력한 진입 카드.
+            <b>vLLM 로컬 서빙 + Squid 프록시 강제 차단</b>으로 외부 LLM API 호출 0건 ·
+            <b>온프레미스 배포 검증기</b>로 영업비밀 외부 송신 0건 audit 자동 검증 ·
+            <b>사내 변리사 등록 + 사내 검토 페이지</b>로 기업 내부 결재 흐름 그대로 적용 ·
+            <b>법인 명의 출원 강제</b>로 기업 IP 자산 일관 관리.
+            중견·대기업 R&amp;D 부서가 외부 클라우드에 발명을 노출하지 않고 자체 인프라에서 4-관할 출원 패키지를 생성할 수 있는 국내 유일의 옵션입니다.
           </p>
         </div>
       </div>
@@ -1867,7 +1954,7 @@
         <div class="card neu-raised">
           <div class="card-icon neu-pressed"><span class="ico-em">🏆</span></div>
           <h3>차별 자산 7종</h3>
-          <p style="font-size:13px;">① 멀티에이전트 (LangGraph+CrewAI+AutoGen) ② KIPO+한국어 특화 ③ Mode B 셀프 출원 ④ Mode C 온프레미스 ⑤ 6-소스 선행기술 검색 ⑥ 40+ QA 규칙 ⑦ Brian 보안 생태계 시너지.</p>
+          <p style="font-size:13px;">① 멀티에이전트 (LangGraph+CrewAI+AutoGen) ② KIPO+한국어 특화 ③ Mode B 셀프 출원 ④ Mode C 온프레미스 ⑤ 6-소스 선행기술 검색 ⑥ 40+ QA 규칙 ⑦ 기업급 보안 생태계 (vLLM 로컬 + ZDR + 영업비밀 0건 송신).</p>
         </div>
         <div class="card neu-raised">
           <div class="card-icon neu-pressed"><span class="ico-am">😅</span></div>
@@ -1876,8 +1963,8 @@
         </div>
         <div class="card neu-raised">
           <div class="card-icon neu-pressed"><span class="ico-em">📈</span></div>
-          <h3>비용 비교 — 동일 발명</h3>
-          <p style="font-size:13px;">변리사 사무소 200~500만원 vs <b>PatentForge Mode B 5~10만원</b> = <b>95~98% 비용 절감</b>. 단, 등록률 75% → 45~55%로 감소(자기 책임). 시장 진입 장벽 200만원 → 5만원으로 시장 5~10배 확장.</p>
+          <h3>비용 비교 — 개인 발명가 1건</h3>
+          <p style="font-size:13px;">변리사 사무소 200~500만원 vs <b>PatentForge Mode B 5~10만원</b> = <b>95~98% 비용 절감</b>. 단, 등록률 75% → 45~55%로 감소(자기 책임). <b>13K~20K 개인 발명가</b>의 진입 장벽 200만원 → 5만원으로 시장 5~10배 확장.</p>
         </div>
       </div>
 
@@ -2104,46 +2191,74 @@
 
       <div class="grid-3">
         <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">▲</span></div>
-          <h3>5대 기여 영역</h3>
+          <div class="card-icon neu-pressed"><span class="ico-am">👤</span></div>
+          <h3>개인 발명가에게 약속</h3>
           <p style="font-size:13px; line-height:1.75;">
-            ① <b>변리사 시간 단축</b> — 형식 작업 자동화로 법적 판단에 집중<br/>
-            ② <b>BLOCKER 자동 차단</b> — 출원 거부 사항을 사전 방지<br/>
-            ③ <b>영업비밀 보호 표준</b> — ZDR + 마스킹 기본 내장<br/>
-            ④ <b>법적 traceability</b> — 5년 hash-chained audit<br/>
-            ⑤ <b>변리사·발명자 협업 UX</b> — 검토 페이지 anchor 코멘트
+            • <b>비용 95~98% 절감</b> — 200만원 → 5만원<br/>
+            • <b>KIPOnet 셀프 출원 가이드</b> 6단계 PDF 자동 동봉<br/>
+            • <b>면책 동의서 + SHA-256</b> — 법적 보호<br/>
+            • <b>의견제출 대응 ResponseAgent</b> — 거절이유통지서 OCR + 의견서 초안<br/>
+            • 13,000~20,000명 잠재 사용자
           </p>
         </div>
         <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-am">★</span></div>
-          <h3>사회적 책임</h3>
+          <div class="card-icon neu-pressed"><span class="ico-cy">🏢</span></div>
+          <h3>기업 R&amp;D 담당자에게 약속</h3>
           <p style="font-size:13px; line-height:1.75;">
-            • 1인 발명가 보호 — 변리사 비용 부담 완화<br/>
-            • 출원 품질 평준화 — BLOCKER 자동 검출<br/>
-            • 기술 분쟁 예방 — 회피설계 강건성 점수 사전 평가<br/>
-            • 영업비밀 사고 방지 — 외부 LLM 자동 마스킹
+            • <b>외부 LLM 호출 0건</b> — vLLM 로컬 + Squid 프록시 강제<br/>
+            • <b>영업비밀 외부 송신 0건</b> audit 자동 검증<br/>
+            • <b>4-관할 일괄 출원</b> (KIPO+USPTO+EPO+PCT)<br/>
+            • <b>법인 명의 강제</b> + 사내 변리사 등록<br/>
+            • 약 2,500개사 잠재 고객
+          </p>
+        </div>
+        <div class="card neu-raised">
+          <div class="card-icon neu-pressed"><span class="ico-em">⚖</span></div>
+          <h3>AI 우호 변리사에게 약속</h3>
+          <p style="font-size:13px; line-height:1.75;">
+            • <b>처리량 3~5배 향상</b> — 형식 작업 자동화<br/>
+            • <b>측정 가능한 metric</b> — 정규식·AST·LLM 출력<br/>
+            • <b>3 점수 표시</b> — 진보성·실시가능성·강건성<br/>
+            • <b>5년 audit log</b> — 변리사법 §2 입증 자료<br/>
+            • 약 3,600명 잠재 사용자
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top: 28px;">
+        <div class="card neu-raised">
+          <div class="card-icon neu-pressed"><span class="ico-em">▲</span></div>
+          <h3>5대 기여 영역</h3>
+          <p style="font-size:13px; line-height:1.75;">
+            ① 변리사 시간 단축 — 형식 작업 자동화로 법적 판단에 집중 ·
+            ② BLOCKER 자동 차단 — 출원 거부 사항을 사전 방지 ·
+            ③ 영업비밀 보호 표준 — ZDR + 마스킹 기본 내장 ·
+            ④ 법적 traceability — 5년 hash-chained audit ·
+            ⑤ 변리사·발명자 협업 UX — 검토 페이지 anchor 코멘트
           </p>
         </div>
         <div class="card neu-raised">
           <div class="card-icon neu-pressed"><span class="ico-pk">⊘</span></div>
           <h3>의도적으로 *하지 않을* 일</h3>
           <p style="font-size:13px; line-height:1.75;">
-            ❌ 변리사 대체 (변리사법 §2 저촉)<br/>
-            ❌ 무인 출원 (HITL 게이트 우회 불가)<br/>
-            ❌ 발명 본문을 외부 학습에 제공<br/>
-            ❌ KIPOnet 시스템 자동 출원 (책임 분리)
+            ❌ 변리사 대체 (변리사법 §2 저촉) ·
+            ❌ 무인 출원 (HITL 게이트 우회 불가) ·
+            ❌ 발명 본문을 외부 학습에 제공 ·
+            ❌ KIPOnet 시스템 자동 출원 (책임 분리) ·
+            ❌ <b>3 페르소나 외 사용자 (분쟁 중 발명·핵심 IP) 자동화</b>
           </p>
         </div>
       </div>
 
       <div class="quote-banner neu-raised" style="margin-top: 36px;">
         <blockquote>
-          한 줄의 발명을 출원 가능 명세서로 변환하는 것은 어려운 일이 아닙니다.
-          <b>그 변환이 변리사법과 KIPO 양식과 영업비밀 보호 규정을 모두 준수했음을 증명하는 것</b>이 어려운 일입니다.<br/><br/>
-          PatentForge는 발명자에게 <b>3가지 길</b>을 제시합니다 — 변리사와 함께 가는 길(Mode A), 본인이 직접 가는 길(Mode B § 21 단서),
-          그리고 사내에서 안전하게 가는 길(Mode C). 어느 길을 선택하든 audit log는 영구 보존되며, 책임의 경계는 명확합니다.
+          PatentForge는 모든 사람을 위한 도구가 아닙니다.<br/>
+          <b class="text-am">개인 발명가 13K~20K</b>가 변리사 비용 200만원 대신 5만원으로 본인 발명을 보호할 수 있도록,
+          <b class="text-cy">기업 R&amp;D 특허 담당자</b>가 영업비밀을 외부 클라우드에 보내지 않고 사내에서 4-관할 출원 패키지를 만들 수 있도록,
+          <b class="text-em">AI 우호적 변리사</b>가 형식 작업에서 해방되어 법적 판단에 시간을 쓸 수 있도록 — <br/>
+          이 <b>3가지 일을 가장 잘 돕는 도구</b>가 되는 것이 PatentForge의 목표입니다.
         </blockquote>
-        <cite>— Brian Lee · 2026-05-06 · WDLAB</cite>
+        <cite>— WDLAB · 2026-05-06</cite>
       </div>
     </section>
 
@@ -2163,7 +2278,7 @@
         </div>
         <div class="footer-meta">
           <div>v3.2 · 2026.05.06 · 68 tests pass · $4.53/case</div>
-          <div>© WDLAB / A3 AI Research Lab / Brian Lee</div>
+          <div>© WDLAB</div>
           <div>KIPO §29·§42 · 변리사법 §2·§21 · 37 CFR §§1.71–84 · EPC Articles 78 · PCT Rules 5–11</div>
         </div>
       </div>

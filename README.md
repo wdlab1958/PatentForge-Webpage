@@ -1,8 +1,12 @@
 # PatentForge — 소개 웹페이지
 
 > **Multi-Agent Multi-Jurisdiction Patent Application Platform — Invention to Filing-Ready Specification (v3.2).**
-> 한국 발명자의 한 줄 발명 신고를 <b>4개 관할(KIPO·USPTO·EPO·PCT)의 출원 가능 패키지</b>로 한 번에 변환하며,
-> Mode A 변리사 협업 · **Mode B 셀프 출원 (변리사법 §21 단서)** · Mode C 사내 R&D 의 3가지 운영 모드를 지원합니다.
+> 3개의 명확한 타겟 페르소나를 위한 도구입니다:
+> - 👤 **개인 발명가 (13,000~20,000명)** → Mode B 셀프 출원, 비용 5만원
+> - 🏢 **기업 R&D 특허 담당자 (~2,500개사)** → Mode C 온프레미스, 영업비밀 외부 송신 0건
+> - ⚖ **AI 우호적 변리사 (~3,600명)** → Mode A 변리사 협업, 처리량 3~5배 향상
+>
+> 한 줄의 발명 신고를 <b>4개 관할(KIPO·USPTO·EPO·PCT)의 출원 가능 패키지</b>로 변환합니다.
 > [PatentForge/README.md (v3.2)](../PatentForge/README.md) +
 > [PatentForge-Guide.docx](../PatentForge/documents/PatentForge-Guide.docx) +
 > [PatentForge-Legal-Positioning.md](../PatentForge/documents/PatentForge-Legal-Positioning.md) +
@@ -60,15 +64,16 @@ PatentForge의 위험 시그널은 AlphaForge와 의미가 다릅니다.
 
 ---
 
-## 2. 페이지 구조 (30 sections)
+## 2. 페이지 구조 (31 sections)
 
-PatentForge 6개 출처 문서를 다음과 같이 매핑 (✦ = v3.2 신규 섹션):
+PatentForge 6개 출처 문서를 다음과 같이 매핑 (✦ = v3.2 신규 섹션, ◆ = 페르소나 중심 신규):
 
 | § | 섹션 ID | 출처 | 핵심 컴포넌트 |
 | --- | --- | --- | --- |
-| 1 | `#hero` | README v3.2 | 6 통계 (4 관할·3 모드·10+2 agents·5 HITL·43 routes·68 tests) + §21 chip |
+| 1 | `#hero` | README v3.2 + 페르소나 정의 | 5 chip + Hero tagline (개인 발명가/기업 R&D/AI 우호 변리사 명시) + 6 통계 |
 | 2 | `#identity` | Guide + Legal | 6 카드 (도구 vs 대리 / 3-Mode 게이팅 / metric / audit / 비용 / 오케스트라) |
-| **3** | **`#jurisdictions`** ✦ | **README §1·§9 + Over-Competitor B–D** | **4-국가 카드 (KIPO/USPTO/EPO/PCT) + 산출물 목록 + FilingProfile SSOT banner** |
+| **3** | **`#personas`** ◆ | **타겟 사용자 정의** | **3 페르소나 카드 (👤 개인 발명가 13K~20K · 🏢 기업 R&D 2.5K개사 · ⚖ AI 우호 변리사 3.6K) + 모드 매핑** |
+| **4** | **`#jurisdictions`** ✦ | **README §1·§9 + Over-Competitor B–D** | **4-국가 카드 (KIPO/USPTO/EPO/PCT) + 산출물 목록 + FilingProfile SSOT banner** |
 | **4** | **`#engines`** ✦ | **README §1 + Over-Competitor A** | **4-엔진 도면 파이프라인 (mermaid + GraphViz + Matplotlib + Pillow) + 관할별 sheet 정규화** |
 | **5** | **`#multibuild`** ✦ | **README §9** | **POST `/export/{id}/multi/build` API 코드 + 관할별 ZIP 일람표** |
 | 6 | `#modes` | Legal §3~§6 | 3 운영 모드 매트릭스 (A/B/C) + Mode B 활성화 5조건 banner |
@@ -90,7 +95,7 @@ PatentForge 6개 출처 문서를 다음과 같이 매핑 (✦ = v3.2 신규 섹
 | 22 | `#roadmap` | README §11 | **v0 → v1·v2 → v3 → v3.2 NOW → v4 planned** |
 | 23 | `#advertising` | Legal §12 | 광고 표현 합법 vs 위법 7+7 표 |
 | 24 | `#countries` | Legal §14 | 6 국가 셀프 출원 (KR/US/JP/PCT ok · EU partial · CN blocked) |
-| 25 | `#market` | Legal §17 | 3-Tier 시장 + Brian 시너지 |
+| 25 | `#market` | Legal §17 | 3-Tier 시장 (개인 발명가 13K~20K + 기업 R&D + AI-친화 변리사) |
 | **26** | **`#competitors`** ✦ | **Competitive-Analysis (6번째 가이드)** | **11×N 매트릭스 (PatentForge + 6 경쟁) + 차별 자산 7 + 약점 7 + 4분면 banner** |
 | **27** | **`#self-filing`** ✦ | **v3-spec-final-review.md** | **PatentForge가 PatentForge 출원 — Score 93/100 + 6 메타 타일 + 메타 검증 3종** |
 | **28** | **`#kpi`** ✦ | **README §11 v3.2** | **13 stages · ~50 min · $4.53 · 68 tests pass (Figures 17 + USPTO 14 + EPO 11 + PCT 10)** |
@@ -150,12 +155,13 @@ PatentForge-Webpage/
 - **`.countries` (3×2-col)** + `.country.ok` / `.partial` / `.blocked` — 6 국가 셀프 출원 가능성
 - **`.market` (3-col)** + `.market-seg.s-a` / `.s-b` / `.s-c` — 3-Tier 시장 분석
 - **`.ad-table`** + `.ad-row .ok` / `.no` (line-through) — 광고 표현 합법/위법
-- **`.banner.warn`** — Mode B / 회색지대 / Brian 시너지 amber inset glow 배너
+- **`.banner.warn`** — Mode B / 회색지대 / 기업 R&D 시너지 amber inset glow 배너
 - **`.juris` (4-col)** + `.juris-card.j-kipo/j-uspto/j-epo/j-pct` — v3.2 4-관할 카드 (각 관할 dpi/format spec + 산출물 목록 + flag color glow)
 - **`.engines` (4-col)** + `.engine.e-2/e-3/e-4` — 4-엔진 도면 파이프라인 (mermaid·GraphViz·Matplotlib·Pillow)
 - **`.compet-table`** + `.compet-row .pf-cell` (★ Unique) / `.y` (✓) / `.n` (✗) / `.p` (△) — 11×N 경쟁 비교 매트릭스
 - **`.meta-card`** + `.meta-score` (94px gradient) + `.meta-grid` (6 tiles) — PatentForge 자기 자신 출원 메타 카드
 - **`.api-block`** + `.verb` / `.path` / `.key` / `.str` / `.num` / `.cmt` 신택스 하이라이트 — POST `/export/{id}/multi/build` JSON 코드 블록
+- **`.persona` (3-col)** + `.p-individual` (amber) / `.p-corporate` (cyan) / `.p-attorney` (emerald) — 3 타겟 페르소나 카드. icon + 시장 규모 + needs 리스트 + mode pill
 
 ### 3.3 `js/app.js`
 - **Smooth scroll** + 사이드바 active 동기화
@@ -216,7 +222,7 @@ GitHub Pages는 정적 파일만 호스팅하므로 빌드 단계 없음.
 - **PatentForge-Competitive-Analysis.docx** (2026-05-04 · v1.0 · 여섯 번째 가이드): 국내 3 + 해외 7 + PatentForge = 11종 비교 매트릭스 · 차별 자산 7종 · 약점 7종 솔직 인정 · 4분면 매트릭스
 - **Over-Competitor.md** (2026-05-06 · v1.0): Phase A (도면) + Phase B (USPTO) + Phase C (EPO) + Phase D (PCT) + Phase E (빌더 다형성) + Phase F (ResponseAgent) 6주 단계별 사양서
 - **v3-spec-final-review.md** (2026-05-06 · v1.0): PatentForge가 자기 자신을 출원하는 재귀적 셀프 검증 — 종합 점수 93/100 + P0/P1/P2 보완 권고 + 메타 검증 3종
-- 작성: Brian Lee · WDLAB / A3 AI Research Lab
+- 작성: WDLAB
 - 대상 시스템: **PatentForge v3.2** (KIPO + USPTO + EPO + PCT 4-관할 parity 달성)
 
 ---
@@ -234,7 +240,7 @@ GitHub Pages는 정적 파일만 호스팅하므로 빌드 단계 없음.
 
 ## 8. 라이선스 / 저작권
 
-© WDLAB · Brian Lee
+© WDLAB
 WDLAB Internal · Confidential. 본 사이트는 PatentForge 프로젝트의 소개 목적으로 작성되었습니다.
 
 **관할별 법규 준수**: KIPO 특허법 §29 · §42 · 변리사법 §2 · §21 단서 (한국) · 37 CFR §§1.71–84 + MPEP §2173.05(e) (미국) · EPC Articles 78 + Rules 41–47 (유럽) · PCT Rules 5–11 + PCT-EASY 1.5 (국제). Mode A·C는 변리사 검토 강제, Mode B는 §21 단서에 따른 본인 직접 출원만 허용합니다.
