@@ -213,8 +213,11 @@ code {
 
 .section { padding: 52px 0; scroll-margin-top: 24px; }
 
-/* Section heading */
-.section-head { margin-bottom: 36px; max-width: 920px; }
+/* Section heading — fluid column width that tracks viewport.
+ * Was a fixed 920px which pinched .section-lead into 5–7 ugly lines on
+ * desktop. Now the column ramps from ~40 rem on phones to ~76 rem
+ * (≈ 1216 px) on wide desktops so each sentence flows on 1–2 lines. */
+.section-head { margin-bottom: 36px; max-width: clamp(40rem, 88vw, 76rem); }
 .section-tag {
   display: inline-block;
   padding: 6px 14px;
@@ -237,23 +240,23 @@ code {
   margin-bottom: 12px;
 }
 /* ----- .section-lead — fluid typography
- * One continuous paragraph; reading width and type size smoothly track
- * the viewport via CSS clamp() so the text stays comfortable from a
- * 360 px phone up to a 1480 px desktop without artificial truncation.
+ * One continuous paragraph that reflows naturally with the viewport.
+ * Width is inherited from the parent .section-head (which is fluid),
+ * so the lead column tracks the viewport size directly. No <br/>,
+ * no truncation, no word-break:keep-all (which produced clipped
+ * mid-phrase wraps on Korean text). Default browser wrapping +
+ * text-wrap: pretty gives clean, even lines.
  * ----- */
 .section-lead {
-  /* font-size: 14px @ 360px viewport → 17px @ 1280px+ viewport (linear) */
-  font-size: clamp(14px, 0.6875rem + 0.55vw, 17px);
+  /* type ramps from 15 px on a 360 px phone to 17 px on a 1280 px+ desktop */
+  font-size: clamp(15px, 0.875rem + 0.4vw, 17px);
   color: var(--text-2);
-  /* line-height grows slightly with size so longer lines stay readable */
-  line-height: clamp(1.6, 1.55 + 0.1vw, 1.75);
-  /* reading column also fluid: tight on phones, generous on desktop */
-  max-width: clamp(20rem, 50vw + 18rem, 56rem);
-  /* allow the paragraph to wrap naturally without runt orphans on Korean text */
-  word-break: keep-all;
-  overflow-wrap: anywhere;
-  /* room for inline emphasis spans without breaking flow */
-  hanging-punctuation: first last;
+  line-height: 1.8;
+  /* fill the parent .section-head (which itself is clamp()-based fluid) */
+  max-width: 100%;
+  /* modern automatic wrap quality — avoids runt orphans + uneven line
+   * lengths. Falls back gracefully on browsers without support. */
+  text-wrap: pretty;
 }
 .section-lead b { color: var(--text-1); font-weight: 700; }
 
