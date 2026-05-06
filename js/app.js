@@ -129,68 +129,6 @@
   }, { threshold: 0.4 });
   bars.forEach((b) => bio.observe(b));
 
-  // ---------- Collapsible .section-lead (더보기/접기) ----------
-  const setupLeadCollapse = () => {
-    const leads = document.querySelectorAll('.section-lead');
-    leads.forEach((lead) => {
-      // Already processed?
-      if (lead.dataset.collapseSetup === '1') return;
-      // Force layout to measure
-      const overflow = lead.scrollHeight - lead.clientHeight;
-      if (overflow <= 2) {
-        // Short lead — release the clamp so it shows fully
-        lead.style.maxHeight = 'none';
-        lead.dataset.collapseSetup = '1';
-        return;
-      }
-
-      lead.classList.add('is-clamp');
-
-      const toggle = document.createElement('button');
-      toggle.type = 'button';
-      toggle.className = 'section-lead-toggle';
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.innerHTML = '<span class="label">더보기</span><span class="arrow">▼</span>';
-      lead.insertAdjacentElement('afterend', toggle);
-
-      toggle.addEventListener('click', () => {
-        const expanded = lead.classList.toggle('is-expanded');
-        toggle.querySelector('.label').textContent = expanded ? '접기' : '더보기';
-        toggle.setAttribute('aria-expanded', String(expanded));
-      });
-
-      lead.dataset.collapseSetup = '1';
-    });
-  };
-
-  // Initial setup after fonts/layout settle, then re-evaluate on resize
-  // (line wrapping changes between viewports, so a 3-line lead at 1280px
-  // may become 5 lines at 720px and need re-clamping).
-  if (document.readyState === 'complete') {
-    setupLeadCollapse();
-  } else {
-    window.addEventListener('load', setupLeadCollapse);
-  }
-
-  let resizeTimer = null;
-  window.addEventListener('resize', () => {
-    if (resizeTimer) clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      // Reset all leads and re-evaluate
-      document.querySelectorAll('.section-lead').forEach((lead) => {
-        lead.classList.remove('is-clamp', 'is-expanded');
-        lead.style.maxHeight = '';
-        lead.dataset.collapseSetup = '';
-        // Remove existing toggle if any
-        const next = lead.nextElementSibling;
-        if (next && next.classList.contains('section-lead-toggle')) {
-          next.remove();
-        }
-      });
-      setupLeadCollapse();
-    }, 200);
-  });
-
   // ---------- Single scroll handler ----------
   let ticking = false;
   window.addEventListener('scroll', () => {
