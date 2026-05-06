@@ -1516,6 +1516,275 @@ code {
 .banner p b { color: var(--led-amber); font-weight: 700; }
 
 /* ============================================================
+   JURISDICTIONS — KIPO / USPTO / EPO / PCT
+   ============================================================ */
+.juris {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.juris-card {
+  padding: 24px 22px;
+  position: relative;
+  transition: transform .3s ease;
+}
+.juris-card:hover { transform: translateY(-4px); }
+.juris-card .juris-head {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 14px;
+}
+.juris-card .juris-flag {
+  width: 56px; height: 36px;
+  border-radius: 8px;
+  background: var(--bg);
+  box-shadow: var(--shadow-pressed-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px; font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--text-1);
+}
+.juris-card.j-kipo  .juris-flag { color: var(--led-emerald); box-shadow: var(--shadow-pressed-sm), 0 0 10px var(--led-emerald-glow); }
+.juris-card.j-uspto .juris-flag { color: var(--led-amber);   box-shadow: var(--shadow-pressed-sm), 0 0 10px var(--led-amber-glow); }
+.juris-card.j-epo   .juris-flag { color: var(--led-cyan);    box-shadow: var(--shadow-pressed-sm), 0 0 10px var(--led-cyan-glow); }
+.juris-card.j-pct   .juris-flag { color: var(--led-pink);    box-shadow: var(--shadow-pressed-sm), 0 0 10px var(--led-pink-glow); }
+.juris-card h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-1);
+  letter-spacing: -0.02em;
+}
+.juris-card .juris-spec {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-3);
+  margin-top: 2px;
+  letter-spacing: 0.02em;
+}
+.juris-card p {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+.juris-list {
+  list-style: none;
+  padding: 10px 12px;
+  background: var(--bg);
+  box-shadow: var(--shadow-pressed-sm);
+  border-radius: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-2);
+  letter-spacing: 0.02em;
+}
+.juris-list li {
+  padding: 3px 0;
+  position: relative;
+  padding-left: 14px;
+}
+.juris-list li::before {
+  content: '·';
+  position: absolute;
+  left: 4px;
+  font-weight: 800;
+  color: var(--text-3);
+}
+.juris-card.j-kipo  .juris-list li::before { color: var(--led-emerald); }
+.juris-card.j-uspto .juris-list li::before { color: var(--led-amber); }
+.juris-card.j-epo   .juris-list li::before { color: var(--led-cyan); }
+.juris-card.j-pct   .juris-list li::before { color: var(--led-pink); }
+.juris-card .juris-meta {
+  margin-top: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text-3);
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   COMPETITORS — 11×N comparison strip
+   ============================================================ */
+.compet-table {
+  padding: 8px;
+  overflow-x: auto;
+}
+.compet-row {
+  display: grid;
+  grid-template-columns: 200px repeat(7, 1fr);
+  gap: 8px;
+  padding: 12px 18px;
+  font-size: 12.5px;
+  border-radius: 12px;
+  align-items: center;
+}
+.compet-row + .compet-row { margin-top: 3px; }
+.compet-head {
+  background: var(--bg);
+  box-shadow: var(--shadow-pressed-sm);
+  font-weight: 700;
+}
+.compet-head > div {
+  font-size: 10.5px; font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--text-2);
+}
+.compet-head > div:first-child { text-align: left; color: var(--text-1); }
+.compet-head > .pf {
+  color: var(--led-emerald);
+  text-shadow: 0 0 8px var(--led-emerald-glow);
+}
+.compet-row > div { color: var(--text-3); text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; }
+.compet-row > div:first-child {
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: left;
+  color: var(--text-1);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+}
+.compet-row > .y { color: var(--led-emerald); font-weight: 800; }
+.compet-row > .n { color: var(--led-pink); }
+.compet-row > .p { color: var(--led-amber); }
+.compet-row > .pf-cell { color: var(--led-emerald); font-weight: 800; text-shadow: 0 0 6px var(--led-emerald-glow); }
+
+/* ============================================================
+   META — recursive self-filing badge
+   ============================================================ */
+.meta-card {
+  padding: 32px 36px;
+  position: relative;
+}
+.meta-card::after {
+  content: ''; position: absolute; inset: 0;
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+  box-shadow: inset 0 0 22px var(--led-emerald-glow);
+}
+.meta-card .meta-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 26px;
+  align-items: center;
+}
+.meta-card .meta-score {
+  font-family: 'Inter', sans-serif;
+  font-size: 88px;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--led-emerald) 0%, var(--led-emerald-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.meta-card .meta-score small {
+  font-size: 22px;
+  opacity: 0.65;
+  font-weight: 700;
+}
+.meta-card .meta-body h3 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-1);
+  margin-bottom: 8px;
+}
+.meta-card .meta-body p {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+.meta-card .meta-body p b { color: var(--led-emerald); }
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+}
+.meta-tile {
+  padding: 16px 12px;
+  text-align: center;
+  border-radius: 14px;
+  background: var(--bg);
+  box-shadow: var(--shadow-pressed-sm);
+}
+.meta-tile .num {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin-bottom: 4px;
+  color: var(--led-emerald);
+}
+.meta-tile .lbl {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ============================================================
+   API SAMPLE — code block style
+   ============================================================ */
+.api-block {
+  padding: 24px 26px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--text-2);
+  white-space: pre;
+  overflow-x: auto;
+}
+.api-block .verb  { color: var(--led-emerald); font-weight: 700; }
+.api-block .path  { color: var(--text-1); font-weight: 700; }
+.api-block .key   { color: var(--led-amber); }
+.api-block .str   { color: var(--led-pink); }
+.api-block .num   { color: var(--led-cyan); }
+.api-block .cmt   { color: var(--text-3); font-style: italic; }
+
+/* ============================================================
+   FIGURE ENGINES — 4-engine pipeline
+   ============================================================ */
+.engines {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.engine {
+  padding: 22px 18px;
+  text-align: center;
+  position: relative;
+  transition: transform .3s ease;
+}
+.engine:hover { transform: translateY(-3px); }
+.engine .engine-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--led-emerald);
+  margin-bottom: 8px;
+}
+.engine.e-2 .engine-name { color: var(--led-amber); }
+.engine.e-3 .engine-name { color: var(--led-cyan); }
+.engine.e-4 .engine-name { color: var(--led-pink); }
+.engine h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 6px;
+}
+.engine p {
+  font-size: 11.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1280px) {
@@ -1534,6 +1803,12 @@ code {
   .countries { grid-template-columns: repeat(2, 1fr); }
   .market { grid-template-columns: 1fr; }
   .legal-table { grid-template-columns: 1fr; }
+  .juris { grid-template-columns: repeat(2, 1fr); }
+  .engines { grid-template-columns: repeat(2, 1fr); }
+  .meta-grid { grid-template-columns: repeat(3, 1fr); }
+  .compet-row { grid-template-columns: 160px repeat(7, 1fr); font-size: 11px; padding: 10px 14px; }
+  .meta-card .meta-row { grid-template-columns: 1fr; gap: 14px; text-align: center; }
+  .meta-card .meta-score { font-size: 64px; }
 }
 @media (max-width: 1024px) {
   :root { --sb-w: 248px; }
@@ -1543,6 +1818,8 @@ code {
   .agents { grid-template-columns: repeat(2, 1fr); }
   .bar-row { grid-template-columns: 130px 1fr 80px; }
   .flow { grid-template-columns: repeat(2, 1fr); }
+  .juris { grid-template-columns: repeat(2, 1fr); }
+  .compet-row { font-size: 10.5px; }
 }
 @media (max-width: 720px) {
   .sidebar { transform: translateX(-100%); transition: transform .3s ease; }
@@ -1567,4 +1844,11 @@ code {
   .ad-row { grid-template-columns: 1fr; gap: 6px; padding: 12px 16px; }
   .ad-head { display: none; }
   .banner { flex-direction: column; gap: 12px; padding: 22px 24px; }
+  .juris { grid-template-columns: 1fr; }
+  .engines { grid-template-columns: 1fr; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .compet-table { overflow-x: scroll; }
+  .compet-row { grid-template-columns: 140px repeat(7, 1fr); font-size: 10px; }
+  .compet-head > div { font-size: 9px; }
+  .api-block { font-size: 11px; padding: 18px 18px; }
 }

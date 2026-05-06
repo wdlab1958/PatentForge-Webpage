@@ -1,7 +1,7 @@
 # Design System — PatentForge Webpage
 
 > **Spec compatibility**: W3C [Design Tokens Community Group (DTCG)](https://design-tokens.github.io/community-group/format/) JSON token format · [Google Labs **Stitch**](https://stitch.withgoogle.com) ingestion · [Figma Design Tokens plugin](https://github.com/lukasoppermann/design-tokens) compatible
-> **Status**: 2026-05-06 · v1.1 · light-mode only · Legal Positioning (3-Mode) 컴포넌트 추가
+> **Status**: 2026-05-06 · v1.2 · light-mode only · 4-관할 (KIPO/USPTO/EPO/PCT) + Critic + Translator + 11종 경쟁 매트릭스 컴포넌트 추가
 > **Source of truth code-side**: [`css/style.css`](css/style.css) (token block lines 9–49)
 > **Author**: Brian Lee · WDLAB
 > **Parent system**: derived from [`PatentForge/design.md`](../PatentForge/design.md) and the WDLAB-AlphaForge / WDLAB-LLMOps page series. PatentForge's accent palette is intentionally different — emerald replaces cyan to signal "법적 정상 진행", and amber is promoted to a first-class accent for HITL gates.
@@ -628,6 +628,11 @@ DTCG가 표준화하지 않은 보조 메타데이터.
 - **`.country.ok` / `.partial` / `.blocked`** — 6 국가 셀프 출원 가능성 status 색 코딩
 - **`.market-seg.s-a` / `.s-b` / `.s-c`** — 3-Tier 시장 세그먼트 카드. seg-revenue는 모드별 색상 (emerald/amber/cyan)
 - **`.banner.warn`** — 강한 경고 배너. amber inset glow + 큰 아이콘 + 경고 카피
+- **`.juris-card.j-kipo` / `.j-uspto` / `.j-epo` / `.j-pct`** — v3.2 4-관할 카드. flag pill에 색 의미 매핑 (KIPO emerald / USPTO amber / EPO cyan / PCT pink). 산출물 목록은 mono 폰트 + 색맞춤 bullet
+- **`.engine.e-2` / `.e-3` / `.e-4`** — 4-엔진 도면 파이프라인 카드. engine-name 색 의미 (mermaid emerald / GraphViz amber / Matplotlib cyan / Pillow pink)
+- **`.compet-row .pf-cell`** — 11×N 경쟁 비교 매트릭스의 PatentForge 컬럼. emerald + text-shadow 강조. `.y` (✓ emerald) / `.n` (✗ pink) / `.p` (△ amber) 셀 보조 색
+- **`.meta-card`** — 재귀적 셀프 검증 메타 카드. 거대 점수(88px gradient) + 6 metric tile grid + emerald inset glow
+- **`.api-block`** — JSON API 코드 블록. neu-pressed 안쪽 영역 + JetBrains Mono + verb/path/key/str/num/cmt 신택스 하이라이트
 
 ### Inputs / Buttons
 - `.btn-neu` — 기본 (raised → translateY → pressed)
@@ -658,6 +663,7 @@ DTCG가 표준화하지 않은 보조 메타데이터.
 |---|---|---|
 | v1.0 | 2026-05-06 | 최초 작성 — DTCG 호환 / Stitch ingest / Figma plugin 지원 / 8 카테고리 고정. AlphaForge / LLMOps Webpage와 visual language 공유, accent palette를 emerald(정상)+amber(HITL)+pink(BLOCKER) 3축으로 재배치 |
 | v1.1 | 2026-05-06 | Legal Positioning(다섯 번째 가이드) 적용 — 7 신규 컴포넌트 추가: `.mode` (3-Mode A/B/C 매트릭스, m-a/m-b/m-c), `.legal-col.allowed/.forbidden` (합법/위법 행위 비교), `.flow-step.is-warn` (6-step 면책 동의서 게이트), `.country.ok/.partial/.blocked` (국가별 셀프 출원), `.market-seg.s-a/.s-b/.s-c` (3-Tier 시장 분석), `.ad-table .ok/.no` (광고 표현 합법/위법 line-through), `.banner.warn` (강한 경고 배너). 색 의미 확장: <b>m-a/s-a/.ok = emerald</b> (Mode A 권장 / 합법 진출), <b>m-b/s-b/is-warn = amber</b> (Mode B 면책 게이트 / HITL), <b>m-c/s-c = cyan</b> (Mode C 사내 R&amp;D · 보조 정보 색상의 의미적 승격), <b>.blocked/.no = pink</b> (셀프 출원 불가 / 위법 표현). |
+| v1.2 | 2026-05-06 | v3.2 implementation update (PatentForge README 6번째·v3-spec-final-review·Over-Competitor) 반영 — 5 신규 컴포넌트 추가: `.juris-card.j-kipo/.j-uspto/.j-epo/.j-pct` (4-관할 카드), `.engine.e-2/.e-3/.e-4` (4-엔진 도면 파이프라인), `.compet-row .pf-cell/.y/.n/.p` (11×N 경쟁 매트릭스), `.meta-card` (재귀적 셀프 검증 거대 점수 카드), `.api-block .verb/.path/.key/.str/.num/.cmt` (JSON 신택스 하이라이트). 색 의미 4-관할 매핑: <b>KIPO = emerald</b> (정상 진행 + 1차 출원 대상) / <b>USPTO = amber</b> (Mode B 우호 + 영문 번역 게이트) / <b>EPO = cyan</b> (Mode A 한정 + 유럽 변리사 강제) / <b>PCT = pink</b> (Mode B/C 가능 + 153 contracting states). |
 
 ---
 

@@ -1,10 +1,15 @@
 # PatentForge — 소개 웹페이지
 
-> **AI가 작성하고, 변리사가 검토하고, 당신이 출원하는 — 한국 유일의 모드 분기형 특허 플랫폼.**
-> Mode A 변리사 협업 · **Mode B 셀프 출원 (변리사법 §21 단서)** · Mode C 사내 R&D.
-> [PatentForge 사용 가이드 v1.0](../PatentForge/documents/PatentForge-Guide.docx) +
-> [PatentForge Legal Positioning v1.0](../PatentForge/documents/PatentForge-Legal-Positioning.md)
-> 두 문서를 24개 섹션으로 재구성한 정적 웹사이트입니다.
+> **Multi-Agent Multi-Jurisdiction Patent Application Platform — Invention to Filing-Ready Specification (v3.2).**
+> 한국 발명자의 한 줄 발명 신고를 <b>4개 관할(KIPO·USPTO·EPO·PCT)의 출원 가능 패키지</b>로 한 번에 변환하며,
+> Mode A 변리사 협업 · **Mode B 셀프 출원 (변리사법 §21 단서)** · Mode C 사내 R&D 의 3가지 운영 모드를 지원합니다.
+> [PatentForge/README.md (v3.2)](../PatentForge/README.md) +
+> [PatentForge-Guide.docx](../PatentForge/documents/PatentForge-Guide.docx) +
+> [PatentForge-Legal-Positioning.md](../PatentForge/documents/PatentForge-Legal-Positioning.md) +
+> [Over-Competitor.md (Phase A–F)](../PatentForge/documents/Over-Competitor.md) +
+> [PatentForge-Competitive-Analysis.docx (11종 비교)](../PatentForge/documents/PatentForge-Competitive-Analysis.docx) +
+> [v3-spec-final-review.md (재귀적 셀프 출원)](../PatentForge/documents/v3-spec-final-review.md)
+> 의 6개 출처 문서를 30개 섹션으로 재구성한 정적 웹사이트입니다.
 
 🌐 **Live**: https://wdlab1958.github.io/PatentForge-Webpage/
 
@@ -16,11 +21,12 @@
 | --- | --- |
 | 기술 스택 | Vanilla HTML / CSS / JavaScript (의존성 0) |
 | 디자인 시스템 | Neumorphism — convex/concave 그림자 + LED glow |
-| 색상 의미 | **Emerald(#10B981)**=정상 진행 · **Amber(#F4A11C)**=HITL 게이트 · **Pink(#FF2D95)**=BLOCKER · **Cyan(#00B8D4)**=보조 정보 |
+| 색상 의미 (v3.2) | **Emerald**=정상 진행 / Mode A / KIPO · **Amber**=HITL / Mode B / USPTO · **Cyan**=Mode C / EPO · **Pink**=BLOCKER / PCT |
 | 폰트 | Noto Sans KR · Inter · JetBrains Mono (Google Fonts) |
 | 반응형 | 1280 / 1024 / 720px 3 breakpoint |
 | 접근성 | 시멘틱 HTML5 · `aria-label` · 키보드 스크롤 |
 | 배포 | GitHub Pages (`main` branch root) |
+| 섹션 수 | **30** (v1: 12 → v2: 24 → v3.2: 30) |
 
 ---
 
@@ -54,38 +60,44 @@ PatentForge의 위험 시그널은 AlphaForge와 의미가 다릅니다.
 
 ---
 
-## 2. 페이지 구조 (24 sections)
+## 2. 페이지 구조 (30 sections)
 
-PatentForge 가이드 + Legal Positioning 두 문서를 다음과 같이 매핑:
+PatentForge 6개 출처 문서를 다음과 같이 매핑 (✦ = v3.2 신규 섹션):
 
 | § | 섹션 ID | 출처 | 핵심 컴포넌트 |
 | --- | --- | --- | --- |
-| 1 | `#hero` | Guide §1 + Legal §3 | 6 통계 카운터 + 3 모드 chip + §21 단서 슬로건 |
-| 2 | `#identity` | Guide §6 + Legal §2 | 6 카드 (도구 vs 대리 / 3-Mode 게이팅 / metric / audit / 비용 / 오케스트라) |
-| **3** | **`#modes`** ⭐ | **Legal §3~§6** | **3 운영 모드 매트릭스 (A/B/C) + Mode B 활성화 5조건 banner** |
-| **4** | **`#legal`** ⭐ | **Legal §2** | **변리사법 §2/§21 법문 + 합법 vs 위법 행위 7+7 표 + 회색지대 banner** |
-| **5** | **`#disclaimer`** ⭐ | **Legal §8** | **6단계 면책 서명 흐름 + SHA-256 무결성 + 책임 분리 매트릭스** |
-| 6 | `#principles` | Guide 안전 장치 | 6대 설계 원칙 — Mode-aware 게이팅 강제 |
-| 7 | `#safeguards` | Guide 안전 장치 5가지 | 5단계 안전 장치 (Novelty / Robustness / BLOCKER / 검토 / Audit) |
-| 8 | `#pipeline` | Guide Stage 1~12 | 12-stage 파이프라인 시각화 |
-| 9 | `#agents` | Guide LLM Tier 정책 | 12 Specialist Agent — Tier 1/2/3 색 구분 |
-| 10 | `#cost` | 부록 C | 단계별 비용·시간 분포 (애니메이션 가로 막대) |
-| 11 | `#tiers` | 부록 B | 위반 등급 4단계 (BLOCKER/MAJOR/MINOR/INFO) |
-| 12 | `#lawmap` | 부록 A | KIPO 특허법 §29·§42 1:1 매핑 |
-| 13 | `#hitl` | Guide §6.2~§6.4 | 변리사 검토 페이지 UX (APPROVE/REVISE/ABANDON) |
-| **14** | **`#response`** ⭐ | **Legal §11** | **ResponseAgent (Phase 3) — 의견제출통지서 OCR + 의견서·보정서 초안** |
-| 15 | `#journey` | Guide §1~§7 | 8단계 사용자 여정 |
-| 16 | `#outputs` | Guide §7 + Legal §9 | 모드별 표지 페이지 분기 (A/B/C) + Filing/Review |
-| 17 | `#architecture` | Guide §1.1 + 부록 D | 5-layer 시스템 아키텍처 |
-| 18 | `#security` | 부록 D | JWT + RBAC + ZDR + Squid + SHA-256 |
-| 19 | `#roadmap` | 부록 E | v1 → v2 → v3 진화 + Phase 2~3 |
-| **20** | **`#advertising`** ⭐ | **Legal §12** | **광고 표현 합법 vs 위법 7+7 표 + 표시광고법 §3 회피 가이드** |
-| **21** | **`#countries`** ⭐ | **Legal §14** | **6 국가 셀프 출원 (KR/US/JP/PCT 합법 · EU 제한 · CN 차단)** |
-| **22** | **`#market`** ⭐ | **Legal §17** | **3-Tier 시장 (Mode A 1.8억 + Mode B 1억 + Mode C 1억) + Brian 시너지** |
-| 23 | `#compare` | Guide §7 | Filing vs Review docx 비교표 |
-| 24 | `#future` | 부록 E + Legal §17 | 5대 기여 + 사회적 책임 + 의도적으로 *하지 않을* 일 |
+| 1 | `#hero` | README v3.2 | 6 통계 (4 관할·3 모드·10+2 agents·5 HITL·43 routes·68 tests) + §21 chip |
+| 2 | `#identity` | Guide + Legal | 6 카드 (도구 vs 대리 / 3-Mode 게이팅 / metric / audit / 비용 / 오케스트라) |
+| **3** | **`#jurisdictions`** ✦ | **README §1·§9 + Over-Competitor B–D** | **4-국가 카드 (KIPO/USPTO/EPO/PCT) + 산출물 목록 + FilingProfile SSOT banner** |
+| **4** | **`#engines`** ✦ | **README §1 + Over-Competitor A** | **4-엔진 도면 파이프라인 (mermaid + GraphViz + Matplotlib + Pillow) + 관할별 sheet 정규화** |
+| **5** | **`#multibuild`** ✦ | **README §9** | **POST `/export/{id}/multi/build` API 코드 + 관할별 ZIP 일람표** |
+| 6 | `#modes` | Legal §3~§6 | 3 운영 모드 매트릭스 (A/B/C) + Mode B 활성화 5조건 banner |
+| 7 | `#legal` | Legal §2 | 변리사법 §2/§21 법문 + 합법 vs 위법 행위 7+7 표 |
+| 8 | `#disclaimer` | Legal §8 | 6단계 면책 서명 흐름 + SHA-256 무결성 + 책임 분리 매트릭스 |
+| 9 | `#principles` | Guide 안전 장치 | 6대 설계 원칙 — Mode-aware 게이팅 강제 |
+| 10 | `#safeguards` | Guide 안전 장치 | 5단계 안전 장치 (Novelty / Robustness / BLOCKER / 검토 / Audit) |
+| 11 | `#pipeline` | README §3 + Workflow-Detailed | **13-stage 파이프라인 (12 visible + 1 hidden Critic)** + post_qa_mode_router |
+| 12 | `#agents` | README §1 | **10 Specialists + Critic + Translator (KO→EN)** + Tier 1/2/3 |
+| 13 | `#cost` | 부록 C | 단계별 비용·시간 분포 (애니메이션 가로 막대) |
+| 14 | `#tiers` | 부록 B | 위반 등급 4단계 (BLOCKER/MAJOR/MINOR/INFO) |
+| 15 | `#lawmap` | 부록 A | KIPO 특허법 §29·§42 1:1 매핑 |
+| 16 | `#hitl` | Guide §6 | 변리사 검토 페이지 UX (APPROVE/REVISE/ABANDON) |
+| 17 | `#response` | Legal §11 | ResponseAgent (Phase 4) — 의견서 초안 + 강제 면책 |
+| 18 | `#journey` | Guide §1~§7 | 8단계 사용자 여정 |
+| 19 | `#outputs` | Guide §7 + Legal §9 | 모드별 표지 페이지 분기 (A/B/C) + Filing/Review |
+| 20 | `#architecture` | README §4·§5 | **6-layer 아키텍처** (Frontend·Backend·LLM·Data·Documents·External) |
+| 21 | `#security` | 부록 D | JWT + RBAC + ZDR + Squid + SHA-256 |
+| 22 | `#roadmap` | README §11 | **v0 → v1·v2 → v3 → v3.2 NOW → v4 planned** |
+| 23 | `#advertising` | Legal §12 | 광고 표현 합법 vs 위법 7+7 표 |
+| 24 | `#countries` | Legal §14 | 6 국가 셀프 출원 (KR/US/JP/PCT ok · EU partial · CN blocked) |
+| 25 | `#market` | Legal §17 | 3-Tier 시장 + Brian 시너지 |
+| **26** | **`#competitors`** ✦ | **Competitive-Analysis (6번째 가이드)** | **11×N 매트릭스 (PatentForge + 6 경쟁) + 차별 자산 7 + 약점 7 + 4분면 banner** |
+| **27** | **`#self-filing`** ✦ | **v3-spec-final-review.md** | **PatentForge가 PatentForge 출원 — Score 93/100 + 6 메타 타일 + 메타 검증 3종** |
+| **28** | **`#kpi`** ✦ | **README §11 v3.2** | **13 stages · ~50 min · $4.53 · 68 tests pass (Figures 17 + USPTO 14 + EPO 11 + PCT 10)** |
+| 29 | `#compare` | Guide §7 | Filing vs Review docx 비교표 |
+| 30 | `#future` | 부록 E + Legal §17 | 5대 기여 + 사회적 책임 + 의도적으로 *하지 않을* 일 |
 
-⭐ = Legal Positioning 문서로 신규 추가된 섹션 (총 7 섹션)
+✦ = v3.2 implementation update로 신규 추가된 섹션 (총 5 섹션)
 
 ---
 
@@ -93,11 +105,11 @@ PatentForge 가이드 + Legal Positioning 두 문서를 다음과 같이 매핑:
 
 ```
 PatentForge-Webpage/
-├── index.html         # 1633 lines — 24 sections + sidebar nav
+├── index.html         # 2178 lines — 30 sections + sidebar nav
 ├── css/
-│   └── style.css      # 1570 lines — neumorphism + 3-mode visual language
+│   └── style.css      # 1854 lines — neumorphism + 4-juris + 3-mode visual language
 ├── js/
-│   └── app.js         # 144 lines — scroll spy / counters / bar animation / mobile menu
+│   └── app.js         # 145 lines — scroll spy / counters / bar animation / mobile menu
 ├── assets/            # (reserved)
 ├── DESIGN.md          # DTCG 호환 디자인 시스템 문서 (Stitch / Figma plugin 호환)
 └── README.md
@@ -105,7 +117,7 @@ PatentForge-Webpage/
 
 ### 3.1 `index.html`
 - 시멘틱 `<aside class="sidebar">` + `<main class="content">` 2-pane 레이아웃
-- 사이드바 9개 그룹: 시작 / **3 운영 모드** / 철학 / 파이프라인 / 컴플라이언스 / 사용자 / 시스템 / **시장** / 패러다임
+- 사이드바 11개 그룹: 시작 / **4 관할** / 3 운영 모드 / 철학 / 파이프라인 / 컴플라이언스 / 사용자 / 시스템 / 시장 / **메타** / 패러다임
 - 모바일 < 720px 에서는 햄버거 토글로 슬라이드 인
 
 ### 3.2 `css/style.css`
@@ -139,6 +151,11 @@ PatentForge-Webpage/
 - **`.market` (3-col)** + `.market-seg.s-a` / `.s-b` / `.s-c` — 3-Tier 시장 분석
 - **`.ad-table`** + `.ad-row .ok` / `.no` (line-through) — 광고 표현 합법/위법
 - **`.banner.warn`** — Mode B / 회색지대 / Brian 시너지 amber inset glow 배너
+- **`.juris` (4-col)** + `.juris-card.j-kipo/j-uspto/j-epo/j-pct` — v3.2 4-관할 카드 (각 관할 dpi/format spec + 산출물 목록 + flag color glow)
+- **`.engines` (4-col)** + `.engine.e-2/e-3/e-4` — 4-엔진 도면 파이프라인 (mermaid·GraphViz·Matplotlib·Pillow)
+- **`.compet-table`** + `.compet-row .pf-cell` (★ Unique) / `.y` (✓) / `.n` (✗) / `.p` (△) — 11×N 경쟁 비교 매트릭스
+- **`.meta-card`** + `.meta-score` (94px gradient) + `.meta-grid` (6 tiles) — PatentForge 자기 자신 출원 메타 카드
+- **`.api-block`** + `.verb` / `.path` / `.key` / `.str` / `.num` / `.cmt` 신택스 하이라이트 — POST `/export/{id}/multi/build` JSON 코드 블록
 
 ### 3.3 `js/app.js`
 - **Smooth scroll** + 사이드바 active 동기화
@@ -184,15 +201,23 @@ GitHub Pages는 정적 파일만 호스팅하므로 빌드 단계 없음.
 본 페이지의 모든 텍스트는 다음 출처에서 발췌했습니다:
 
 ```
-~/ai_project/PatentForge/documents/PatentForge-Guide.docx                  # 사용자 가이드 + 12단계 + 부록 A~F
-~/ai_project/PatentForge/documents/PatentForge-Legal-Positioning.md        # 법적 포지셔닝 + 셀프 출원 모드 (다섯 번째 가이드)
+~/ai_project/PatentForge/README.md                                          # v3.2 한눈에 보기 (구현 현황)
+~/ai_project/PatentForge/documents/PatentForge-Guide.docx                   # 사용자 가이드 + 12단계 + 부록 A~F
+~/ai_project/PatentForge/documents/PatentForge-Legal-Positioning.md         # 법적 포지셔닝 + 셀프 출원 모드 (다섯 번째 가이드)
+~/ai_project/PatentForge/documents/PatentForge-Competitive-Analysis.docx    # 경쟁 11종 비교 (여섯 번째 가이드)
+~/ai_project/PatentForge/documents/Over-Competitor.md                       # Phase A–F 4-관할 구현 계획
+~/ai_project/PatentForge/documents/v3-spec-final-review.md                  # PatentForge가 자기 자신 출원 — 점수 93/100
 ~/ai_project/PatentForge/design.md                                          # 디자인 시스템
 ```
 
+- **PatentForge/README.md** (2026-05-06 · v3.2): 4-관할 양식 + 10 specialized agents + 5-deep interrupt_before + 13-stage pipeline + 68 tests pass + $4.53/case 등 v3.2 구현 현황
 - **PatentForge-Guide.docx** (2026-05-05 · v1.0): 제1부 초보 사용자 가이드 (1~8장) · 제2부 12단계 워크플로우 상세 (Stage 1~12) · 제3부 부록 A~F
 - **PatentForge-Legal-Positioning.md** (2026-05-04 · v1.0 · 다섯 번째 가이드): 변리사법 §2/§21 해석 · 3가지 운영 모드 · 면책 동의서 흐름 · ResponseAgent · 광고 가이드라인 · 국가별 차이 · 시장 영향 분석
-- 작성: Brian Lee · WDLAB
-- 대상 시스템: PatentForge v3.0 (MVP v1.0 + Mode B/C 추가 계획)
+- **PatentForge-Competitive-Analysis.docx** (2026-05-04 · v1.0 · 여섯 번째 가이드): 국내 3 + 해외 7 + PatentForge = 11종 비교 매트릭스 · 차별 자산 7종 · 약점 7종 솔직 인정 · 4분면 매트릭스
+- **Over-Competitor.md** (2026-05-06 · v1.0): Phase A (도면) + Phase B (USPTO) + Phase C (EPO) + Phase D (PCT) + Phase E (빌더 다형성) + Phase F (ResponseAgent) 6주 단계별 사양서
+- **v3-spec-final-review.md** (2026-05-06 · v1.0): PatentForge가 자기 자신을 출원하는 재귀적 셀프 검증 — 종합 점수 93/100 + P0/P1/P2 보완 권고 + 메타 검증 3종
+- 작성: Brian Lee · WDLAB / A3 AI Research Lab
+- 대상 시스템: **PatentForge v3.2** (KIPO + USPTO + EPO + PCT 4-관할 parity 달성)
 
 ---
 
@@ -212,7 +237,7 @@ GitHub Pages는 정적 파일만 호스팅하므로 빌드 단계 없음.
 © WDLAB · Brian Lee
 WDLAB Internal · Confidential. 본 사이트는 PatentForge 프로젝트의 소개 목적으로 작성되었습니다.
 
-KIPO 특허법 §29 · §42 · 변리사법 §2 · §21 단서 준수. Mode A·C는 변리사 검토 강제, Mode B는 §21 단서에 따른 본인 직접 출원만 허용합니다.
+**관할별 법규 준수**: KIPO 특허법 §29 · §42 · 변리사법 §2 · §21 단서 (한국) · 37 CFR §§1.71–84 + MPEP §2173.05(e) (미국) · EPC Articles 78 + Rules 41–47 (유럽) · PCT Rules 5–11 + PCT-EASY 1.5 (국제). Mode A·C는 변리사 검토 강제, Mode B는 §21 단서에 따른 본인 직접 출원만 허용합니다.
 
 ⚠ **법적 면책**: 본 사이트의 모든 정보는 일반 정보 제공 목적이며, 법률 자문이 아닙니다. PatentForge 운영 전 반드시 변리사·법무법인의 자문을 받으시기 바랍니다.
 

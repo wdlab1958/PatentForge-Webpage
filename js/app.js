@@ -66,7 +66,8 @@
     '.card, .principle, .pipeline-step, .gate, .agent, .journey-step, .tier, ' +
     '.stat-card, .tl-item, .arch-layer, .status-pill, .quote-banner, .output, ' +
     '.list-card, .compare, .bars, ' +
-    '.mode, .legal-col, .flow-step, .country, .market-seg, .ad-table, .banner'
+    '.mode, .legal-col, .flow-step, .country, .market-seg, .ad-table, .banner, ' +
+    '.juris-card, .engine, .compet-table, .meta-card, .api-block'
   );
   revealEls.forEach((el) => {
     el.style.opacity = '0';
