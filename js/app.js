@@ -65,7 +65,8 @@
   const revealEls = document.querySelectorAll(
     '.card, .principle, .pipeline-step, .gate, .agent, .journey-step, .tier, ' +
     '.stat-card, .tl-item, .arch-layer, .status-pill, .quote-banner, .output, ' +
-    '.list-card, .compare, .bars'
+    '.list-card, .compare, .bars, ' +
+    '.mode, .legal-col, .flow-step, .country, .market-seg, .ad-table, .banner'
   );
   revealEls.forEach((el) => {
     el.style.opacity = '0';

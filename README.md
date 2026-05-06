@@ -1,8 +1,10 @@
 # PatentForge — 소개 웹페이지
 
-> **KIPO 출원 가능 명세서를 12단계 멀티에이전트 파이프라인으로 자동 생성하는 변리사 협업 플랫폼**의 소개 사이트.
-> [PatentForge 사용 가이드 v1.0](../PatentForge/documents/PatentForge-Guide.docx) (제1부 사용자 가이드 + 제2부 12단계 워크플로우 상세 + 제3부 부록 A~F) 의 핵심을
-> 12개 섹션으로 재구성한 정적 웹사이트입니다.
+> **AI가 작성하고, 변리사가 검토하고, 당신이 출원하는 — 한국 유일의 모드 분기형 특허 플랫폼.**
+> Mode A 변리사 협업 · **Mode B 셀프 출원 (변리사법 §21 단서)** · Mode C 사내 R&D.
+> [PatentForge 사용 가이드 v1.0](../PatentForge/documents/PatentForge-Guide.docx) +
+> [PatentForge Legal Positioning v1.0](../PatentForge/documents/PatentForge-Legal-Positioning.md)
+> 두 문서를 24개 섹션으로 재구성한 정적 웹사이트입니다.
 
 🌐 **Live**: https://wdlab1958.github.io/PatentForge-Webpage/
 
@@ -52,29 +54,38 @@ PatentForge의 위험 시그널은 AlphaForge와 의미가 다릅니다.
 
 ---
 
-## 2. 페이지 구조 (12 sections)
+## 2. 페이지 구조 (24 sections)
 
-가이드북의 사용자 가이드 + 12단계 워크플로우 + 부록 A~F를 다음과 같이 매핑:
+PatentForge 가이드 + Legal Positioning 두 문서를 다음과 같이 매핑:
 
-| § | 섹션 ID | 가이드 출처 | 핵심 컴포넌트 |
+| § | 섹션 ID | 출처 | 핵심 컴포넌트 |
 | --- | --- | --- | --- |
-| 1 | `#hero` | 제1부 §1 / 부록 C | 6개 핵심 통계 카운터 + KIPO §29·§42·변리사법 §2 chip |
-| 2 | `#identity` | 제1부 §6 / 부록 D | 6 identity 카드 (변리사 협업 도구 / 무인 출원 불허 / 측정 가능 metric / Hash-Chained Audit / 비용 회로 / 오케스트라) |
-| 3 | `#principles` | 제2부 안전 장치 + 부록 A | 6대 설계 원칙 — 변리사법 §2 / HITL / metric / BLOCKER / 영업비밀 / audit log |
-| 4 | `#safeguards` | 제2부 §전체 안전 장치 5가지 | 5단계 안전 장치 (Novelty 회색지대 / Robustness / BLOCKER / 변리사 검토 / Audit) |
-| 5 | `#pipeline` | 제2부 Stage 1~12 | 12-stage 파이프라인 시각화 (HITL/final 변형) |
-| 6 | `#agents` | 제2부 LLM Tier 정책 | 12 Specialist Agent — Tier 1/2/3 색 구분 |
-| 7 | `#cost` | 부록 C | 단계별 비용·시간 분포 (애니메이션 가로 막대) |
-| 8 | `#tiers` | 부록 B | 위반 등급 4단계 (BLOCKER/MAJOR/MINOR/INFO) |
-| 9 | `#law` | 부록 A | KIPO 특허법 §29·§42 + 변리사법 §2 1:1 매핑 |
-| 10 | `#hitl` | 제1부 §6.2~§6.4 | 변리사 검토 페이지 UX (APPROVE/REVISE/ABANDON + 3 점수) |
-| 11 | `#journey` | 제1부 §1~§7 | 8단계 사용자 여정 (로그인 → 다운로드) |
-| 12 | `#outputs` | 제1부 §7 | Filing / Review docx + .pdf · ePAS · .hwp · checklist |
-| 13 | `#architecture` | 제1부 §1.1 + 부록 D | 5-layer 시스템 아키텍처 (Frontend/Backend/LLM/Data/External) |
-| 14 | `#security` | 부록 D | JWT + RBAC + ZDR + Squid + SHA-256 hash chain |
-| 15 | `#roadmap` | 부록 E | v1 → v2 → v3 진화 + Phase 2~3 |
-| 16 | `#compare` | 제1부 §7 | Filing vs Review docx 비교표 |
-| 17 | `#future` | 부록 E + 구현 우선순위 | 5대 기여 영역 + 사회적 책임 + 의도적으로 *하지 않을* 일 |
+| 1 | `#hero` | Guide §1 + Legal §3 | 6 통계 카운터 + 3 모드 chip + §21 단서 슬로건 |
+| 2 | `#identity` | Guide §6 + Legal §2 | 6 카드 (도구 vs 대리 / 3-Mode 게이팅 / metric / audit / 비용 / 오케스트라) |
+| **3** | **`#modes`** ⭐ | **Legal §3~§6** | **3 운영 모드 매트릭스 (A/B/C) + Mode B 활성화 5조건 banner** |
+| **4** | **`#legal`** ⭐ | **Legal §2** | **변리사법 §2/§21 법문 + 합법 vs 위법 행위 7+7 표 + 회색지대 banner** |
+| **5** | **`#disclaimer`** ⭐ | **Legal §8** | **6단계 면책 서명 흐름 + SHA-256 무결성 + 책임 분리 매트릭스** |
+| 6 | `#principles` | Guide 안전 장치 | 6대 설계 원칙 — Mode-aware 게이팅 강제 |
+| 7 | `#safeguards` | Guide 안전 장치 5가지 | 5단계 안전 장치 (Novelty / Robustness / BLOCKER / 검토 / Audit) |
+| 8 | `#pipeline` | Guide Stage 1~12 | 12-stage 파이프라인 시각화 |
+| 9 | `#agents` | Guide LLM Tier 정책 | 12 Specialist Agent — Tier 1/2/3 색 구분 |
+| 10 | `#cost` | 부록 C | 단계별 비용·시간 분포 (애니메이션 가로 막대) |
+| 11 | `#tiers` | 부록 B | 위반 등급 4단계 (BLOCKER/MAJOR/MINOR/INFO) |
+| 12 | `#lawmap` | 부록 A | KIPO 특허법 §29·§42 1:1 매핑 |
+| 13 | `#hitl` | Guide §6.2~§6.4 | 변리사 검토 페이지 UX (APPROVE/REVISE/ABANDON) |
+| **14** | **`#response`** ⭐ | **Legal §11** | **ResponseAgent (Phase 3) — 의견제출통지서 OCR + 의견서·보정서 초안** |
+| 15 | `#journey` | Guide §1~§7 | 8단계 사용자 여정 |
+| 16 | `#outputs` | Guide §7 + Legal §9 | 모드별 표지 페이지 분기 (A/B/C) + Filing/Review |
+| 17 | `#architecture` | Guide §1.1 + 부록 D | 5-layer 시스템 아키텍처 |
+| 18 | `#security` | 부록 D | JWT + RBAC + ZDR + Squid + SHA-256 |
+| 19 | `#roadmap` | 부록 E | v1 → v2 → v3 진화 + Phase 2~3 |
+| **20** | **`#advertising`** ⭐ | **Legal §12** | **광고 표현 합법 vs 위법 7+7 표 + 표시광고법 §3 회피 가이드** |
+| **21** | **`#countries`** ⭐ | **Legal §14** | **6 국가 셀프 출원 (KR/US/JP/PCT 합법 · EU 제한 · CN 차단)** |
+| **22** | **`#market`** ⭐ | **Legal §17** | **3-Tier 시장 (Mode A 1.8억 + Mode B 1억 + Mode C 1억) + Brian 시너지** |
+| 23 | `#compare` | Guide §7 | Filing vs Review docx 비교표 |
+| 24 | `#future` | 부록 E + Legal §17 | 5대 기여 + 사회적 책임 + 의도적으로 *하지 않을* 일 |
+
+⭐ = Legal Positioning 문서로 신규 추가된 섹션 (총 7 섹션)
 
 ---
 
@@ -82,11 +93,11 @@ PatentForge의 위험 시그널은 AlphaForge와 의미가 다릅니다.
 
 ```
 PatentForge-Webpage/
-├── index.html         # 1159 lines — 12 sections + sidebar nav
+├── index.html         # 1633 lines — 24 sections + sidebar nav
 ├── css/
-│   └── style.css      # 1149 lines — neumorphism design system
+│   └── style.css      # 1570 lines — neumorphism + 3-mode visual language
 ├── js/
-│   └── app.js         # 143 lines — scroll spy / counters / bar animation / mobile menu
+│   └── app.js         # 144 lines — scroll spy / counters / bar animation / mobile menu
 ├── assets/            # (reserved)
 ├── DESIGN.md          # DTCG 호환 디자인 시스템 문서 (Stitch / Figma plugin 호환)
 └── README.md
@@ -94,7 +105,7 @@ PatentForge-Webpage/
 
 ### 3.1 `index.html`
 - 시멘틱 `<aside class="sidebar">` + `<main class="content">` 2-pane 레이아웃
-- 사이드바 7개 그룹: 시작 / 철학 / 파이프라인 / 컴플라이언스 / 사용자 / 시스템 / 패러다임
+- 사이드바 9개 그룹: 시작 / **3 운영 모드** / 철학 / 파이프라인 / 컴플라이언스 / 사용자 / 시스템 / **시장** / 패러다임
 - 모바일 < 720px 에서는 햄버거 토글로 슬라이드 인
 
 ### 3.2 `css/style.css`
@@ -121,6 +132,13 @@ PatentForge-Webpage/
 - `.outputs` (2-col) — Filing / Review 비교
 - `.bars` + `.bar-track` + `.bar-fill` — 단계별 비용·시간 가로 막대
 - `.compare-row` — Filing vs Review 비교표
+- **`.modes` (3-col)** — Mode A/B/C 매트릭스 (`.m-a` emerald / `.m-b` amber / `.m-c` cyan glow)
+- **`.legal-table`** + `.legal-col.allowed` / `.legal-col.forbidden` — 합법/위법 행위 비교
+- **`.flow` (6-col)** + `.flow-step.is-warn` — 면책 동의서 6단계 amber 강조
+- **`.countries` (3×2-col)** + `.country.ok` / `.partial` / `.blocked` — 6 국가 셀프 출원 가능성
+- **`.market` (3-col)** + `.market-seg.s-a` / `.s-b` / `.s-c` — 3-Tier 시장 분석
+- **`.ad-table`** + `.ad-row .ok` / `.no` (line-through) — 광고 표현 합법/위법
+- **`.banner.warn`** — Mode B / 회색지대 / Brian 시너지 amber inset glow 배너
 
 ### 3.3 `js/app.js`
 - **Smooth scroll** + 사이드바 active 동기화
@@ -163,18 +181,18 @@ GitHub Pages는 정적 파일만 호스팅하므로 빌드 단계 없음.
 
 ## 6. 컨텐츠 출처 (Single Source of Truth)
 
-본 페이지의 모든 텍스트는 다음 단일 출처에서 발췌했습니다:
+본 페이지의 모든 텍스트는 다음 출처에서 발췌했습니다:
 
 ```
-~/ai_project/PatentForge/documents/PatentForge-Guide.docx
-~/ai_project/PatentForge/design.md
+~/ai_project/PatentForge/documents/PatentForge-Guide.docx                  # 사용자 가이드 + 12단계 + 부록 A~F
+~/ai_project/PatentForge/documents/PatentForge-Legal-Positioning.md        # 법적 포지셔닝 + 셀프 출원 모드 (다섯 번째 가이드)
+~/ai_project/PatentForge/design.md                                          # 디자인 시스템
 ```
 
-- 제1부 초보 사용자 가이드 (1~8장)
-- 제2부 12단계 워크플로우 상세 (Stage 1~12)
-- 제3부 부록 A (KIPO 특허법) / B (컴플라이언스) / C (비용·시간) / D (보안) / E (v1·v2·v3 진화) / F (트러블슈팅)
+- **PatentForge-Guide.docx** (2026-05-05 · v1.0): 제1부 초보 사용자 가이드 (1~8장) · 제2부 12단계 워크플로우 상세 (Stage 1~12) · 제3부 부록 A~F
+- **PatentForge-Legal-Positioning.md** (2026-05-04 · v1.0 · 다섯 번째 가이드): 변리사법 §2/§21 해석 · 3가지 운영 모드 · 면책 동의서 흐름 · ResponseAgent · 광고 가이드라인 · 국가별 차이 · 시장 영향 분석
 - 작성: Brian Lee · WDLAB
-- 발행: 2026-05-05 (PatentForge v3.0 대상)
+- 대상 시스템: PatentForge v3.0 (MVP v1.0 + Mode B/C 추가 계획)
 
 ---
 
@@ -194,7 +212,9 @@ GitHub Pages는 정적 파일만 호스팅하므로 빌드 단계 없음.
 © WDLAB · Brian Lee
 WDLAB Internal · Confidential. 본 사이트는 PatentForge 프로젝트의 소개 목적으로 작성되었습니다.
 
-KIPO 특허법 §29 · §42 · 변리사법 §2 준수. 어떠한 자동 출원도 허용하지 않습니다.
+KIPO 특허법 §29 · §42 · 변리사법 §2 · §21 단서 준수. Mode A·C는 변리사 검토 강제, Mode B는 §21 단서에 따른 본인 직접 출원만 허용합니다.
+
+⚠ **법적 면책**: 본 사이트의 모든 정보는 일반 정보 제공 목적이며, 법률 자문이 아닙니다. PatentForge 운영 전 반드시 변리사·법무법인의 자문을 받으시기 바랍니다.
 
 ---
 

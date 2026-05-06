@@ -1,7 +1,7 @@
 # Design System — PatentForge Webpage
 
 > **Spec compatibility**: W3C [Design Tokens Community Group (DTCG)](https://design-tokens.github.io/community-group/format/) JSON token format · [Google Labs **Stitch**](https://stitch.withgoogle.com) ingestion · [Figma Design Tokens plugin](https://github.com/lukasoppermann/design-tokens) compatible
-> **Status**: 2026-05-06 · v1.0 · light-mode only
+> **Status**: 2026-05-06 · v1.1 · light-mode only · Legal Positioning (3-Mode) 컴포넌트 추가
 > **Source of truth code-side**: [`css/style.css`](css/style.css) (token block lines 9–49)
 > **Author**: Brian Lee · WDLAB
 > **Parent system**: derived from [`PatentForge/design.md`](../PatentForge/design.md) and the WDLAB-AlphaForge / WDLAB-LLMOps page series. PatentForge's accent palette is intentionally different — emerald replaces cyan to signal "법적 정상 진행", and amber is promoted to a first-class accent for HITL gates.
@@ -622,6 +622,12 @@ DTCG가 표준화하지 않은 보조 메타데이터.
 - `.tl-item` — 4 roadmap milestones, pulse-card 변형 1개
 - `.output` — Filing / Review docx, .r 변형은 amber accent
 - `.list-card.law` / `.list-card.sec` — 법률/보안 항목 리스트
+- **`.mode`** — Mode A/B/C 매트릭스 카드. m-a (emerald), m-b (amber), m-c (cyan) 의미적 구분. mode-letter는 모드 이니셜을 거대 글자로 표시 (44px extrabold + accent text-shadow)
+- **`.legal-col.allowed` / `.legal-col.forbidden`** — 합법/위법 행위 2-col 비교. emerald ✓ / pink ✗ marker
+- **`.flow-step.is-warn`** — 면책 동의서 6-step gate. amber inset glow로 강한 경고 강조 (Step 2~6)
+- **`.country.ok` / `.partial` / `.blocked`** — 6 국가 셀프 출원 가능성 status 색 코딩
+- **`.market-seg.s-a` / `.s-b` / `.s-c`** — 3-Tier 시장 세그먼트 카드. seg-revenue는 모드별 색상 (emerald/amber/cyan)
+- **`.banner.warn`** — 강한 경고 배너. amber inset glow + 큰 아이콘 + 경고 카피
 
 ### Inputs / Buttons
 - `.btn-neu` — 기본 (raised → translateY → pressed)
@@ -651,6 +657,7 @@ DTCG가 표준화하지 않은 보조 메타데이터.
 | 버전 | 날짜 | 변경 |
 |---|---|---|
 | v1.0 | 2026-05-06 | 최초 작성 — DTCG 호환 / Stitch ingest / Figma plugin 지원 / 8 카테고리 고정. AlphaForge / LLMOps Webpage와 visual language 공유, accent palette를 emerald(정상)+amber(HITL)+pink(BLOCKER) 3축으로 재배치 |
+| v1.1 | 2026-05-06 | Legal Positioning(다섯 번째 가이드) 적용 — 7 신규 컴포넌트 추가: `.mode` (3-Mode A/B/C 매트릭스, m-a/m-b/m-c), `.legal-col.allowed/.forbidden` (합법/위법 행위 비교), `.flow-step.is-warn` (6-step 면책 동의서 게이트), `.country.ok/.partial/.blocked` (국가별 셀프 출원), `.market-seg.s-a/.s-b/.s-c` (3-Tier 시장 분석), `.ad-table .ok/.no` (광고 표현 합법/위법 line-through), `.banner.warn` (강한 경고 배너). 색 의미 확장: <b>m-a/s-a/.ok = emerald</b> (Mode A 권장 / 합법 진출), <b>m-b/s-b/is-warn = amber</b> (Mode B 면책 게이트 / HITL), <b>m-c/s-c = cyan</b> (Mode C 사내 R&amp;D · 보조 정보 색상의 의미적 승격), <b>.blocked/.no = pink</b> (셀프 출원 불가 / 위법 표현). |
 
 ---
 
