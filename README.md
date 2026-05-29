@@ -1,6 +1,6 @@
 # PatentForge — 소개 웹페이지
 
-> **Multi-Agent Multi-Jurisdiction Patent Application Platform — Invention to Filing-Ready Specification (v3.2).**
+> **Multi-Agent Multi-Jurisdiction Patent Application Platform — Invention to Filing-Ready Specification (v3.4 · 2026-05-29).**
 > 3개의 명확한 타겟 페르소나를 위한 도구입니다:
 > - 👤 **개인 발명가 (13,000~20,000명)** → Mode B 셀프 출원, 비용 5만원
 > - 🏢 **기업 R&D 특허 담당자 (~2,500개사)** → Mode C 온프레미스, 영업비밀 외부 송신 0건
@@ -223,7 +223,7 @@ GitHub Pages는 정적 파일만 호스팅하므로 빌드 단계 없음.
 - **Over-Competitor.md** (2026-05-06 · v1.0): Phase A (도면) + Phase B (USPTO) + Phase C (EPO) + Phase D (PCT) + Phase E (빌더 다형성) + Phase F (ResponseAgent) 6주 단계별 사양서
 - **v3-spec-final-review.md** (2026-05-06 · v1.0): PatentForge가 자기 자신을 출원하는 재귀적 셀프 검증 — 종합 점수 93/100 + P0/P1/P2 보완 권고 + 메타 검증 3종
 - 작성: WDLAB
-- 대상 시스템: **PatentForge v3.2** (KIPO + USPTO + EPO + PCT 4-관할 parity 달성)
+- 대상 시스템: **PatentForge v3.4** (KIPO + USPTO + EPO + PCT 4-관할 parity 달성 + TranslatorAgent 실구현 + 운영 배포 + 결제 인프라)
 
 ---
 
