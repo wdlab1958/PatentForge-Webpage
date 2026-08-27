@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PatentForge · KIPO 특허 명세서 자동화 플랫폼</title>
-<meta name="description" content="PatentForge는 자유 서술 형태의 발명 신고서를 12단계 멀티에이전트 파이프라인을 거쳐 KIPO 출원 가능한 명세서·청구범위·요약서·도면 일체로 자동 생성하는 변리사 협업 플랫폼입니다. 변리사 검토 강제 게이트, BLOCKER 자동 차단, Hash-Chained Audit으로 무인 출원을 절대 허용하지 않습니다." />
+<title>PatentForge · 특허 출원 문서 자동 작성 서비스</title>
+<meta name="description" content="PatentForge는 발명 내용을 이야기하듯 적으면 특허청에 낼 수 있는 명세서·청구범위·요약서·도면을 자동으로 만들어 주는 서비스입니다. AI가 초안을 만들고, 변리사가 검토하고, 출원은 당신이 합니다." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -24,7 +24,7 @@
       </div>
       <div class="brand-text">
         <div class="brand-title">PatentForge</div>
-        <div class="brand-subtitle">v3.4 · 4-Juris · 3-Mode · 2026.05.29</div>
+        <div class="brand-subtitle">특허 출원 문서 자동 작성</div>
       </div>
     </div>
 
@@ -36,83 +36,38 @@
 
     <nav class="nav-sections">
       <div class="nav-group">
-        <div class="nav-label">시작</div>
-        <a class="nav-item active" href="#hero" data-target="hero"><i class="dot"></i><span>홈 · 개요</span></a>
-        <a class="nav-item" href="#identity" data-target="identity"><i class="dot"></i><span>왜 PatentForge 인가</span></a>
-        <a class="nav-item" href="#personas" data-target="personas"><i class="dot dot-am"></i><span>3 페르소나 (타겟 사용자)</span></a>
+        <div class="nav-label">소개</div>
+        <a class="nav-item active" href="#hero" data-target="hero"><i class="dot"></i><span>홈</span></a>
+        <a class="nav-item" href="#identity" data-target="identity"><i class="dot"></i><span>PatentForge란?</span></a>
+        <a class="nav-item" href="#personas" data-target="personas"><i class="dot dot-am"></i><span>누구를 위한 서비스인가</span></a>
       </div>
 
       <div class="nav-group">
-        <div class="nav-label">4 관할 · Jurisdictions</div>
-        <a class="nav-item" href="#jurisdictions" data-target="jurisdictions"><i class="dot dot-em"></i><span>KIPO · USPTO · EPO · PCT</span></a>
-        <a class="nav-item" href="#engines" data-target="engines"><i class="dot dot-em"></i><span>4-엔진 도면 파이프라인</span></a>
-        <a class="nav-item" href="#multibuild" data-target="multibuild"><i class="dot dot-em"></i><span>Multi-Build API + ZIP</span></a>
+        <div class="nav-label">서비스</div>
+        <a class="nav-item" href="#modes" data-target="modes"><i class="dot dot-em"></i><span>세 가지 이용 방법</span></a>
+        <a class="nav-item" href="#pipeline" data-target="pipeline"><i class="dot dot-em"></i><span>문서가 만들어지는 과정</span></a>
+        <a class="nav-item" href="#jurisdictions" data-target="jurisdictions"><i class="dot dot-em"></i><span>해외 출원도 한 번에</span></a>
+        <a class="nav-item" href="#outputs" data-target="outputs"><i class="dot dot-cy"></i><span>받아보는 문서</span></a>
       </div>
 
       <div class="nav-group">
-        <div class="nav-label">3 운영 모드 · Modes</div>
-        <a class="nav-item" href="#modes" data-target="modes"><i class="dot dot-em"></i><span>Mode A · B · C 매트릭스</span></a>
-        <a class="nav-item" href="#legal" data-target="legal"><i class="dot dot-em"></i><span>변리사법 §2 · §21 단서</span></a>
-        <a class="nav-item" href="#disclaimer" data-target="disclaimer"><i class="dot dot-am"></i><span>면책 동의서 흐름 (Mode B)</span></a>
+        <div class="nav-label">안심 포인트</div>
+        <a class="nav-item" href="#safeguards" data-target="safeguards"><i class="dot dot-am"></i><span>5중 안전장치</span></a>
+        <a class="nav-item" href="#legal" data-target="legal"><i class="dot dot-pk"></i><span>법을 지키는 방식</span></a>
+        <a class="nav-item" href="#disclaimer" data-target="disclaimer"><i class="dot dot-am"></i><span>직접 출원 전 확인 절차</span></a>
+        <a class="nav-item" href="#security" data-target="security"><i class="dot dot-pk"></i><span>발명 아이디어 보호</span></a>
       </div>
 
       <div class="nav-group">
-        <div class="nav-label">철학 · Philosophy</div>
-        <a class="nav-item" href="#principles" data-target="principles"><i class="dot dot-em"></i><span>6대 설계 원칙</span></a>
-        <a class="nav-item" href="#safeguards" data-target="safeguards"><i class="dot dot-am"></i><span>5대 안전 장치</span></a>
-      </div>
-
-      <div class="nav-group">
-        <div class="nav-label">파이프라인 · Pipeline</div>
-        <a class="nav-item" href="#pipeline" data-target="pipeline"><i class="dot dot-em"></i><span>12단계 자동 워크플로우</span></a>
-        <a class="nav-item" href="#agents" data-target="agents"><i class="dot dot-em"></i><span>전문 에이전트</span></a>
-        <a class="nav-item" href="#cost" data-target="cost"><i class="dot dot-em"></i><span>비용 · 시간 분포</span></a>
-      </div>
-
-      <div class="nav-group">
-        <div class="nav-label">컴플라이언스 · Compliance</div>
-        <a class="nav-item" href="#tiers" data-target="tiers"><i class="dot dot-pk"></i><span>위반 등급 4단계</span></a>
-        <a class="nav-item" href="#lawmap" data-target="lawmap"><i class="dot dot-pk"></i><span>KIPO 특허법 매핑</span></a>
-        <a class="nav-item" href="#hitl" data-target="hitl"><i class="dot dot-am"></i><span>변리사 검토 페이지</span></a>
-        <a class="nav-item" href="#response" data-target="response"><i class="dot dot-am"></i><span>ResponseAgent · 의견서</span></a>
-      </div>
-
-      <div class="nav-group">
-        <div class="nav-label">사용자 · Experience</div>
-        <a class="nav-item" href="#journey" data-target="journey"><i class="dot dot-cy"></i><span>8단계 사용 절차</span></a>
-        <a class="nav-item" href="#outputs" data-target="outputs"><i class="dot dot-cy"></i><span>모드별 산출물</span></a>
-      </div>
-
-      <div class="nav-group">
-        <div class="nav-label">시스템 · Tech</div>
-        <a class="nav-item" href="#architecture" data-target="architecture"><i class="dot dot-cy"></i><span>기술 스택 · 인프라</span></a>
-        <a class="nav-item" href="#security" data-target="security"><i class="dot dot-pk"></i><span>보안 · 영업비밀 보호</span></a>
-        <a class="nav-item" href="#roadmap" data-target="roadmap"><i class="dot"></i><span>v1·v2·v3 진화 · 로드맵</span></a>
-      </div>
-
-      <div class="nav-group">
-        <div class="nav-label">시장 · Market</div>
-        <a class="nav-item" href="#advertising" data-target="advertising"><i class="dot dot-pk"></i><span>광고 표현 가이드</span></a>
-        <a class="nav-item" href="#countries" data-target="countries"><i class="dot dot-cy"></i><span>국가별 셀프 출원</span></a>
-        <a class="nav-item" href="#market" data-target="market"><i class="dot"></i><span>3-Tier 시장 확장</span></a>
-        <a class="nav-item" href="#competitors" data-target="competitors"><i class="dot dot-em"></i><span>경쟁 11종 매트릭스</span></a>
-      </div>
-
-      <div class="nav-group">
-        <div class="nav-label">메타 · Meta</div>
-        <a class="nav-item" href="#self-filing" data-target="self-filing"><i class="dot dot-em"></i><span>PatentForge가 PatentForge 출원</span></a>
-        <a class="nav-item" href="#kpi" data-target="kpi"><i class="dot dot-em"></i><span>v3.4 KPI · 13 stages · $4.53</span></a>
-      </div>
-
-      <div class="nav-group">
-        <div class="nav-label">패러다임 · Future</div>
-        <a class="nav-item" href="#compare" data-target="compare"><i class="dot"></i><span>Filing vs Review</span></a>
-        <a class="nav-item" href="#future" data-target="future"><i class="dot"></i><span>최종 목표 · 비전</span></a>
+        <div class="nav-label">이용 안내</div>
+        <a class="nav-item" href="#journey" data-target="journey"><i class="dot dot-cy"></i><span>이용 절차</span></a>
+        <a class="nav-item" href="#response" data-target="response"><i class="dot dot-cy"></i><span>심사 결과 받은 후에도</span></a>
+        <a class="nav-item" href="#future" data-target="future"><i class="dot"></i><span>우리의 약속</span></a>
       </div>
     </nav>
 
     <div class="sidebar-footer neu-pressed">
-      <div class="status-led"><span class="pulse"></span> 3-Mode · §21 단서 준수 · KIPO-Ready</div>
+      <div class="status-led"><span class="pulse"></span> 변리사법 준수 · 안심 설계</div>
     </div>
   </aside>
 
@@ -122,23 +77,21 @@
     <!-- ===== HERO ===== -->
     <section id="hero" class="section section-hero">
       <div class="hero-meta">
-        <span class="chip neu-pressed">v3.4 · 2026.05.29</span>
-        <span class="chip neu-pressed">개인 발명가 · 기업 R&amp;D · 변리사 — 3 페르소나 타겟</span>
-        <span class="chip neu-pressed">4 Jurisdictions · KIPO·USPTO·EPO·PCT</span>
-        <span class="chip neu-pressed">변리사법 §21 단서 준수</span>
+        <span class="chip neu-pressed">개인 발명가 · 기업 · 변리사 모두를 위한 서비스</span>
+        <span class="chip neu-pressed">한국 · 미국 · 유럽 · 국제출원 지원</span>
+        <span class="chip neu-pressed">변리사법을 지키며 설계</span>
       </div>
 
       <h1 class="hero-title">
         <span class="text-grad-em">Patent</span><span class="text-grad-am">Forge</span>
       </h1>
       <p class="hero-tagline">
-        <b class="text-am">개인 발명가</b>는 5만원에 셀프 출원하고,
-        <b class="text-cy">기업 R&amp;D 특허 담당자</b>는 영업비밀을 외부로 보내지 않고 사내에서 출원하며,<br/>
-        <b class="text-em">AI 도구 우호적인 변리사</b>는 형식 작업을 시스템에 맡기고 법적 판단에만 집중합니다.
+        발명 내용을 이야기하듯 적어 주세요.<br/>
+        특허청에 낼 수 있는 <b class="text-em">명세서 · 청구범위 · 요약서 · 도면</b>을 자동으로 만들어 드립니다.
       </p>
       <p class="hero-quote">
-        "PatentForge는 변리사가 아니라 도구다. 한국 변리사법 §21 단서('본인이 직접 행하는 경우')에 따라<br/>
-        발명자는 자기 책임 하에 셀프 출원할 수 있고, 시스템은 측정 가능한 metric만을 보고한다."
+        "AI가 초안을 만들고, 변리사가 검토하고, 출원은 당신이 합니다.<br/>
+        PatentForge는 변리사를 대신하는 서비스가 아니라, 특허 서류 작성을 도와주는 도구입니다."
       </p>
 
       <div class="hero-cta">
@@ -146,34 +99,30 @@
           <span>서비스 시작하기 →</span>
         </a>
         <button class="btn-neu" onclick="document.getElementById('personas').scrollIntoView({behavior:'smooth'})">
-          <span>당신의 페르소나 찾기</span>
+          <span>나에게 맞는 서비스 찾기</span>
         </button>
-        <button class="btn-neu" onclick="document.getElementById('jurisdictions').scrollIntoView({behavior:'smooth'})">
-          <span>4-관할 패키지 살펴보기</span>
+        <button class="btn-neu" onclick="document.getElementById('pipeline').scrollIntoView({behavior:'smooth'})">
+          <span>어떻게 만들어지나요?</span>
         </button>
       </div>
       <p class="hero-launch-note" id="hero-launch-note" style="margin-top:.6rem;font-size:.78rem;opacity:.7;"></p>
 
       <div class="hero-stats">
         <div class="stat-card neu-raised">
+          <div class="stat-number text-am">5</div>
+          <div class="stat-label">만원부터 · 개인 직접 출원</div>
+        </div>
+        <div class="stat-card neu-raised">
           <div class="stat-number text-em">4</div>
-          <div class="stat-label">Jurisdictions (v3.2)</div>
+          <div class="stat-label">곳 특허청 서류 지원</div>
         </div>
         <div class="stat-card neu-raised">
           <div class="stat-number text-em">3</div>
-          <div class="stat-label">Operating Modes</div>
+          <div class="stat-label">가지 이용 방법</div>
         </div>
         <div class="stat-card neu-raised">
-          <div class="stat-number text-am">10</div>
-          <div class="stat-label">Specialist Agents + Translator</div>
-        </div>
-        <div class="stat-card neu-raised">
-          <div class="stat-number text-pk">5</div>
-          <div class="stat-label">interrupt_before HITL</div>
-        </div>
-        <div class="stat-card neu-raised">
-          <div class="stat-number text-cy">43</div>
-          <div class="stat-label">FastAPI Routes</div>
+          <div class="stat-number text-cy">40</div>
+          <div class="stat-label">여 가지 자동 점검 항목</div>
         </div>
       </div>
     </section>
@@ -181,59 +130,58 @@
     <!-- ===== IDENTITY ===== -->
     <section id="identity" class="section">
       <div class="section-head">
-        <span class="section-tag">Identity</span>
-        <h2>왜 <span class="text-em">PatentForge</span> 인가?</h2>
+        <span class="section-tag">소개</span>
+        <h2><span class="text-em">PatentForge</span>란 무엇인가요?</h2>
         <p class="section-lead">
-          PatentForge는 변리사를 대체하는 시스템이 아닙니다. <b class="text-am">개인 발명가</b>의 진입 장벽을 200만원 → 5만원으로 낮추고,
-          <b class="text-cy">기업 R&amp;D 특허 담당자</b>의 영업비밀을 사내에 가두며, <b class="text-em">AI 우호 변리사</b>의 형식 작업을 자동화하는 <b>도구(Tooling)</b>입니다.
-          변리사법 §2 "대리"를 피하기 위해 시스템은 사용자 명의로 출원하지 않고, 법률 효과를 발생시키지 않으며, 위임 계약을 체결하지 않습니다.
-          <b>변리사법 §21 단서("본인이 직접 행하는 경우")에 따라</b> 발명자가 자기 책임 하에 셀프 출원하는 Mode B도 지원합니다.
+          특허를 내려면 보통 변리사 사무소에 <b>200만원 안팎</b>의 비용을 내야 합니다.
+          PatentForge는 이 부담을 크게 낮춥니다. 발명 내용을 적으면 특허청 규격에 맞는 서류 일체를 자동으로 만들어 주고,
+          필요에 따라 <b class="text-em">변리사의 검토</b>를 거치거나 <b class="text-am">본인이 직접 출원</b>할 수 있게 돕습니다.
+          법이 허용하는 범위 안에서만 움직이는, 특허 서류 작성 <b>도구</b>입니다.
         </p>
       </div>
 
       <div class="grid-3">
         <div class="card neu-raised card-hover">
           <div class="card-icon neu-pressed"><span class="ico-em">⌘</span></div>
-          <h3>도구 (Tooling), 대리 아님</h3>
-          <p>PatentForge는 산출물(.docx)만 사용자에게 전달하며, KIPO 출원은 사용자 본인 또는 변리사가 수행합니다. <b>SaaS 이용약관만 체결, 위임 계약 없음.</b></p>
+          <h3>도구입니다, 대리인이 아닙니다</h3>
+          <p>PatentForge는 완성된 서류 파일을 전달할 뿐, 출원은 본인 또는 변리사가 직접 합니다. 누군가를 대신해 출원하는 일은 하지 않습니다.</p>
         </div>
         <div class="card neu-raised card-hover">
           <div class="card-icon neu-pressed"><span class="ico-am">⊠</span></div>
-          <h3>3-Mode 분기 게이팅</h3>
-          <p>QA 단계 직후 모드별 분기: <b>Mode A</b> 변리사 검토 강제 / <b>Mode B</b> 면책 동의서 + 본인 인증 강제 / <b>Mode C</b> 사내 변리사 강제. 모드 우회는 코드 레벨에서 차단.</p>
+          <h3>무인 자동 출원은 없습니다</h3>
+          <p>어떤 이용 방법을 선택하든, 변리사의 검토 또는 본인의 확인·동의 절차를 거쳐야만 최종 문서가 완성됩니다. 이 절차는 건너뛸 수 없습니다.</p>
         </div>
         <div class="card neu-raised card-hover">
           <div class="card-icon neu-pressed"><span class="ico-em">◇</span></div>
-          <h3>측정 가능한 거절 사유</h3>
-          <p>"AI가 거부했습니다" ❌ → "독립항 단어 수 87 미만, KIPO-CLAIM-WORDS 검증 실패" ✓. 모든 거절은 정규식·AST·LLM 검증의 명시적 metric으로 설명됩니다.</p>
+          <h3>이유를 설명해 드립니다</h3>
+          <p>"안 됩니다"라고만 하지 않습니다. 서류에 문제가 있으면 어느 부분이 어떤 규정에 어긋나는지 구체적으로 짚어 드립니다.</p>
         </div>
         <div class="card neu-raised card-hover">
           <div class="card-icon neu-pressed"><span class="ico-pk">▣</span></div>
-          <h3>영구 audit log</h3>
-          <p>변리사 결정·면책 동의서 서명·LLM 호출·비용을 PostgreSQL <code>audit_trail</code>에 SHA-256 hash chain으로 <b>영구 보존</b>(5년 → 영구로 격상). 변리사법 위반 의혹 시 결정적 증거.</p>
+          <h3>모든 과정이 기록됩니다</h3>
+          <p>검토·동의·작성 이력을 위조할 수 없는 방식으로 보관합니다. 나중에 문제가 생겨도 누가 무엇을 확인했는지 증명할 수 있습니다.</p>
         </div>
         <div class="card neu-raised card-hover">
           <div class="card-icon neu-pressed"><span class="ico-am">◐</span></div>
-          <h3>비용 회로 차단기</h3>
-          <p>사건당 $20 한도. 초과 시 <code>CostCircuitBreaker</code>가 즉시 파이프라인 정지. 평균은 $4–12, 최대 비용은 Claims 단계($2–5)와 Spec 단계($1–3)에 집중.</p>
+          <h3>비용에 상한이 있습니다</h3>
+          <p>서류 1건을 만드는 데 드는 비용에 상한선을 두고, 넘어서면 작업을 자동으로 멈춥니다. 예상치 못한 요금이 청구되지 않습니다.</p>
         </div>
         <div class="card neu-raised card-hover">
           <div class="card-icon neu-pressed"><span class="ico-em">◈</span></div>
-          <h3>오케스트라 모델</h3>
-          <p>LangGraph Supervisor가 12명의 Specialist Agent를 지휘. <code>interrupt_before=["mode_a_review", "mode_b_disclaimer_gate", "mode_c_review"]</code> — 3개 모드 게이트 모두 자동 우회 불가.</p>
+          <h3>전문 분업으로 완성도를 높입니다</h3>
+          <p>비슷한 특허 찾기, 권리 범위 문장 다듬기, 도면 그리기, 형식 점검 — 각 단계를 전담하는 자동화 모듈이 나눠 맡아 빈틈을 줄입니다.</p>
         </div>
       </div>
     </section>
 
-    <!-- ===== PERSONAS — Target Users ===== -->
+    <!-- ===== PERSONAS ===== -->
     <section id="personas" class="section">
       <div class="section-head">
-        <span class="section-tag">Target Users · 3 Personas</span>
-        <h2>PatentForge가 만드는 <span class="text-em">3 명의 사용자</span></h2>
+        <span class="section-tag">누구를 위한 서비스인가</span>
+        <h2>PatentForge가 돕는 <span class="text-em">세 부류의 사용자</span></h2>
         <p class="section-lead">
-          PatentForge는 모든 발명자를 위한 도구가 아닙니다. 다음 <b>3가지 명확한 페르소나</b>의 일을 가장 잘 돕도록 설계되었으며,
-          각 페르소나는 다른 운영 모드를 선택하고, 다른 산출물을 사용하며, 다른 책임 경계를 가집니다.
-          나머지 사용자(예: 핵심 IP 대형 사건의 사내 법무팀, 분쟁 중인 특허의 무효심판 대응)는 직접 변리사 사무소를 권장합니다.
+          PatentForge는 모든 경우를 위한 서비스가 아닙니다. 아래 세 부류의 일을 가장 잘 돕도록 만들어졌고,
+          각각에 맞는 이용 방법이 따로 준비되어 있습니다.
         </p>
       </div>
 
@@ -243,270 +191,65 @@
             <div class="persona-icon">👤</div>
             <div>
               <h3>개인 발명가</h3>
-              <div class="persona-size">국내 약 13,000~20,000명 · 한국 연 개인 출원 약 30,000건 중 디지털 친화 ~67%</div>
+              <div class="persona-size">학생 · 연구자 · 1인 창업가 · 소상공인</div>
             </div>
           </div>
-          <p>학생·연구자·1인 창업가·소상공인 등 자기 발명을 본인 명의로 출원하고 싶지만 변리사 비용 200만원이 부담스러운 발명가. 변리사법 §21 단서를 활용하여 본인이 직접 KIPOnet에 출원합니다.</p>
+          <p>좋은 아이디어가 있지만 변리사 비용 200만원이 부담스러운 분. 법이 허용하는 "본인 직접 출원" 방식으로, 스스로 특허청에 출원할 수 있게 돕습니다.</p>
           <ul class="persona-needs">
-            <li>저비용 (변리사료 0원, KIPO 출원료 70% 감면)</li>
-            <li>면책 동의서 + 본인 인증으로 법적 보호</li>
-            <li>KIPOnet 셀프 출원 6단계 가이드 PDF 자동 동봉</li>
-            <li>의견제출통지서 수령 시 ResponseAgent 보조</li>
+            <li>변리사 비용 없이 5~10만원대로 시작</li>
+            <li>개인은 특허청 수수료도 70% 감면</li>
+            <li>직접 출원하는 방법을 담은 안내서 제공</li>
+            <li>심사 결과를 받은 후의 대응도 지원</li>
           </ul>
-          <span class="persona-mode">→ Mode B 셀프 출원</span>
+          <span class="persona-mode">→ 이용 방법 B · 내가 직접 출원</span>
         </div>
 
         <div class="persona neu-raised p-corporate">
           <div class="persona-head">
             <div class="persona-icon">🏢</div>
             <div>
-              <h3>기업 R&amp;D 특허 담당자</h3>
-              <div class="persona-size">중견기업 R&amp;D 약 2,000개사 · 대기업 R&amp;D 약 500개사</div>
+              <h3>기업의 특허 담당자</h3>
+              <div class="persona-size">매년 여러 건을 출원하는 중견 · 대기업</div>
             </div>
           </div>
-          <p>R&amp;D 부서에서 매년 수십~수백 건의 발명을 출원해야 하지만 외부 클라우드에 영업비밀을 노출할 수 없는 기업의 IP 담당자. 사내 변리사 또는 외부 변리사와 협력하되 발명 본문은 절대 외부로 송신하지 않아야 합니다.</p>
+          <p>회사의 기밀 기술을 외부 서비스에 올릴 수 없는 기업. PatentForge를 회사 서버 안에 설치해, 발명 내용이 회사 밖으로 한 글자도 나가지 않게 운영할 수 있습니다.</p>
           <ul class="persona-needs">
-            <li>온프레미스 배포 (vLLM 로컬 + Squid 프록시 강제)</li>
-            <li>외부 LLM API 호출 0건 audit 자동 검증</li>
-            <li>법인 명의 출원 + 사내 변리사 등록·승인</li>
-            <li>4-관할 (KIPO+USPTO+EPO+PCT) 일괄 패키지 빌드</li>
+            <li>회사 내부 설치형 — 자료 외부 전송 없음</li>
+            <li>외부로 나간 데이터가 없음을 기록으로 증명</li>
+            <li>회사 명의 출원 + 사내 변리사 승인 절차</li>
+            <li>국내외 출원 서류를 한 번에 준비</li>
           </ul>
-          <span class="persona-mode">→ Mode C 사내 R&amp;D</span>
+          <span class="persona-mode">→ 이용 방법 C · 우리 회사 안에서</span>
         </div>
 
         <div class="persona neu-raised p-attorney">
           <div class="persona-head">
             <div class="persona-icon">⚖</div>
             <div>
-              <h3>AI 도구 우호적인 변리사</h3>
-              <div class="persona-size">한국 변리사 약 12,000명 중 AI 친화적 ~30% (약 3,600명)</div>
+              <h3>변리사</h3>
+              <div class="persona-size">새 도구를 적극 활용하려는 사무소</div>
             </div>
           </div>
-          <p>형식 작업(IDF 정형화·선행기술 검색·청구항 단일문장 검증·단락 번호 부여)에 시간을 빼앗기지 않고 <b>법적 판단에만 집중</b>하고 싶은 변리사. AI 도구의 한계를 명확히 인지하면서도 생산성 도구로 적극 활용하려는 사무소.</p>
+          <p>서류 정리, 자료 검색, 형식 맞추기 같은 반복 작업은 시스템에 맡기고, 변리사는 전문적 판단에만 집중합니다. 사건당 검토 시간이 30분~2시간으로 줄어 더 많은 사건을 처리할 수 있습니다.</p>
           <ul class="persona-needs">
-            <li>측정 가능한 metric만 출력 (정규식·AST·LLM 검증)</li>
-            <li>변리사 검토 페이지에 진보성·실시가능성·강건성 3 점수 표시</li>
-            <li>Hash-chained audit log로 검토 사실 영구 입증</li>
-            <li>사건당 30분~2시간 검토로 처리량 3~5배 향상</li>
+            <li>반복적인 형식 작업 자동화</li>
+            <li>판단에 필요한 근거 자료를 정리해 제시</li>
+            <li>검토 이력이 기록으로 남아 안심</li>
+            <li>사무소 처리량 3~5배 향상</li>
           </ul>
-          <span class="persona-mode">→ Mode A 변리사 협업</span>
+          <span class="persona-mode">→ 이용 방법 A · 변리사와 함께</span>
         </div>
       </div>
 
       <div class="banner neu-raised warn" style="margin-top: 28px;">
         <div class="banner-icon">★</div>
         <div class="banner-body">
-          <h4>이 외 사용자는 누구를 위한 도구가 아닌가?</h4>
+          <h4>이런 경우에는 변리사 사무소를 먼저 찾으세요</h4>
           <p>
-            <b>대형 IP 분쟁 중인 발명</b> · <b>핵심 권리범위가 사업 전략을 좌우하는 사건</b> · <b>무효심판 대응이 필요한 사건</b> 은 PatentForge 단독 사용을 권장하지 않습니다.
-            이런 사건은 도구로 가속할 수 있는 영역이 아닌, <b>변리사 사무소의 법적 전문성과 누적 경험이 결정적인 영역</b>입니다.
-            PatentForge는 이 영역의 변리사 보조 도구로서만 의미가 있으며, 자동 출원이나 셀프 출원은 권장하지 않습니다.
+            <b>특허 분쟁이 진행 중인 발명</b>, <b>사업의 성패가 걸린 핵심 기술</b>, <b>등록 특허의 무효 다툼</b>은
+            도구로 해결할 수 있는 영역이 아닙니다. 이런 사건은 변리사의 전문성과 경험이 결정적이며,
+            PatentForge는 이 경우 직접 출원을 권하지 않습니다.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== JURISDICTIONS — v3.2 headliner ===== -->
-    <section id="jurisdictions" class="section">
-      <div class="section-head">
-        <span class="section-tag">v3.2 · Multi-Jurisdiction Parity</span>
-        <h2>발명 1건 → 4개 관할 출원 패키지 <span class="text-em">한 번에</span></h2>
-        <p class="section-lead">
-          v3.2부터 PatentForge는 한국 KIPO 외에 <b>USPTO · EPO · PCT</b> 양식까지 지원합니다. 한 번의 워크플로우 후
-          <b>출원 패키지 빌드 모달</b>에서 관할을 선택하고 EPO 지정국·우선권·Two-Part-Form을 설정하면 백엔드 오케스트레이터가
-          관할별 ZIP을 동시 생성합니다. 각 관할의 양식 규정·도면 표준·언어 요건을 모두 자동 충족합니다.
-        </p>
-      </div>
-
-      <div class="juris">
-        <div class="juris-card neu-raised j-kipo">
-          <div class="juris-head">
-            <div class="juris-flag">KIPO</div>
-            <div>
-              <h4>한국 특허청</h4>
-              <div class="juris-spec">300 dpi A4 · KO · 별지 제15·16호</div>
-            </div>
-          </div>
-          <p>한국어 명세서·청구범위·요약서·도면 + ePAS XML. 도면은 한국어 라벨 "도 N", 부호 100·110·120…. <b>Mode A·B·C 모두 1차 출원 대상.</b></p>
-          <ul class="juris-list">
-            <li>specification.docx + .pdf</li>
-            <li>specification_for_filing.docx</li>
-            <li>filing_checklist.json</li>
-            <li>kiponet_filing_guide.pdf (Mode B)</li>
-            <li>ePAS XML</li>
-          </ul>
-          <div class="juris-meta">v1 since · 100% complete</div>
-        </div>
-
-        <div class="juris-card neu-raised j-uspto">
-          <div class="juris-head">
-            <div class="juris-flag">USPTO</div>
-            <div>
-              <h4>미국 특허청</h4>
-              <div class="juris-spec">600 dpi 8.5×11" · EN · 37 CFR §§1.71–77</div>
-            </div>
-          </div>
-          <p>Application Data Sheet (PTO/AIA/14) + §1.77 spec + §1.75 antecedent-checked claims + §1.72 abstract + §1.84 drawings + Patent Center XML. <b>antecedent-basis validator (MPEP §2173.05(e))로 "the X" 도입 누락 차단.</b></p>
-          <ul class="juris-list">
-            <li>ADS.pdf · specification.pdf · claims.pdf</li>
-            <li>abstract.pdf · drawings.pdf · declaration.pdf</li>
-            <li>application-body.xml (Patent Center)</li>
-          </ul>
-          <div class="juris-meta">v3.2 NEW</div>
-        </div>
-
-        <div class="juris-card neu-raised j-epo">
-          <div class="juris-head">
-            <div class="juris-flag">EPO</div>
-            <div>
-              <h4>유럽 특허청</h4>
-              <div class="juris-spec">300 dpi A4 mono · EN · EPC Articles 78 + Rules 41–47</div>
-            </div>
-          </div>
-          <p>Form 1001 (Article 78 EPC) + Rule 42 spec + <b>Rule 43 Two-Part-Form 자동 변환</b> (전제부+특징부) + Rule 47 abstract + Rule 46 mono drawings + EPO Online Filing 2.0 XML. <b>39+5+6 designation states</b> UI 다중 선택.</p>
-          <ul class="juris-list">
-            <li>form_1001.pdf · specification.pdf</li>
-            <li>claims.pdf (single- or two-part)</li>
-            <li>abstract.pdf · drawings.pdf</li>
-          </ul>
-          <div class="juris-meta">v3.2 NEW</div>
-        </div>
-
-        <div class="juris-card neu-raised j-pct">
-          <div class="juris-head">
-            <div class="juris-flag">PCT</div>
-            <div>
-              <h4>국제출원 (WIPO)</h4>
-              <div class="juris-spec">300 dpi A4 mono · KO/EN · PCT Rules 5–11</div>
-            </div>
-          </div>
-          <p>RO/101 Request + Rule 5 description.xml + Rule 6 claims.xml + Rule 8 abstract.xml + Rule 11 monochrome drawings + <b>PCT-EASY 1.5 ZIP</b>. <b>153 contracting states</b> 전체 designation 기본 포함.</p>
-          <ul class="juris-list">
-            <li>RO-101.pdf · request.xml</li>
-            <li>description.xml · claims.xml · abstract.xml</li>
-            <li>drawings/fig_NN_pct.png[]</li>
-          </ul>
-          <div class="juris-meta">v3.2 NEW</div>
-        </div>
-      </div>
-
-      <div class="banner neu-raised warn" style="margin-top: 28px;">
-        <div class="banner-icon">★</div>
-        <div class="banner-body">
-          <h4>FilingProfile = Single Source of Truth — 관할별 양식 자동 매핑</h4>
-          <p>
-            KIPO 별지 제15호 양식의 출원인·발명자·권리권자 정보를 한 번 입력하면, <code>document/profile_adapter.py</code>가
-            <b>USPTO ADS inventor/applicant 행 · EPO Form 1001 fields · PCT RO/101 fields</b>로 자동 매핑합니다.
-            UI에서 양식이 4번 중복되지 않으며, 이름/주소 표기 규칙(서양식 family name 우선 등)도 자동 정규화됩니다.
-            KO→EN 번역은 dev 프로필에서 결정론적 glossary 치환(SSOT 라벨 일관성 보장), 운영에서는 Claude Sonnet 4.6
-            <code>agent_stage="translation_ko_en"</code>이 문장 단위 번역을 수행합니다.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== ENGINES — 4-engine figure pipeline ===== -->
-    <section id="engines" class="section">
-      <div class="section-head">
-        <span class="section-tag">v3.2 · Figure Pipeline</span>
-        <h2>4-엔진 도면 파이프라인 — <span class="text-em">관할별 표준 자동 변환</span></h2>
-        <p class="section-lead">
-          v3.1까지는 mermaid 단일 엔진(KIPO PNG 한정)이었습니다. v3.2에서 <b>4개 엔진(mermaid + GraphViz + Matplotlib + Pillow)</b>이
-          도면 의도(시스템 구성도 / 흐름도 / 정량 그래프 / 콜아웃 오버레이)에 따라 자동 분기하며, 4개 관할별 sheet 정규화기가
-          KIPO 300 dpi A4 / USPTO 600 dpi 8.5×11" Letter (B&amp;W + "FIG. N + Sheet n of N") / EPO 300 dpi A4 mono / PCT 300 dpi A4 mono로 각각 변환합니다.
-        </p>
-      </div>
-
-      <div class="engines">
-        <div class="engine neu-raised">
-          <div class="engine-name">mermaid</div>
-          <h4>블록도 · 시퀀스</h4>
-          <p>mmdc CLI → graphviz → Pillow 폴백. <b>B&amp;W 강제 lock</b>으로 USPTO §1.84 회색 픽셀 0건 강제.</p>
-        </div>
-        <div class="engine neu-raised e-2">
-          <div class="engine-name">GraphViz</div>
-          <h4>시스템 구성도</h4>
-          <p>DOT → PNG/SVG/PDF. <code>cluster</code> 노드로 모듈 그룹화. 60/300/600 dpi 모두 통과.</p>
-        </div>
-        <div class="engine neu-raised e-3">
-          <div class="engine-name">Matplotlib</div>
-          <h4>정량 그래프</h4>
-          <p>Agg 백엔드, mono 팔레트. KIPO §42③2 정량 효과의 (수치, 단위) 튜플 → line/bar 차트 SVG.</p>
-        </div>
-        <div class="engine neu-raised e-4">
-          <div class="engine-name">Pillow</div>
-          <h4>참조부호 콜아웃</h4>
-          <p>SSOT 참조부호 사전 → leader-line 화살표 + 텍스트 라벨 오버레이. MPEP §608.01(p) 45° 교차 금지 준수.</p>
-        </div>
-      </div>
-
-      <div class="grid-3" style="margin-top: 28px;">
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">🇰🇷</span></div>
-          <h3>KIPO 300 dpi · A4</h3>
-          <p style="font-size:12.5px;">2481×3507 px · 도 N 가운데 정렬 · 한국어 라벨 · 부호 100/110/120…</p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-am">🇺🇸</span></div>
-          <h3>USPTO 600 dpi · 8.5×11" Letter</h3>
-          <p style="font-size:12.5px;">5100×6600 px · "FIG. N" + "Sheet 1 of N" 강제 · B&amp;W only (회색 픽셀 1개도 거절)</p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-cy">🇪🇺</span></div>
-          <h3>EPO 300 dpi · A4 mono</h3>
-          <p style="font-size:12.5px;">2481×3507 px · "Fig. N" 가운데 정렬 · Rule 46 EPC mono · 별도 시트</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== MULTI-BUILD API ===== -->
-    <section id="multibuild" class="section">
-      <div class="section-head">
-        <span class="section-tag">Multi-Jurisdiction Build API</span>
-        <h2>한 번의 모달 → <span class="text-em">관할별 ZIP 일괄 생성</span></h2>
-        <p class="section-lead">
-          사건이 <code>COMPLETED</code> 상태에 도달하면 사건 상세 페이지의 <b>출원 패키지 빌드 카드</b>에 표시되는 모달에서 관할 다중 선택,
-          EPO designation states, foreign priority, Two-Part-Form 옵션을 설정합니다. 백엔드 <code>document/build_orchestrator.py</code>가
-          관할별 builder를 순차 실행하며 <code>&lt;output&gt;/&lt;case_id&gt;/&lt;j&gt;/</code> 아래에 ZIP을 작성합니다.
-        </p>
-      </div>
-
-      <div class="grid-2" style="gap: 24px;">
-        <div class="api-block neu-raised">
-<span class="verb">POST</span> <span class="path">/export/{case_id}/multi/build</span>
-{
-  <span class="key">"jurisdictions"</span>: [<span class="str">"USPTO"</span>, <span class="str">"EPO"</span>, <span class="str">"PCT"</span>],
-  <span class="key">"epo_designated_states"</span>: [
-    <span class="str">"DE"</span>, <span class="str">"FR"</span>, <span class="str">"GB"</span>, <span class="str">"IT"</span>,
-    <span class="str">"ES"</span>, <span class="str">"NL"</span>, <span class="str">"CH"</span>, <span class="str">"SE"</span>
-  ],
-  <span class="key">"epo_apply_two_part_form"</span>: <span class="num">true</span>,
-  <span class="key">"epo_closest_d1_features"</span>: [
-    <span class="str">"receiving interface"</span>,
-    <span class="str">"persona pool"</span>
-  ],
-  <span class="key">"pct_language_of_filing"</span>: <span class="str">"EN"</span>,
-  <span class="key">"foreign_priority_country"</span>: <span class="str">"KR"</span>,
-  <span class="key">"foreign_priority_no"</span>: <span class="str">"10-2026-0123456"</span>,
-  <span class="key">"foreign_priority_date"</span>: <span class="str">"2026-05-06"</span>,
-  <span class="key">"docket_no"</span>: <span class="str">"WDLAB-001"</span>,
-  <span class="key">"correspondence_email"</span>: <span class="str">"wdlab1958@gmail.com"</span>
-}
-
-<span class="cmt"># 다운로드 (관할별)</span>
-<span class="verb">GET</span> <span class="path">/export/{case_id}/multi/USPTO</span>  → uspto_package.zip
-<span class="verb">GET</span> <span class="path">/export/{case_id}/multi/EPO</span>    → epo_package.zip
-<span class="verb">GET</span> <span class="path">/export/{case_id}/multi/PCT</span>    → pct_easy_package.zip
-        </div>
-
-        <div class="list-card neu-raised">
-          <h3>관할별 산출물 일람표 <span class="pill">v3.2 NEW</span></h3>
-          <ul>
-            <li><b>USPTO 패키지</b><span><b>ADS.pdf</b> + specification.pdf + claims.pdf + abstract.pdf + drawings.pdf + declaration.pdf + <b>application-body.xml</b> · 37 CFR §§1.71–77 + §1.84 + Patent Center red-folder schema</span></li>
-            <li><b>EPO 패키지</b><span><b>form_1001.pdf</b> + specification.pdf + claims.pdf (single- or two-part) + abstract.pdf + drawings.pdf · EPC Articles 78 + Rules 41–47 + EPO Online Filing 2.0 XSD</span></li>
-            <li><b>PCT 패키지</b><span><b>RO-101.pdf</b> + request.xml + description.xml + claims.xml + abstract.xml + drawings/fig_NN_pct.png[] · PCT Rules 5–11 + PCT-EASY 1.5 XSD</span></li>
-            <li><b>비용 캡</b><span>관할 수 × $15 동적 산정 (KIPO 단독 $20 / KIPO+USPTO $35 / 4관할 $60). <code>cost_cap_override_usd</code>로 사용자 동의 후 상향.</span></li>
-          </ul>
         </div>
       </div>
     </section>
@@ -514,13 +257,12 @@
     <!-- ===== MODES ===== -->
     <section id="modes" class="section">
       <div class="section-head">
-        <span class="section-tag">3 Operating Modes · 페르소나 매핑</span>
-        <h2>각 페르소나에 맞춰진 <span class="text-em">3가지 운영 모드</span></h2>
+        <span class="section-tag">세 가지 이용 방법</span>
+        <h2>상황에 맞게 고르는 <span class="text-em">세 가지 이용 방법</span></h2>
         <p class="section-lead">
-          한국 변리사법 §21 단서가 허용하는 <b>"본인이 직접 행하는 경우"</b>를 활용하여, PatentForge는 3가지 운영 모드를 제공합니다.
-          모드는 페르소나와 1:1로 매칭됩니다 — <b class="text-em">변리사 = Mode A</b> ·
-          <b class="text-am">개인 발명가 = Mode B</b> · <b class="text-cy">기업 R&amp;D = Mode C</b>.
-          사용자가 사건 생성 시점에 모드를 명시적으로 선택하며, 모드별로 워크플로우·HITL 게이트·산출물 표시·법적 책임 분리가 다릅니다.
+          우리 법(변리사법)은 변리사가 아닌 사람의 출원 대행을 금지하지만, <b>"본인이 직접 출원하는 것"</b>은 허용합니다.
+          PatentForge는 이 원칙 위에서 세 가지 이용 방법을 제공합니다. 시작할 때 하나를 선택하며,
+          선택에 따라 검토 절차와 책임의 범위가 달라집니다.
         </p>
       </div>
 
@@ -528,51 +270,48 @@
         <div class="mode neu-raised m-a">
           <div class="mode-head">
             <div class="mode-letter">A</div>
-            <span class="mode-tag">⚖ AI 우호 변리사용</span>
+            <span class="mode-tag">⚖ 가장 안전한 방법</span>
           </div>
-          <h3>변리사 협업 모드</h3>
-          <div class="mode-sub">Attorney-Reviewed · 변리사가 도구를 이용하는 모드</div>
-          <p>변리사가 자기 사무소의 작업 처리량을 3~5배 향상시키기 위해 PatentForge를 도구로 사용. 검토는 변리사 본인이 수행하고, 출원도 변리사 또는 의뢰인 명의로 진행됩니다.</p>
+          <h3>변리사와 함께</h3>
+          <div class="mode-sub">변리사가 검토하고, 변리사를 통해 출원</div>
+          <p>시스템이 만든 초안을 변리사가 처음부터 끝까지 검토합니다. 등록 가능성이 가장 높고, 전문가의 책임 있는 확인을 받을 수 있습니다.</p>
           <ul class="mode-meta">
-            <li><b class="hi">검토</b><span>변리사 100% 강제 — 우회 불가</span></li>
-            <li><b class="hi">검토료</b><span>변리사 사무소 자체 결정</span></li>
-            <li><b class="hi">예상 등록률</b><span>약 75%</span></li>
+            <li><b class="hi">검토</b><span>변리사가 반드시 검토 — 생략 불가</span></li>
+            <li><b class="hi">비용</b><span>변리사 사무소별 검토료 별도</span></li>
+            <li><b class="hi">추천 대상</b><span>안전하게 진행하고 싶은 모든 분</span></li>
             <li><b class="hi">출원 명의</b><span>변리사 또는 의뢰인</span></li>
-            <li><b class="hi">변리사 효익</b><span>형식 작업 자동화 → 검토 시간 30분~2시간</span></li>
           </ul>
         </div>
 
         <div class="mode neu-raised m-b">
           <div class="mode-head">
             <div class="mode-letter">B</div>
-            <span class="mode-tag">👤 개인 발명가용</span>
+            <span class="mode-tag">👤 가장 저렴한 방법</span>
           </div>
-          <h3>셀프 출원 모드</h3>
-          <div class="mode-sub">Self-Filing · 13K~20K 개인 발명가의 진입 장벽 해소</div>
-          <p>변리사 비용 200만원이 부담스러운 개인 발명가가 본인 명의로 KIPOnet 직접 출원. <b>면책 동의서 + 본인 인증 강제.</b> 변리사법 §21 단서로 합법.</p>
+          <h3>내가 직접 출원</h3>
+          <div class="mode-sub">본인 이름으로, 본인 책임 아래 직접 출원</div>
+          <p>완성된 서류를 받아 본인이 직접 특허청에 제출합니다. 비용이 가장 적게 들지만, 변리사 검토를 거치지 않으므로 그 결과는 본인 책임입니다. 시작 전 확인 절차를 반드시 거칩니다.</p>
           <ul class="mode-meta">
-            <li><b class="hi">검토</b><span>면책 동의서로 우회 (자기 책임)</span></li>
-            <li><b class="hi">총 비용</b><span>5~10만원 (PatentForge) + KIPO 출원료 13.8만원</span></li>
-            <li><b class="hi">예상 등록률</b><span>45~55% (PatentForge 추정)</span></li>
-            <li><b class="hi">출원 명의</b><span>본인 (셀프)</span></li>
-            <li><b class="hi">감면</b><span>KIPO 개인 70% 감면 자동 적용</span></li>
+            <li><b class="hi">검토</b><span>본인 확인 · 동의 절차로 대신 (자기 책임)</span></li>
+            <li><b class="hi">비용</b><span>5~10만원 + 특허청 수수료 (개인 70% 감면)</span></li>
+            <li><b class="hi">추천 대상</b><span>비용이 부담스러운 개인 발명가</span></li>
+            <li><b class="hi">출원 명의</b><span>본인</span></li>
           </ul>
         </div>
 
         <div class="mode neu-raised m-c">
           <div class="mode-head">
             <div class="mode-letter">C</div>
-            <span class="mode-tag">🏢 기업 R&amp;D 담당자용</span>
+            <span class="mode-tag">🏢 기업 전용</span>
           </div>
-          <h3>사내 R&amp;D 모드</h3>
-          <div class="mode-sub">In-House · 영업비밀 외부 송신 0건 · 중견·대기업</div>
-          <p>R&amp;D 부서의 IP 담당자가 외부 클라우드에 발명을 노출하지 않고 사내 인프라에서 명세서를 생성. <b>vLLM 로컬 + Squid 프록시 강제 차단</b>으로 외부 LLM API 호출 0건 보장.</p>
+          <h3>우리 회사 안에서</h3>
+          <div class="mode-sub">회사 서버에 설치, 기밀이 밖으로 나가지 않음</div>
+          <p>PatentForge를 회사 내부에 설치해 운영합니다. 발명 내용이 외부로 전송되지 않고, 사내 변리사의 승인을 거쳐 회사 명의로 출원합니다.</p>
           <ul class="mode-meta">
-            <li><b class="hi">검토</b><span>사내 변리사 강제</span></li>
-            <li><b class="hi">라이선스</b><span>온프레미스 연 라이선스 (협의)</span></li>
-            <li><b class="hi">예상 등록률</b><span>약 70%</span></li>
-            <li><b class="hi">출원 명의</b><span>법인 (강제)</span></li>
-            <li><b class="hi">감면</b><span>KIPO 중소기업 50% 감면 가능</span></li>
+            <li><b class="hi">검토</b><span>사내 변리사가 반드시 승인</span></li>
+            <li><b class="hi">비용</b><span>연 단위 설치형 계약 (협의)</span></li>
+            <li><b class="hi">추천 대상</b><span>기밀 보호가 중요한 기업</span></li>
+            <li><b class="hi">출원 명의</b><span>회사 (법인)</span></li>
           </ul>
         </div>
       </div>
@@ -580,803 +319,176 @@
       <div class="banner neu-raised warn">
         <div class="banner-icon">⚠</div>
         <div class="banner-body">
-          <h4>Mode B 활성화 5가지 조건 (모두 충족 필수)</h4>
+          <h4>"내가 직접 출원"(방법 B)을 시작하기 위한 다섯 가지 조건</h4>
           <p>
-            ① 사용자가 사건 생성 시 Mode B를 명시적으로 선택 ·
-            ② 면책 동의서 전자서명 완료 (스크롤 95% 이상 + SHA-256 해시) ·
-            ③ 사용자 본인 인증 완료 (간편인증 PASS / 카카오 / 네이버 또는 SMS OTP) ·
-            ④ 출원인이 사용자 본인 (또는 사용자가 대표인 법인) ·
-            ⑤ PatentForge 이용약관 셀프 출원 조항 동의.
-            <b>위 5가지 중 하나라도 누락되면 Mode B 활성화 불가, 자동으로 Mode A로 전환.</b>
+            ① 본인이 직접 이 방법을 선택 ·
+            ② 안내문을 끝까지 읽고 동의 서명 ·
+            ③ 휴대폰 등으로 본인 인증 ·
+            ④ 출원인이 본인(또는 본인이 대표인 회사) ·
+            ⑤ 이용약관의 직접 출원 조항에 동의.
+            <b>하나라도 빠지면 시작할 수 없으며, 변리사와 함께하는 방법 A로 안내됩니다.</b>
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ===== LEGAL POSITIONING ===== -->
-    <section id="legal" class="section">
-      <div class="section-head">
-        <span class="section-tag">Legal Positioning · 변리사법 §21 단서</span>
-        <h2>"본인이 직접 행하는 경우" — <span class="text-em">단서가 셀프 출원을 허용</span></h2>
-        <p class="section-lead">
-          한국 변리사법 §21은 변리사 아닌 자의 대리 행위를 금지하지만, <b>본문 단서</b>가 본인 직접 행위는 허용합니다. PatentForge는 이 단서에 정확히 맞춰 설계되었습니다.
-          PatentForge가 "대리"가 아닌 "도구"로 분류되려면 다음 3 조건을 모두 피해야 합니다 — <b>① 타인 명의 행위 금지 ② 법률 효과 발생 금지 ③ 위임 계약 체결 금지.</b>
-        </p>
-      </div>
-
-      <div class="grid-2" style="gap: 28px; margin-bottom: 28px;">
-        <div class="list-card neu-raised law">
-          <h3>변리사법 §2 — 변리사 업무 <span class="pill">법문</span></h3>
-          <ul>
-            <li><b>본문</b><span>변리사는 특허청 또는 법원에 대하여 특허·실용신안·디자인·상표에 관한 사항을 <b>대리</b>하고 그 사항에 관한 감정과 그 밖의 사무를 수행하는 것을 업으로 한다.</span></li>
-            <li><b>"대리"</b><span>① 타인의 명의로 ② 법률 효과 발생 ③ 타인의 위임을 받음 — 3 요소 모두 충족 시 변리사 독점 업무</span></li>
-            <li><b>처벌</b><span>§54 — <b>5년 이하 징역 또는 5천만원 이하 벌금</b> + 민사 (금지 청구·손해배상) + 행정 (사업 중지)</span></li>
-          </ul>
-        </div>
-
-        <div class="list-card neu-raised law">
-          <h3>변리사법 §21 — 업무영역 + 단서 <span class="pill">PatentForge 근거</span></h3>
-          <ul>
-            <li><b>본문</b><span>변리사가 아닌 자는 §2 업무를 영위하지 못한다.</span></li>
-            <li><b>단서 ①</b><span>다른 법률에 특별한 규정이 있는 경우</span></li>
-            <li><b>단서 ②</b><span><b>본인이 직접 행하는 경우</b> — Mode B의 법적 근거</span></li>
-            <li><b>적용 범위</b><span>발명자 본인 (개인 명의) ✅ · 회사 대표이사 (법인 명의) ✅ · 회사 대표가 위임한 직원 (법인 명의) ✅</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="legal-table">
-        <div class="legal-col allowed neu-raised">
-          <h3><span class="marker">✓</span>합법 — PatentForge 운영자가 안전한 행위</h3>
-          <ul>
-            <li>발명자 본인이 본인 발명을 본인 명의로 출원 (§21 단서)</li>
-            <li>법인 대표이사가 자기 회사 발명을 법인 명의로 출원</li>
-            <li>회사 대표가 위임한 직원이 법인 명의로 출원 (위임장 첨부)</li>
-            <li>AI 도구가 사용자 발명에 대한 명세서 초안 생성 (도구 제공)</li>
-            <li>양식 검증 결과 표시 (BLOCKER / MAJOR / MINOR)</li>
-            <li>자체 자동 검증 점수 (진보성·실시가능성·회피강건성) 제공</li>
-            <li>변리사 사무소 연결 (제휴 — 알선료 0원)</li>
-          </ul>
-        </div>
-        <div class="legal-col forbidden neu-raised">
-          <h3><span class="marker">✗</span>위법 — 처벌 위험 행위</h3>
-          <ul>
-            <li>비변리사 컨설턴트가 타인 발명을 수임 대리하여 출원</li>
-            <li>AI 도구가 사용자 명의로 KIPO에 자동 출원 ("대리" 해당)</li>
-            <li>"변리사를 대신하여 출원해드립니다" 광고</li>
-            <li>사용자 발명에 대한 단정적 법적 의견 ("이 발명은 진보성이 있다")</li>
-            <li>"AI 변리사" / "변리사 대체 서비스" 표현 사용</li>
-            <li>변리사 사무소 알선·중개 수수료 수수</li>
-            <li>"특허 등록 보장" / "100% 등록 가능" 표현</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="banner neu-raised warn" style="margin-top: 28px;">
-        <div class="banner-icon">⚠</div>
-        <div class="banner-body">
-          <h4>회색 지대 — 자동 출원 기능 (현 시점 미구현)</h4>
-          <p>
-            만약 PatentForge가 KIPOnet API로 사용자 명의 자동 출원을 추가한다면 §2 "대리" 위반 가능성이 높습니다.
-            <b>본 가이드는 MVP v1.0에서 자동 출원 기능을 구현하지 않습니다.</b>
-            Phase 3 이후 변리사회 정식 자문 후 도입 검토. 자동 출원이 필요한 경우의 방어 장치는
-            ① 사용자 명시적 클릭 + 본인 인증 또는 ② 자동 출원을 제휴 변리사 사무소에 위임의 두 가지뿐.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== DISCLAIMER FLOW ===== -->
-    <section id="disclaimer" class="section">
-      <div class="section-head">
-        <span class="section-tag">Mode B Disclaimer Gate</span>
-        <h2>면책 동의서 — <span class="text-am">6단계 강제 흐름</span></h2>
-        <p class="section-lead">
-          Mode B를 선택하면 Stage 9 QA 직후 면책 동의서 게이트가 발동합니다. 사용자가 동의서 전체를 스크롤하여 끝까지 읽고
-          (스크롤 95% 도달 시에만 "동의" 버튼 활성화), 본인 인증을 거친 후에만 Assembly로 진입할 수 있습니다.
-          서명 데이터는 <b>SHA-256 해시 + 영구 보존 + immutable trigger</b>로 변조가 불가능합니다.
-        </p>
-      </div>
-
-      <div class="flow">
-        <div class="flow-step neu-raised">
-          <div class="flow-num">01</div>
-          <h4>QA 결과 표시</h4>
-          <p>BLOCKER N건 · MAJOR N건 · MINOR N건 + 추정 등록률(45~55%) 노출.</p>
-        </div>
-        <div class="flow-step neu-raised is-warn">
-          <div class="flow-num">02</div>
-          <h4>거절 위험 경고</h4>
-          <p>변리사 검토 시 75% vs 셀프 출원 45~55% 차이를 명시적으로 표시.</p>
-        </div>
-        <div class="flow-step neu-raised is-warn">
-          <div class="flow-num">03</div>
-          <h4>변리사 검토 권유</h4>
-          <p>"Mode A로 전환" 옵션 제시. 사용자가 거절해야만 다음 단계로.</p>
-        </div>
-        <div class="flow-step neu-raised is-warn">
-          <div class="flow-num">04</div>
-          <h4>스크롤 강제</h4>
-          <p>면책 동의서 전체 8개 조항 스크롤 95% 도달 시 동의 버튼 활성화.</p>
-        </div>
-        <div class="flow-step neu-raised is-warn">
-          <div class="flow-num">05</div>
-          <h4>본인 인증</h4>
-          <p>간편인증(PASS/카카오/네이버) 또는 SMS OTP로 본인 확인.</p>
-        </div>
-        <div class="flow-step neu-raised is-warn">
-          <div class="flow-num">06</div>
-          <h4>전자서명 + 해시</h4>
-          <p>SHA-256(<code>user_id + case_id + mode + qa + ts</code>) → DB 영구 저장 + PDF 사본 송부.</p>
-        </div>
-      </div>
-
-      <div class="grid-3" style="margin-top: 28px;">
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-am">📋</span></div>
-          <h3>8개 조항 — 동의서 본문</h3>
-          <p>① 본인 확인 ② 검토 권유 거절 확인 ③ PatentForge 책임 한계 ④ 의견제출 대응 책임 ⑤ 데이터 보존·영구 기록 ⑥ 손해배상 면제 ⑦ 분쟁 해결 관할 (서울중앙지법) ⑧ 전자서명 확인.</p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">🔒</span></div>
-          <h3>SHA-256 무결성</h3>
-          <p>서명된 동의서는 <code>disclaimer_signatures</code> 테이블의 <b>immutable trigger</b>로 수정·삭제 불가. 사후 변조 시 hash chain 깨짐. 향후 변리사법 위반 의혹 시 결정적 증거.</p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-pk">⚠</span></div>
-          <h3>책임 분리 매트릭스</h3>
-          <p><b>KIPO 거절·무효심판 패소·의견제출 마감 도과:</b> Mode A는 변리사 1차 책임, <b>Mode B는 사용자 100% 책임.</b> 영업비밀 누출은 모드 무관 PatentForge ZDR 의무.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 6 PRINCIPLES ===== -->
-    <section id="principles" class="section">
-      <div class="section-head">
-        <span class="section-tag">Design Principles</span>
-        <h2>절대 위반하지 않는 <span class="text-em">6대 설계 원칙</span></h2>
-        <p class="section-lead">
-          한국 특허법(§29 신규성·진보성, §42 명세서 기재요건), 변리사법 §2, KIPO 별지 제15·16호 양식의 요건에서 도출된 6가지 원칙.
-          이 원칙은 어떤 경우에도 우회하지 않습니다.
-        </p>
-      </div>
-
-      <div class="principles">
-        <div class="principle neu-raised">
-          <span class="principle-num">PRINCIPLE 01</span>
-          <h4>변리사법 §2 저촉 방지</h4>
-          <p>특허에 관한 사항의 대리는 변리사 업무. 시스템은 <b>도구만</b> 제공하고, 출원은 변리사 명의로 진행. PatentForge가 변리사를 대체한다고 표현하지 않습니다.</p>
-        </div>
-        <div class="principle neu-raised">
-          <span class="principle-num">PRINCIPLE 02</span>
-          <h4>모드별 게이트 코드-레벨 강제</h4>
-          <p>Mode A는 변리사 검토 100% 강제, Mode B는 면책 동의서 + 본인 인증 강제, Mode C는 사내 변리사 강제. <b>자동 승인 조건 없음 — 모드 우회 불가.</b></p>
-        </div>
-        <div class="principle neu-raised">
-          <span class="principle-num">PRINCIPLE 03</span>
-          <h4>측정 가능한 metric만 출력</h4>
-          <p>모든 거절 사유는 정규식 매치·AST 분석·LLM 분류기의 결과로 설명됩니다. "AI가 그렇게 판단했습니다" 형태의 불투명 응답을 산출하지 않습니다.</p>
-        </div>
-        <div class="principle neu-raised">
-          <span class="principle-num">PRINCIPLE 04</span>
-          <h4>BLOCKER 위반은 직진 차단</h4>
-          <p>QAComplianceAgent의 BLOCKER 1개라도 발견되면 다음 단계로 진행 불가. 자동 회귀 또는 변리사 수정 필수. <b>출원 자체가 거부되는 사항을 묵인하지 않습니다.</b></p>
-        </div>
-        <div class="principle neu-raised">
-          <span class="principle-num">PRINCIPLE 05</span>
-          <h4>영업비밀 마스킹 의무</h4>
-          <p>IDF의 <code>confidential_terms</code>에 입력된 용어는 외부 LLM 호출 시 자동 마스킹. ZDR(Zero Data Retention) 계약된 모델만 영업비밀 처리에 사용 허용.</p>
-        </div>
-        <div class="principle neu-raised">
-          <span class="principle-num">PRINCIPLE 06</span>
-          <h4>5년 영구 audit log</h4>
-          <p>변리사 검토 사실·LLM 호출·비용은 <b>SHA-256 hash chain</b>으로 5년간 영구 보존. 향후 등록 거절 또는 무효심판 시 책임 추적이 가능하도록 설계되어 있습니다.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SAFEGUARDS ===== -->
-    <section id="safeguards" class="section">
-      <div class="section-head">
-        <span class="section-tag">Safety Net</span>
-        <h2>잘못된 출원을 막는 <span class="text-am">5대 안전 장치</span></h2>
-        <p class="section-lead">
-          파이프라인 중 5개 지점에 안전 장치를 배치하여, 발명자의 자기 진술의 과신·LLM의 환각·청구항의 회피 가능성·KIPO 양식 위반·법적 책임 분리 부재로 인한 사고를 사전 차단합니다.
-        </p>
-      </div>
-
-      <div class="gates">
-        <div class="gate neu-raised">
-          <span class="gate-tag tg-major">GATE 1 · STAGE 3</span>
-          <h4>진보성 회색지대 HITL</h4>
-          <p>NoveltyAgent 점수 <b>0.5~0.7</b> 회색지대 진입 시 자동 진행 금지. 변리사 코멘트 + 진행/보강/포기 결정 강제.</p>
-          <div class="gate-meta">hitl_novelty :: blocking</div>
-        </div>
-        <div class="gate neu-raised">
-          <span class="gate-tag tg-block">GATE 2 · STAGE 5</span>
-          <h4>청구범위 강건성 게이트</h4>
-          <p>AutoGen Red Team의 Robustness 점수 <b>0.85 미달</b> 시 자동 재작성. 3회 실패 시 변리사 직접 작성 게이트로 회귀.</p>
-          <div class="gate-meta">robustness ≥ 0.85</div>
-        </div>
-        <div class="gate neu-raised">
-          <span class="gate-tag tg-block">GATE 3 · STAGE 9</span>
-          <h4>KIPO 양식 BLOCKER 차단</h4>
-          <p>QAComplianceAgent의 40+ 검증 규칙 중 <b>BLOCKER 1개라도</b> 발견되면 다음 단계 진행 불가. 자동 수정 시도 후 변리사 검토.</p>
-          <div class="gate-meta">qa.blocker == 0</div>
-        </div>
-        <div class="gate neu-raised">
-          <span class="gate-tag tg-current">GATE 4 · STAGE 10</span>
-          <h4>변리사 최종 검토 강제</h4>
-          <p><b>무인 출원 절대 불허.</b> 변리사가 ✓ 승인 / ↺ 수정 / ✗ 포기 중 직접 결정. 코멘트는 청구항·단락 단위 anchor로 구조화 입력.</p>
-          <div class="gate-meta">attorney.decision != null</div>
-        </div>
-        <div class="gate neu-raised">
-          <span class="gate-tag tg-info">GATE 5 · STAGE 12</span>
-          <h4>Audit Log 영구 보존</h4>
-          <p>변리사 결정·에이전트 호출·비용을 <b>5년간 영구 보존</b>. SHA-256 hash chain으로 사후 변조 불가. 무효심판·책임 추궁 시 증거.</p>
-          <div class="gate-meta">retention 5y · sha256-chained</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 13-STAGE PIPELINE ===== -->
+    <!-- ===== PIPELINE ===== -->
     <section id="pipeline" class="section">
       <div class="section-head">
-        <span class="section-tag">13-Stage Pipeline (12 visible + 1 hidden Critic)</span>
-        <h2>발명 → 출원, <span class="text-em">12+1 단계 자동 워크플로우</span></h2>
+        <span class="section-tag">문서가 만들어지는 과정</span>
+        <h2>발명 이야기가 출원 서류가 되기까지 <span class="text-em">8단계</span></h2>
         <p class="section-lead">
-          v3.2 파이프라인은 12개 가시 단계 + <b>1개 숨김 Critic 게이트</b>로 구성됩니다.
-          <code>Intake → PriorArt → Novelty → TechImpl → Claims → <b>Critic</b> → Spec → Abstract → Figures → QA → {Review | Mode-B Disclaimer} → Assembly → Done.</code>
-          <b>5-deep <code>interrupt_before</code></b>: <code>intake_wait · hitl_novelty · hitl_review · mode_b_disclaimer · assembly</code> — defense-in-depth로 Assembly는
-          명시 결정 또는 SHA-256 서명 없이 절대 실행되지 않습니다. <code>post_qa_mode_router</code>가 <code>operation_mode</code>로 분기합니다.
+          발명 내용을 적어 주시면, 아래 단계를 거쳐 특허청 규격에 맞는 서류가 완성됩니다.
+          대부분 자동으로 진행되며, 보통 <b>30분에서 3시간</b> 정도 걸립니다.
+          중요한 갈림길에서는 반드시 사람의 확인을 받습니다.
         </p>
       </div>
 
       <div class="pipeline">
         <div class="pipeline-step neu-raised">
           <div class="stage-num">01</div>
-          <h4>Intake</h4>
-          <div class="stage-eng">발명 정보 수집</div>
-          <p>자유 서술 → 17필드 IDF. Socratic 5–8 라운드 대화로 누락·모호 필드 보강.</p>
-          <div class="stage-meta">Tier 3 · Qwen3-8B</div>
+          <h4>발명 내용 정리</h4>
+          <div class="stage-eng">이야기를 서류의 재료로</div>
+          <p>자유롭게 적은 발명 이야기를 읽고, 빠졌거나 모호한 부분은 몇 차례 되물어 정리합니다.</p>
         </div>
         <div class="pipeline-step neu-raised">
           <div class="stage-num">02</div>
-          <h4>PriorArt</h4>
-          <div class="stage-eng">선행기술 조사</div>
-          <p>KIPRIS·USPTO·EPO·OpenAlex 멀티소스 검색 → BGE-Reranker → MMR. 상위 30~50건.</p>
-          <div class="stage-meta">Tier 3 · BGE-M3</div>
+          <h4>비슷한 특허 찾기</h4>
+          <div class="stage-eng">국내외 자료 검색</div>
+          <p>국내외 특허와 학술 자료를 검색해, 내 발명과 비슷한 기존 기술을 찾아냅니다.</p>
         </div>
         <div class="pipeline-step neu-raised is-hitl">
           <div class="stage-num">03</div>
-          <h4>Novelty</h4>
-          <div class="stage-eng">신규성·진보성 판단</div>
-          <p>CrewAI 3-페르소나 합의 (Examiner / Practitioner / Inventor-Advocate). 회색지대 HITL.</p>
-          <div class="stage-meta gate">⚠ HITL · Tier 1 · Sonnet 4.6</div>
+          <h4>새로움 진단</h4>
+          <div class="stage-eng">특허 가능성 평가</div>
+          <p>기존 기술과 비교해 얼마나 새로운지 여러 관점에서 평가합니다. 판단이 애매하면 자동 진행을 멈추고 전문가 확인을 요청합니다.</p>
+          <div class="stage-meta gate">⚠ 애매하면 멈추고 확인</div>
         </div>
         <div class="pipeline-step neu-raised">
           <div class="stage-num">04</div>
-          <h4>TechImpl</h4>
-          <div class="stage-eng">기술 구현 방법론</div>
-          <p>1차 실시예 + 대안 2~5개 + 변형 차원. 의사코드·하드웨어 사양·동작 시나리오 모두 포함.</p>
-          <div class="stage-meta">Tier 2 · Qwen3.6-27B</div>
+          <h4>권리 범위 작성</h4>
+          <div class="stage-eng">청구범위 문장 만들기</div>
+          <p>특허의 핵심인 권리 범위 문장을 작성합니다. 허점이 없는지 스스로 공격해 보고, 약하면 다시 씁니다.</p>
         </div>
         <div class="pipeline-step neu-raised">
           <div class="stage-num">05</div>
-          <h4>Claims</h4>
-          <div class="stage-eng">청구범위 작성</div>
-          <p>독립항 1~3 + 종속항 5~20. AutoGen Red Team Robustness ≥ 0.85 강제.</p>
-          <div class="stage-meta">Tier 1 · Sonnet 4.6 · $2–5</div>
-        </div>
-        <div class="pipeline-step neu-raised is-final">
-          <div class="stage-num">5½</div>
-          <h4>Critic <span style="font-size:9px; opacity:0.7;">(hidden)</span></h4>
-          <div class="stage-eng">Patentability Critic 게이트</div>
-          <p>진보성(보정)·실시가능성·회피강건성 3 점수 산출 → Claims 게이팅. v3.2 신규 추가.</p>
-          <div class="stage-meta">Tier 1 · 30~60s · $0.10–0.30</div>
+          <h4>명세서 · 요약서 작성</h4>
+          <div class="stage-eng">본문 완성</div>
+          <p>발명의 배경, 해결하려는 문제, 구체적인 실현 방법을 특허청이 요구하는 짜임새로 서술합니다.</p>
         </div>
         <div class="pipeline-step neu-raised">
           <div class="stage-num">06</div>
-          <h4>Spec</h4>
-          <div class="stage-eng">명세서 본문 (4-청크 SSOT)</div>
-          <p>7섹션 (명칭·기술분야·배경·과제·해결·효과·구체) + 단락 번호 [0001]…</p>
-          <div class="stage-meta">Tier 1 · Sonnet 4.6 · $1–3</div>
+          <h4>도면 그리기</h4>
+          <div class="stage-eng">설명 그림 제작</div>
+          <p>구성도와 흐름도 등 발명을 설명하는 도면을 특허청 규격(크기·해상도·번호)에 맞춰 그립니다.</p>
         </div>
         <div class="pipeline-step neu-raised">
           <div class="stage-num">07</div>
-          <h4>Abstract</h4>
-          <div class="stage-eng">요약서 작성</div>
-          <p>한국어 400자 이내(하드캡) + 영문 150 words + 대표 도면 자동 선정.</p>
-          <div class="stage-meta">Tier 2 · Qwen3.6-27B</div>
-        </div>
-        <div class="pipeline-step neu-raised">
-          <div class="stage-num">08</div>
-          <h4>Figures</h4>
-          <div class="stage-eng">도면 생성</div>
-          <p>mermaid → SVG → PNG(300dpi). 5~10개 도면 + 참조부호 사전 자동 부여.</p>
-          <div class="stage-meta">Tier 3 · Coder-30B</div>
-        </div>
-        <div class="pipeline-step neu-raised">
-          <div class="stage-num">09</div>
-          <h4>QA</h4>
-          <div class="stage-eng">형식 검증</div>
-          <p>40+ KIPO 검증 규칙 → BLOCKER / MAJOR / MINOR / INFO 분류. BLOCKER 시 회귀.</p>
-          <div class="stage-meta">Tier 3 · Regex+AST+LLM</div>
-        </div>
-        <div class="pipeline-step neu-raised is-hitl">
-          <div class="stage-num">10</div>
-          <h4>Review<span style="font-size:9px; opacity:0.7;"> · Mode A/C</span><br/><span style="font-size:11px;">또는 Disclaimer · Mode B</span></h4>
-          <div class="stage-eng">post_qa_mode_router 분기</div>
-          <p>Mode A/C → 변리사 ✓/↺/✗ · Mode B → 면책 동의서 SHA-256 서명. 5-deep interrupt_before로 보호.</p>
-          <div class="stage-meta gate">⚠ HITL · 30분~2시간 / 1~5분</div>
-        </div>
-        <div class="pipeline-step neu-raised">
-          <div class="stage-num">11</div>
-          <h4>Assembly</h4>
-          <div class="stage-eng">최종 문서 조립</div>
-          <p>WDLAB 스타일 .docx + .pdf + ePAS XML(Phase 2) + 별지 제15호 + 첨부 체크리스트.</p>
-          <div class="stage-meta">python-docx + Jinja2</div>
+          <h4>형식 점검</h4>
+          <div class="stage-eng">40여 가지 자동 검사</div>
+          <p>특허청 규정 40여 가지를 자동 점검합니다. 접수 자체가 거부될 수 있는 오류가 있으면 다음 단계로 넘어가지 않습니다.</p>
         </div>
         <div class="pipeline-step neu-raised is-final">
-          <div class="stage-num">12</div>
-          <h4>Done</h4>
-          <div class="stage-eng">완료 및 보존</div>
-          <p>다운로드 링크 (TTL 24h) + 이메일 + 5년 audit log + 데이터 보존 스케줄.</p>
-          <div class="stage-meta">cron + sha256-chain</div>
+          <div class="stage-num">08</div>
+          <h4>사람의 최종 확인</h4>
+          <div class="stage-eng">검토 또는 본인 동의</div>
+          <p>변리사의 검토(방법 A·C) 또는 본인의 확인·동의(방법 B)를 거친 뒤에야 최종 서류가 완성됩니다.</p>
+          <div class="stage-meta gate">⚠ 확인 없이는 완성되지 않음</div>
         </div>
       </div>
     </section>
 
-    <!-- ===== AGENTS ===== -->
-    <section id="agents" class="section">
+    <!-- ===== JURISDICTIONS ===== -->
+    <section id="jurisdictions" class="section">
       <div class="section-head">
-        <span class="section-tag">Specialist Agents · v3.2</span>
-        <h2>10 + 1 + 1 = <span class="text-em">12개 에이전트</span></h2>
+        <span class="section-tag">해외 출원도 한 번에</span>
+        <h2>발명 1건 → <span class="text-em">4곳 특허청 서류</span>를 한 번에</h2>
         <p class="section-lead">
-          LangGraph Supervisor가 단원을 지휘하듯, 각 에이전트는 <code>tools.profile</code>에 명시된 도구만 사용 가능합니다.
-          v3.2 구성: <b>10개 specialist</b> + <b>1개 hidden Critic 게이트</b> + <b>1개 신규 TranslatorAgent (KO→EN)</b> for international filings.
-          LLM은 3-Tier — <b>Tier 1</b> Claude Sonnet 4.6 (법적 추론), <b>Tier 2</b> Qwen3.6-27B 로컬 (도메인 작성), <b>Tier 3</b> Qwen3-8B (분류·대화).
+          특허는 나라마다 따로 출원해야 하고, 요구하는 서류 형식도 제각각입니다.
+          PatentForge는 발명 내용을 한 번만 정리하면 <b>한국 · 미국 · 유럽 · 국제출원</b> 각각의 규격에 맞춘
+          서류 묶음을 만들어 드립니다. 언어 번역, 도면 규격 변환, 서식 차이까지 자동으로 처리합니다.
         </p>
       </div>
 
-      <div class="agents">
-        <div class="agent neu-raised tier-3">
-          <div class="agent-head">
-            <span class="agent-badge b-t3">T3</span>
-            <h4>IntakeAgent</h4>
-          </div>
-          <p>자유 서술을 17필드 IDF로 정형화. Socratic questioning 5–8 라운드.</p>
-          <div class="agent-tools">tools: idf.write · llm.chat</div>
-        </div>
-        <div class="agent neu-raised tier-3">
-          <div class="agent-head">
-            <span class="agent-badge b-t3">T3</span>
-            <h4>PriorArtAgent</h4>
-          </div>
-          <p>KIPRIS·USPTO·EPO·OpenAlex 검색 + BGE-Reranker + MMR.</p>
-          <div class="agent-tools">tools: kipris · uspto · qdrant.read</div>
-        </div>
-        <div class="agent neu-raised tier-1">
-          <div class="agent-head">
-            <span class="agent-badge b-t1">T1</span>
-            <h4>NoveltyAgent</h4>
-          </div>
-          <p>CrewAI 3-페르소나 합의 (Strict / Practitioner / Advocate). 페르소나는 별도 LLM 호출로 격리.</p>
-          <div class="agent-tools">tools: crewai · llm.judge</div>
-        </div>
-        <div class="agent neu-raised tier-2">
-          <div class="agent-head">
-            <span class="agent-badge b-t2">T2</span>
-            <h4>TechImplAgent</h4>
-          </div>
-          <p>1차 실시예 + 대안 2~5개. 의사코드는 Coder-30B 별도 호출.</p>
-          <div class="agent-tools">tools: llm.code · embodiment.write</div>
-        </div>
-        <div class="agent neu-raised tier-1">
-          <div class="agent-head">
-            <span class="agent-badge b-t1">T1</span>
-            <h4>ClaimsAgent</h4>
-          </div>
-          <p>독립항+종속항 작성. AutoGen Attacker/Defender/Judge 5라운드 적대 검증.</p>
-          <div class="agent-tools">tools: claims.write · autogen.redteam</div>
-        </div>
-        <div class="agent neu-raised tier-1">
-          <div class="agent-head">
-            <span class="agent-badge b-t1">T1</span>
-            <h4>SpecAgent</h4>
-          </div>
-          <p>7섹션 명세서 본문. 단락 번호 [0001]… 자동 부여, 청구항 용어 명세서 뒷받침 강제.</p>
-          <div class="agent-tools">tools: spec.write · ssot.refnum.read</div>
-        </div>
-        <div class="agent neu-raised tier-2">
-          <div class="agent-head">
-            <span class="agent-badge b-t2">T2</span>
-            <h4>AbstractAgent</h4>
-          </div>
-          <p>한국어 400자 + 영문 abstract + 대표 도면 자동 선정. 카운트 기반 자동 재생성.</p>
-          <div class="agent-tools">tools: abstract.write · count.verify</div>
-        </div>
-        <div class="agent neu-raised tier-3">
-          <div class="agent-head">
-            <span class="agent-badge b-t3">T3</span>
-            <h4>FigureAgent</h4>
-          </div>
-          <p>mermaid → SVG → PNG(300dpi). 참조부호 사전 SSOT로 SpecAgent와 공유.</p>
-          <div class="agent-tools">tools: mermaid · cairosvg · refnum.write</div>
-        </div>
-        <div class="agent neu-raised tier-3">
-          <div class="agent-head">
-            <span class="agent-badge b-t3">T3</span>
-            <h4>QAComplianceAgent</h4>
-          </div>
-          <p>40+ KIPO 양식 규칙 검증 (정규식 + AST + LLM). BLOCKER 자동 분류.</p>
-          <div class="agent-tools">tools: regex · docx.parse · xsd.validate</div>
-        </div>
-        <div class="agent neu-raised tier-1">
-          <div class="agent-head">
-            <span class="agent-badge b-t1">T1</span>
-            <h4>CriticAgent <span style="font-size:9px; opacity:0.7;">(hidden gate)</span></h4>
-          </div>
-          <p>v3.2 신규. Claims 직후 진보성(보정)·실시가능성·회피강건성 3 점수 산출 → Claims 게이팅 + Review 페이지 표시.</p>
-          <div class="agent-tools">tools: critic.score · review.publish</div>
-        </div>
-        <div class="agent neu-raised tier-1">
-          <div class="agent-head">
-            <span class="agent-badge b-t1">T1</span>
-            <h4>TranslatorAgent <span style="font-size:9px; opacity:0.7;">(v3.2 NEW)</span></h4>
-          </div>
-          <p>KO→EN 번역. <code>agent_stage="translation_ko_en"</code>. SSOT 영문 라벨 사전 + glossary 강제 주입으로 spec/claims/abstract 용어 일관성 보장.</p>
-          <div class="agent-tools">tools: glossary · refnum.en · spec.en.write</div>
-        </div>
-        <div class="agent neu-raised">
-          <div class="agent-head">
-            <span class="agent-badge">SVC</span>
-            <h4>AssemblyAgent</h4>
-          </div>
-          <p>LLM 호출 없음. python-docx + reportlab + Jinja2. <b>BuildSpec(jurisdictions, purpose)</b>으로 KIPO/USPTO/EPO/PCT 빌더 다형성 분기.</p>
-          <div class="agent-tools">tools: docx · pdf · xml · build_orchestrator</div>
-        </div>
-        <div class="agent neu-raised">
-          <div class="agent-head">
-            <span class="agent-badge">SVC</span>
-            <h4>SupervisorAgent</h4>
-          </div>
-          <p>LangGraph 마에스트로. 5-deep <code>interrupt_before</code> · <code>post_qa_mode_router</code> · <code>_drive_to_review_or_end</code> · <code>AsyncPostgresSaver</code>.</p>
-          <div class="agent-tools">tools: langgraph · graph.stream · checkpointer</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== COST / TIME ===== -->
-    <section id="cost" class="section">
-      <div class="section-head">
-        <span class="section-tag">Economics</span>
-        <h2>사건당 평균 <span class="text-em">$4–12</span> · <span class="text-am">30분~3시간</span></h2>
-        <p class="section-lead">
-          비용은 Claims 단계와 Spec 단계에 집중되며, 시간은 Spec 4-청크 분할과 Claims Red Team 5라운드가 가장 깁니다.
-          <b>$20 한도</b>의 CostCircuitBreaker가 자동 작동하며, 환경변수 <code>PER_CASE_LIMIT_USD</code>로 조정 가능합니다.
-          (변리사 검토 시간은 별도, 평균 30분~2시간)
-        </p>
-      </div>
-
-      <div class="grid-2" style="gap: 28px;">
-        <div class="list-card neu-raised">
-          <h3>단계별 비용 분포 <span class="pill">USD / case</span></h3>
-          <div class="bars">
-            <div class="bar-row">
-              <div class="bar-label">Claims (T1)</div>
-              <div class="bar-track"><div class="bar-fill high" data-w="100%"></div></div>
-              <div class="bar-value">$2.0–5.0</div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-label">Spec (T1)</div>
-              <div class="bar-track"><div class="bar-fill high" data-w="65%"></div></div>
-              <div class="bar-value">$1.0–3.0</div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-label">Novelty (T1)</div>
-              <div class="bar-track"><div class="bar-fill" data-w="40%"></div></div>
-              <div class="bar-value">$0.5–1.5</div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-label">TechImpl (T2)</div>
-              <div class="bar-track"><div class="bar-fill" data-w="22%"></div></div>
-              <div class="bar-value">$0.3–0.8</div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-label">PriorArt (T3)</div>
-              <div class="bar-track"><div class="bar-fill low" data-w="12%"></div></div>
-              <div class="bar-value">$0.1–0.4</div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-label">Intake (T3)</div>
-              <div class="bar-track"><div class="bar-fill low" data-w="8%"></div></div>
-              <div class="bar-value">$0.05–0.3</div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-label">Abstract (T2)</div>
-              <div class="bar-track"><div class="bar-fill low" data-w="6%"></div></div>
-              <div class="bar-value">$0.05–0.2</div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-label">QA (T3)</div>
-              <div class="bar-track"><div class="bar-fill low" data-w="5%"></div></div>
-              <div class="bar-value">$0.05–0.2</div>
+      <div class="juris">
+        <div class="juris-card neu-raised j-kipo">
+          <div class="juris-head">
+            <div class="juris-flag">한국</div>
+            <div>
+              <h4>한국 특허청</h4>
+              <div class="juris-spec">기본 지원 · 한국어</div>
             </div>
           </div>
-        </div>
-
-        <div class="list-card neu-raised">
-          <h3>단계별 시간 분포 <span class="pill">minutes</span></h3>
-          <div class="bars">
-            <div class="bar-row">
-              <div class="bar-label">Spec (4-청크)</div>
-              <div class="bar-track"><div class="bar-fill high" data-w="100%"></div></div>
-              <div class="bar-value">6–10m</div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-label">Claims Red Team</div>
-              <div class="bar-track"><div class="bar-fill high" data-w="92%"></div></div>
-              <div class="bar-value">5–15m</div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-label">PriorArt 검색</div>
-              <div class="bar-track"><div class="bar-fill" data-w="48%"></div></div>
-              <div class="bar-value">3–8m</div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-label">Novelty 합의</div>
-              <div class="bar-track"><div class="bar-fill" data-w="42%"></div></div>
-              <div class="bar-value">3–6m</div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-label">Intake 대화</div>
-              <div class="bar-track"><div class="bar-fill" data-w="32%"></div></div>
-              <div class="bar-value">2–5m</div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-label">TechImpl</div>
-              <div class="bar-track"><div class="bar-fill" data-w="28%"></div></div>
-              <div class="bar-value">2–4m</div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-label">Figures 렌더</div>
-              <div class="bar-track"><div class="bar-fill low" data-w="18%"></div></div>
-              <div class="bar-value">1–3m</div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-label">Assembly</div>
-              <div class="bar-track"><div class="bar-fill low" data-w="6%"></div></div>
-              <div class="bar-value">~1m</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== TIERS ===== -->
-    <section id="tiers" class="section">
-      <div class="section-head">
-        <span class="section-tag">Compliance Tiers</span>
-        <h2>위반의 등급, <span class="text-pk">BLOCKER · MAJOR · MINOR · INFO</span></h2>
-        <p class="section-lead">
-          QAComplianceAgent(Stage 9)는 40+ 검증 규칙의 결과를 4단계 심각도로 분류합니다.
-          BLOCKER는 출원 자체가 거부되는 사항, MAJOR는 거절이유 통지 가능성이 높은 사항, MINOR는 자동 수정 가능, INFO는 통계 항목입니다.
-        </p>
-      </div>
-
-      <div class="tiers">
-        <div class="tier neu-raised t-block">
-          <div class="tier-icon"><span class="text-pk">⛔</span></div>
-          <h3>BLOCKER</h3>
-          <p>출원 자체가 거부되는 사항. <b>직진 차단.</b> 직전 단계로 자동 회귀 또는 변리사 수정 필수.</p>
-          <div class="tier-meta">예: 단일 문장 위반, 단락번호 누락, 청구항 인용 순환</div>
-        </div>
-        <div class="tier neu-raised t-major">
-          <div class="tier-icon"><span class="text-am">⚠</span></div>
-          <h3>MAJOR</h3>
-          <p>거절이유 통지 가능성이 높은 사항. 변리사 코멘트 다수 예상. 5개 이상 시 HITL 권고.</p>
-          <div class="tier-meta">예: 도면 참조 불일치, 청구항 용어 명세서 미정의</div>
-        </div>
-        <div class="tier neu-raised t-minor">
-          <div class="tier-icon"><span class="text-cy">◇</span></div>
-          <h3>MINOR</h3>
-          <p>자동 수정 가능 또는 권고 수준. <b>출원에는 지장 없음.</b> 자동 통과 + 보고서에 기록.</p>
-          <div class="tier-meta">예: 폰트, 여백, 단락 번호 형식 자잘한 차이</div>
-        </div>
-        <div class="tier neu-raised t-info">
-          <div class="tier-icon"><span style="color: var(--text-2);">ⓘ</span></div>
-          <h3>INFO</h3>
-          <p>정보 제공용 통계 항목. 검토 부담 없음. 변리사 참고용.</p>
-          <div class="tier-meta">예: 단어 수 분포, 단락 길이 분포</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== LAW MAP ===== -->
-    <section id="lawmap" class="section">
-      <div class="section-head">
-        <span class="section-tag">Statutory Mapping</span>
-        <h2>특허법 §29 · §42와의 <span class="text-em">1:1 매핑</span></h2>
-        <p class="section-lead">
-          PatentForge의 자동 검증 규칙과 HITL 게이트는 한국 특허법 §29(신규성·진보성)·§42(명세서 기재요건)·변리사법 §2(자격 보장)에서 직접 도출되었습니다.
-          시스템 결정은 항상 명시된 조항으로 traceable 합니다.
-        </p>
-      </div>
-
-      <div class="grid-2">
-        <div class="list-card neu-raised law">
-          <h3>특허법 §29 — 신규성·진보성 <span class="pill">PatentForge 대응</span></h3>
-          <ul>
-            <li><b>§29①</b><span>출원 전 공지된 발명과 동일하지 않을 것 → <b>NoveltyAgent</b> 단일/결합 인용 위협도 별도 평가</span></li>
-            <li><b>§29②</b><span>통상의 기술자가 용이하게 도출할 수 없을 것 → <b>3-페르소나 합의</b> + 회색지대 0.5~0.7 HITL</span></li>
-            <li><b>POSITA</b><span>해당 분야 평균적 지식 + 5년 실무 → 시스템 프롬프트에 수준 명시</span></li>
-            <li><b>예상 효과</b><span>"통상의 기술자가 예상하지 못한 효과" 발굴 → IDF 효과 vs 선행기술 효과 정량 비교</span></li>
+          <p>한국어 명세서 · 청구범위 · 요약서 · 도면 일체. 세 가지 이용 방법 모두에서 기본으로 지원합니다.</p>
+          <ul class="juris-list">
+            <li>출원용 문서 파일 (워드 · PDF)</li>
+            <li>제출 전 확인용 체크리스트</li>
+            <li>직접 출원 안내서 (방법 B)</li>
           </ul>
+          <div class="juris-meta">기본 지원</div>
         </div>
 
-        <div class="list-card neu-raised law">
-          <h3>특허법 §42 — 명세서 기재요건 <span class="pill">PatentForge 대응</span></h3>
-          <ul>
-            <li><b>§42③1호</b><span>실시 가능 명세서 → <b>TechImplAgent</b> 1차 실시예 + 대안 2~5 + 의사코드</span></li>
-            <li><b>§42③2호</b><span>발명의 효과 정량 기재 → 효과 계층(주1+부3~5) 강제, 정량 수치+비교 기준</span></li>
-            <li><b>§42④1호</b><span>청구범위 명확성 → 단일 문장(마침표 1개) + 불명료 표현 정규식 차단</span></li>
-            <li><b>§42④2호</b><span>명세서 뒷받침 → 청구항 용어를 명세서 본문에서 모두 정의했는지 자체 검증</span></li>
+        <div class="juris-card neu-raised j-uspto">
+          <div class="juris-head">
+            <div class="juris-flag">미국</div>
+            <div>
+              <h4>미국 특허청</h4>
+              <div class="juris-spec">영어 · 미국 규격</div>
+            </div>
+          </div>
+          <p>영어로 번역하고 미국 특허청이 요구하는 서식과 도면 규격(흑백 · 고해상도)에 맞춰 서류 묶음을 만듭니다.</p>
+          <ul class="juris-list">
+            <li>출원 신청 서식 + 명세서 + 청구범위</li>
+            <li>요약서 + 도면 + 선언서</li>
+            <li>온라인 제출용 파일 포함</li>
           </ul>
+          <div class="juris-meta">지원</div>
         </div>
-      </div>
-      <p class="section-lead" style="margin-top: 22px; font-size: 13px;">
-        ※ 변리사법 §2 / §21 단서의 자세한 해설은 <a href="#legal" style="color: var(--led-emerald); text-decoration: underline;">위쪽 "Legal Positioning" 섹션</a>을 참고하십시오.
-      </p>
-    </section>
 
-    <!-- ===== HITL ===== -->
-    <section id="hitl" class="section">
-      <div class="section-head">
-        <span class="section-tag">Attorney Review Page</span>
-        <h2>변리사가 <span class="text-am">법적 판단에 집중하는</span> UX</h2>
-        <p class="section-lead">
-          변리사 검토 페이지(<code>/review/{case_id}</code>)는 좌측에 청구범위·요약서·컴플라이언스 검증 결과를,
-          우측에 최종 판정 버튼과 코멘트 입력란을 배치합니다. <b>형식 검증은 시스템이 미리 끝냈으므로 변리사는 법적 판단에만 시간을 씁니다.</b>
-        </p>
-      </div>
+        <div class="juris-card neu-raised j-epo">
+          <div class="juris-head">
+            <div class="juris-flag">유럽</div>
+            <div>
+              <h4>유럽 특허청</h4>
+              <div class="juris-spec">영어 · 유럽 규격</div>
+            </div>
+          </div>
+          <p>유럽 특허청 서식에 맞춘 서류 묶음을 만들고, 보호받을 국가들을 화면에서 골라 지정할 수 있습니다. 유럽은 현지 전문 대리인을 통한 출원이 필요합니다.</p>
+          <ul class="juris-list">
+            <li>출원 서식 + 명세서 + 청구범위</li>
+            <li>요약서 + 흑백 도면</li>
+            <li>보호 대상 국가 선택 지원</li>
+          </ul>
+          <div class="juris-meta">지원 · 현지 대리인 필요</div>
+        </div>
 
-      <div class="grid-3">
-        <div class="card neu-raised card-hover">
-          <div class="card-icon neu-pressed"><span class="ico-em">✓</span></div>
-          <h3>APPROVE</h3>
-          <p>즉시 Assembly 단계로 진입. 약 1분 안에 Filing(출원용) + Review(검토용) docx 동시 생성. 변리사 검토 사실은 audit log에 영구 기록됩니다.</p>
-        </div>
-        <div class="card neu-raised card-hover">
-          <div class="card-icon neu-pressed"><span class="ico-am">↺</span></div>
-          <h3>REVISE</h3>
-          <p>회귀 단계 선택 다이얼로그: 청구항 / 명세서 / 도면 / 요약서 / 발명. <b>auto</b> 선택 시 코멘트 키워드 분석으로 시스템이 자동 결정.</p>
-        </div>
-        <div class="card neu-raised card-hover">
-          <div class="card-icon neu-pressed"><span class="ico-pk">✗</span></div>
-          <h3>ABANDON</h3>
-          <p>출원 포기 또는 발명 보강 후 재시도. 이미 사용된 LLM 비용은 audit log에 누적되며, 사건은 ABANDONED 상태로 영구 보존.</p>
-        </div>
-      </div>
-
-      <div class="grid-3" style="margin-top: 28px;">
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">📊</span></div>
-          <h3>진보성 (보정)</h3>
-          <p>NoveltyAgent 원본 점수에서 단순 치환 가능성을 반영하여 보정한 값. <code>PatentabilityCriticAgent</code>가 산출.</p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">⚙</span></div>
-          <h3>실시가능성</h3>
-          <p>통상의 기술자가 명세서만으로 발명을 재현할 수 있는 정도. §42③1호 기재 요건의 정량화.</p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-am">🛡</span></div>
-          <h3>회피설계 강건성</h3>
-          <p>청구항 핵심 한정의 치환을 통한 회피 가능성. 낮을수록 침해 회피가 어렵다(=강건). AutoGen Red Team의 재집계.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== RESPONSEAGENT ===== -->
-    <section id="response" class="section">
-      <div class="section-head">
-        <span class="section-tag">ResponseAgent · Phase 3</span>
-        <h2>의견제출통지서 자동 분석 + <span class="text-am">의견서·보정서 초안</span></h2>
-        <p class="section-lead">
-          Mode B 사용자가 KIPO로부터 거절이유통지(의견제출통지서)를 수령하면 ResponseAgent가 OCR + LLM으로 분석하여
-          의견서(§40 양식)와 보정서 초안을 자동 생성합니다. <b>ResponseAgent는 자문이 아닌 도구</b>이며,
-          최종 응답서는 사용자가 직접 검토 후 본인 명의로 KIPOnet에 제출해야 합니다.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card neu-raised card-hover">
-          <div class="card-icon neu-pressed"><span class="ico-am">📥</span></div>
-          <h3>STEP 1 · 통지서 업로드</h3>
-          <p>사용자가 의견제출통지서 PDF 업로드 → OCR로 거절 조항(§29①·§29②·§42), 인용 선행기술, 거절 논거 키워드를 자동 추출.</p>
-        </div>
-        <div class="card neu-raised card-hover">
-          <div class="card-icon neu-pressed"><span class="ico-am">🔍</span></div>
-          <h3>STEP 2 · 차이점 추출</h3>
-          <p>PatentForge 원본 사건 데이터와 매칭. 명세서에서 인용발명 차이점 자동 추출, 청구범위 회피 보정안 도출.</p>
-        </div>
-        <div class="card neu-raised card-hover">
-          <div class="card-icon neu-pressed"><span class="ico-am">📤</span></div>
-          <h3>STEP 3 · 응답서 초안</h3>
-          <p>의견서(.docx) + 보정서(청구범위 보정안) 자동 생성 → 강제 면책 조항 첨부 → KIPOnet 제출 가이드 동봉.</p>
+        <div class="juris-card neu-raised j-pct">
+          <div class="juris-head">
+            <div class="juris-flag">국제</div>
+            <div>
+              <h4>국제출원 (PCT)</h4>
+              <div class="juris-spec">한국어/영어 · 국제 규격</div>
+            </div>
+          </div>
+          <p>한 번의 국제출원으로 세계 150여 개 나라에서 우선권을 확보하는 제도입니다. 국제 규격에 맞춘 서류 묶음을 만들어 드립니다.</p>
+          <ul class="juris-list">
+            <li>국제출원 서식 일체</li>
+            <li>명세서 · 청구범위 · 요약서 · 도면</li>
+            <li>150여 개 가입국 자동 지정</li>
+          </ul>
+          <div class="juris-meta">지원</div>
         </div>
       </div>
 
       <div class="banner neu-raised warn" style="margin-top: 28px;">
-        <div class="banner-icon">⚠</div>
+        <div class="banner-icon">★</div>
         <div class="banner-body">
-          <h4>ResponseAgent의 법적 한계 — 강제 면책</h4>
+          <h4>출원인 정보는 한 번만 입력하면 됩니다</h4>
           <p>
-            한국 변리사법 §2에 따라 "특허에 관한 사항의 대리"는 변리사 독점 업무이며, PatentForge는 변리사가 아닙니다.
-            ResponseAgent의 모든 산출물에는 다음 면책 조항이 강제 첨부됩니다 — <b>"본 초안은 일반 정보 제공 목적이며,
-            출원인 본인이 검토 후 수정·보완하거나 변리사에게 자문을 받으십시오. 의견제출 마감일(보통 2개월) 엄수.
-            본 초안 사용으로 인한 등록 거절·무효 등의 결과에 대해 PatentForge 운영자는 일체의 책임을 지지 않습니다."</b>
-            "이렇게 응답하면 됩니다" 같은 단정적 자문은 절대 출력하지 않습니다.
+            출원인 · 발명자 정보를 한 번 입력하면, 네 곳 특허청의 서로 다른 서식에 자동으로 옮겨 적어 드립니다.
+            이름과 주소의 표기 방식(영문 성명 순서 등)도 나라별 규칙에 맞게 자동으로 바뀝니다.
+            같은 내용을 네 번 반복해서 입력할 필요가 없습니다.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== JOURNEY ===== -->
-    <section id="journey" class="section">
-      <div class="section-head">
-        <span class="section-tag">User Journey</span>
-        <h2>발명 신고서 → 출원 가능 .docx, <span class="text-em">8단계 사용자 절차</span></h2>
-        <p class="section-lead">
-          처음 사용하시는 분도 8단계만 따라가시면 KIPO에 제출 가능한 명세서 docx 파일을 받으실 수 있습니다.
-          첫 5단계는 사용자 입력, 마지막 3단계는 자동 진행 + 변리사 검토 + 다운로드입니다.
-        </p>
-      </div>
-
-      <div class="journey">
-        <div class="journey-step neu-raised">
-          <div class="step-no">01</div>
-          <h4>로그인</h4>
-          <p>프런트엔드 접속 후 회원가입·로그인. JWT 토큰이 로컬 스토리지에 자동 저장되어 이후 모든 화면 자동 인증.</p>
-          <div class="kbd">localhost:3700</div>
-        </div>
-        <div class="journey-step neu-raised">
-          <div class="step-no">02</div>
-          <h4>새 사건 만들기</h4>
-          <p>'+ 새 사건' 버튼으로 가제(假題)와 자유 서술 발명 내용을 입력. INTAKE 단계가 자동 시작되며 사건 상세 페이지로 이동.</p>
-        </div>
-        <div class="journey-step neu-raised">
-          <div class="step-no">03</div>
-          <h4>출원 정보 입력</h4>
-          <p>출원인·발명자·권리권자 정보를 모달에서 일괄 입력. 다수 출원인 시 지분 합 100% 검증. 별지 제15호 양식 필수 항목.</p>
-        </div>
-        <div class="journey-step neu-raised">
-          <div class="step-no">04</div>
-          <h4>발명 정보 입력</h4>
-          <p>Mock 텍스트 불러오기로 빠른 시험 가능. 또는 [발명의 명칭] [기술분야] [해결하려는 과제]… 9개 섹션 직접 작성.</p>
-          <div class="kbd">Ctrl+Enter</div>
-        </div>
-        <div class="journey-step neu-raised">
-          <div class="step-no">05</div>
-          <h4>12단계 자동 진행</h4>
-          <p>ProgressBar가 IntakeAgent부터 점등. HUMAN_REVIEW에 도달할 때까지 사용자 개입 없이 자동 진행. 누적 시간·비용 실시간 표시.</p>
-          <div class="kbd">tail -f logs/jobs/&lt;id&gt;.log</div>
-        </div>
-        <div class="journey-step neu-raised">
-          <div class="step-no">06</div>
-          <h4>변리사 검토</h4>
-          <p>cyan 테두리 카드 등장 시 '변리사 검토 페이지로 이동' → ✓ APPROVE / ↺ REVISE / ✗ ABANDON 중 결정.</p>
-        </div>
-        <div class="journey-step neu-raised">
-          <div class="step-no">07</div>
-          <h4>Assembly 자동 실행</h4>
-          <p>변리사 승인 후 약 1분 안에 Filing(출원용) + Review(검토용) docx 동시 생성. PDF·ePAS XML(Phase 2)·면책 조항·체크리스트 포함.</p>
-        </div>
-        <div class="journey-step neu-raised">
-          <div class="step-no">08</div>
-          <h4>다운로드</h4>
-          <p>'다운로드' 카드에서 원하는 형식 선택. fetch+blob + JWT 인증으로 안전 전송. 링크 TTL은 24시간이며 재생성 가능.</p>
         </div>
       </div>
     </section>
@@ -1384,30 +496,13 @@
     <!-- ===== OUTPUTS ===== -->
     <section id="outputs" class="section">
       <div class="section-head">
-        <span class="section-tag">Mode-Specific Deliverables</span>
-        <h2><span class="text-em">Filing</span> · <span class="text-am">Review</span> + 모드별 표지 페이지 분기</h2>
+        <span class="section-tag">받아보는 문서</span>
+        <h2>같은 내용, <span class="text-em">쓰임이 다른 두 가지 문서</span></h2>
         <p class="section-lead">
-          Assembly Agent는 동일한 사건에서 두 종의 docx를 동시에 산출하며, <b>모드별로 첫 페이지(표지)와 마지막 페이지(면책 조항)이 다릅니다.</b>
-          Mode A는 변리사 정보 동적 삽입, Mode B는 강한 셀프 출원 경고, Mode C는 영업비밀 0건 송신 검증 결과 표시.
+          작업이 끝나면 두 가지 문서를 받습니다. <b>출원용</b>은 특허청에 그대로 제출할 수 있는 깔끔한 완성본이고,
+          <b>검토용</b>은 어떤 점검을 거쳤고 어떤 평가를 받았는지가 함께 담긴 확인용 문서입니다.
+          표지에는 어떤 이용 방법으로, 누구의 확인을 거쳐 만들어졌는지가 명시됩니다.
         </p>
-      </div>
-
-      <div class="grid-3" style="margin-bottom: 28px;">
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">A</span></div>
-          <h3>Mode A 표지 — 변리사 검토 완료</h3>
-          <p style="font-size:12.5px;"><b>✓ 변리사 검토 완료</b> (검토일·등록번호) · <b>✓ PatentForge audit log ID</b> · 면책 조항: "변리사 {name}의 검토를 거쳐 승인되었습니다"</p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-am">B</span></div>
-          <h3>Mode B 표지 — 셀프 출원 경고</h3>
-          <p style="font-size:12.5px;"><b>⚠ 변리사 검토 미완료</b> · BLOCKER/MAJOR/MINOR 카운트 + 추정 등록률 표시 · <b>면책 동의서 ID + 서명 일시</b> 명시 · 강한 경고 면책 조항</p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-cy">C</span></div>
-          <h3>Mode C 표지 — 사내 R&amp;D</h3>
-          <p style="font-size:12.5px;"><b>✓ 사내 변리사 검토 완료</b> · <b>✓ 온프레미스 배포 검증</b> · <b>✓ 영업비밀 외부 송신 0건 (audit 검증)</b> · 보안 등급 + 인스턴스 ID 표시</p>
-        </div>
       </div>
 
       <div class="outputs">
@@ -1415,16 +510,16 @@
           <div class="file-head">
             <div class="file-icon">.docx</div>
             <div>
-              <h4>Filing — KIPO 출원용</h4>
-              <div class="file-name">specification_for_filing.docx</div>
+              <h4>출원용 — 특허청 제출용</h4>
+              <div class="file-name">깔끔한 완성본</div>
             </div>
           </div>
-          <p>KIPO 별지 제16호 양식. 자동 검증 부록 제외. 페이지 여백 상25/하20/좌우20mm, WDLAB 스타일(H1 #1F3864, 본문 11pt) 적용.</p>
+          <p>특허청 서식 그대로. 점검 기록 없이 발명 내용만 담아, 그대로 제출할 수 있습니다.</p>
           <ul>
-            <li>본문 + 청구범위 + 요약서 (한 흐름)</li>
-            <li>도면 (별도 페이지, 300dpi PNG)</li>
-            <li>면책 조항 (변리사 audit log 반영)</li>
-            <li>filing_checklist.json (KIPO 첨부서류 체크리스트)</li>
+            <li>명세서 + 청구범위 + 요약서</li>
+            <li>도면 (규격에 맞춘 고해상도)</li>
+            <li>제출 전 첨부서류 체크리스트</li>
+            <li>PDF 버전 함께 제공</li>
           </ul>
         </div>
 
@@ -1432,128 +527,171 @@
           <div class="file-head">
             <div class="file-icon">.docx</div>
             <div>
-              <h4>Review — 변리사·개발팀 검토용</h4>
-              <div class="file-name">specification.docx</div>
+              <h4>검토용 — 확인 · 보관용</h4>
+              <div class="file-name">점검 결과 포함본</div>
             </div>
           </div>
-          <p>Filing과 동일한 본문 + <b>자동 검증 부록 포함</b>. 단계별 비용·시간·BLOCKER/MAJOR 검출 결과·진보성 점수·Robustness 점수 모두 표시.</p>
+          <p>출원용과 같은 본문에 <b>점검 결과를 덧붙인 문서</b>입니다. 어떤 항목을 검사했고 어떤 평가를 받았는지 확인할 수 있습니다.</p>
           <ul>
-            <li>QA Compliance 보고서 (40+ 규칙)</li>
-            <li>Critic 3개 점수 (진보성·실시가능성·회피강건성)</li>
-            <li>Cost & time breakdown</li>
-            <li>변리사 코멘트 anchor 목록</li>
+            <li>형식 점검 결과 (40여 항목)</li>
+            <li>새로움 · 실현 가능성 등 평가 점수</li>
+            <li>작성에 든 비용과 시간 내역</li>
+            <li>검토 의견 목록</li>
           </ul>
         </div>
       </div>
 
       <div class="status-grid" style="margin-top: 28px;">
         <div class="status-pill neu-raised ok">
-          <div class="num">.pdf</div>
-          <div class="lbl">A4 출원용</div>
-        </div>
-        <div class="status-pill neu-raised warn">
-          <div class="num">.xml</div>
-          <div class="lbl">ePAS · Phase 2</div>
-        </div>
-        <div class="status-pill neu-raised note">
-          <div class="num">.hwp</div>
-          <div class="lbl">KIPOnet · Phase 3</div>
+          <div class="num">.docx</div>
+          <div class="lbl">워드 문서</div>
         </div>
         <div class="status-pill neu-raised ok">
-          <div class="num">.json</div>
-          <div class="lbl">Filing Checklist</div>
+          <div class="num">.pdf</div>
+          <div class="lbl">인쇄 · 제출용</div>
+        </div>
+        <div class="status-pill neu-raised ok">
+          <div class="num">.zip</div>
+          <div class="lbl">해외 출원 서류 묶음</div>
+        </div>
+        <div class="status-pill neu-raised warn">
+          <div class="num">24h</div>
+          <div class="lbl">안전한 다운로드 링크</div>
         </div>
       </div>
     </section>
 
-    <!-- ===== ARCHITECTURE ===== -->
-    <section id="architecture" class="section">
+    <!-- ===== SAFEGUARDS ===== -->
+    <section id="safeguards" class="section">
       <div class="section-head">
-        <span class="section-tag">Architecture</span>
-        <h2>4-계층 시스템 <span class="text-em">아키텍처</span></h2>
+        <span class="section-tag">안심 포인트</span>
+        <h2>잘못된 출원을 막는 <span class="text-am">5중 안전장치</span></h2>
         <p class="section-lead">
-          단일 호스트(Single-Host) self-hosted 구조. FastAPI 백엔드 + React 프런트엔드 + PostgreSQL/Qdrant/Neo4j 데이터 계층 + LangGraph 오케스트레이션.
-          Squid 프록시 단일 IP로 외부 API quota 통합 관리.
+          자동으로 만든 서류를 그대로 내보내는 일은 없습니다. 작성 과정 다섯 곳에 안전장치를 두어,
+          문제가 있는 서류가 손에 들어가기 전에 걸러냅니다.
         </p>
       </div>
 
-      <div class="arch">
-        <div class="arch-layer neu-raised">
-          <div class="arch-layer-title">Frontend · Next.js 14 App Router + Tailwind 3 + Mermaid 11</div>
-          <div class="arch-blocks">
-            <div class="arch-block">사건 목록 + 통계 + ✓ 출원번호 badge</div>
-            <div class="arch-block">FilingProfileModal (별지 제15호 SSOT)</div>
-            <div class="arch-block">ProgressBar (13-stage LED)</div>
-            <div class="arch-block">ModeSelector A/B/C 카드</div>
-            <div class="arch-block">DisclaimerModal (스크롤 95%)</div>
-            <div class="arch-block">변리사 검토 페이지</div>
-            <div class="arch-block">MultiJurisdictionCard + 다운로드 ZIP</div>
-          </div>
+      <div class="gates">
+        <div class="gate neu-raised">
+          <span class="gate-tag tg-major">안전장치 1</span>
+          <h4>새로움이 애매하면 멈춤</h4>
+          <p>기존 기술과 비교해 특허 가능성이 애매하다고 판단되면 자동 진행을 멈추고, 사람이 계속할지 · 보강할지 · 그만둘지 결정합니다.</p>
         </div>
-        <div class="arch-arrow">▼</div>
-
-        <div class="arch-layer neu-raised">
-          <div class="arch-layer-title">Backend · FastAPI + LangGraph + AsyncPostgresSaver</div>
-          <div class="arch-blocks">
-            <div class="arch-block">JWT Auth (header / ?token=)</div>
-            <div class="arch-block">13-stage StateGraph (Critic 포함)</div>
-            <div class="arch-block">10 Specialists + Critic + Translator</div>
-            <div class="arch-block">5-deep interrupt_before</div>
-            <div class="arch-block">post_qa_mode_router</div>
-            <div class="arch-block">build_orchestrator (4-juris)</div>
-            <div class="arch-block">CostCircuitBreaker (관할 수 × $15)</div>
-            <div class="arch-block">26 Jinja2 templates · 43 routes</div>
-          </div>
+        <div class="gate neu-raised">
+          <span class="gate-tag tg-block">안전장치 2</span>
+          <h4>약한 권리 범위는 다시 작성</h4>
+          <p>권리 범위 문장에 빠져나갈 허점이 있는지 스스로 공격해 보고, 기준에 못 미치면 자동으로 다시 씁니다.</p>
         </div>
-        <div class="arch-arrow">▼</div>
-
-        <div class="arch-layer neu-raised">
-          <div class="arch-layer-title">LLM Routing · 3-Tier · always streaming + 64k max_tokens</div>
-          <div class="arch-blocks">
-            <div class="arch-block">Tier 1 · Claude Sonnet 4.6 (법적 추론·번역)</div>
-            <div class="arch-block">Tier 2 · Qwen3.6-27B 로컬 (도메인 작성)</div>
-            <div class="arch-block">Tier 3 · Qwen3-8B (분류·대화)</div>
-            <div class="arch-block">Coder · Qwen3-Coder-30B-A3B (의사코드·mermaid·DOT)</div>
-            <div class="arch-block">Translator · agent_stage="translation_ko_en" + glossary SSOT</div>
-            <div class="arch-block">ZDR 계약 모델만 confidential 처리</div>
-          </div>
+        <div class="gate neu-raised">
+          <span class="gate-tag tg-block">안전장치 3</span>
+          <h4>형식 오류는 통과 불가</h4>
+          <p>특허청이 접수 자체를 거부할 수 있는 오류가 하나라도 발견되면 다음 단계로 넘어가지 않습니다. 고쳐질 때까지 진행이 막힙니다.</p>
         </div>
-        <div class="arch-arrow">▼</div>
-
-        <div class="arch-layer neu-raised">
-          <div class="arch-layer-title">Data · 5-Backend (PostgreSQL 16 :25450)</div>
-          <div class="arch-blocks">
-            <div class="arch-block">PostgreSQL · cases · agent_calls · audit_trail · disclaimer_signatures · case_export_packages</div>
-            <div class="arch-block">Qdrant · BGE-M3 임베딩</div>
-            <div class="arch-block">Neo4j · 인용 그래프 1-hop</div>
-            <div class="arch-block">Redis · 24h KIPRIS 캐시</div>
-            <div class="arch-block">S3 · docx/pdf/zip 5년~영구</div>
-          </div>
+        <div class="gate neu-raised">
+          <span class="gate-tag tg-current">안전장치 4</span>
+          <h4>사람의 확인 없이 완성 없음</h4>
+          <p>변리사의 검토, 또는 본인의 확인·동의를 거쳐야만 최종 문서가 만들어집니다. 이 관문은 어떤 경우에도 자동으로 통과되지 않습니다.</p>
         </div>
-
-        <div class="arch-arrow">▼</div>
-        <div class="arch-layer neu-raised">
-          <div class="arch-layer-title">Documents · 4-Jurisdiction Builders (v3.2 NEW)</div>
-          <div class="arch-blocks">
-            <div class="arch-block">document/uspto/ — ads · spec · claims · abstract · declaration · xml_export · builder</div>
-            <div class="arch-block">document/epo/ — form_1001 · spec · claims (Two-Part) · designation_states · builder</div>
-            <div class="arch-block">document/pct/ — ro_101 · spec · claims · abstract · pct_easy · contracting_states</div>
-            <div class="arch-block">document/profile_adapter — KIPO 별지 제15호 → USPTO ADS / EPO 1001 / PCT RO/101 자동 매핑</div>
-          </div>
+        <div class="gate neu-raised">
+          <span class="gate-tag tg-info">안전장치 5</span>
+          <h4>모든 과정을 기록으로 보존</h4>
+          <p>누가 언제 무엇을 확인하고 동의했는지를 위조할 수 없는 방식으로 기록해 장기간 보관합니다. 나중에 다툼이 생겨도 증거가 남습니다.</p>
         </div>
-        <div class="arch-arrow">▼</div>
+      </div>
+    </section>
 
-        <div class="arch-layer neu-raised">
-          <div class="arch-layer-title">External · via Squid Proxy (Single IP) · v3.2 expanded</div>
-          <div class="arch-blocks">
-            <div class="arch-block">KIPRIS (KO patent search)</div>
-            <div class="arch-block">USPTO PatentsView (EN, v3.2 NEW)</div>
-            <div class="arch-block">EPO OPS</div>
-            <div class="arch-block">Google Patents (cited expansion)</div>
-            <div class="arch-block">OpenAlex / Semantic Scholar (NPL)</div>
-            <div class="arch-block">Anthropic API (ZDR · 64k max_tokens)</div>
-            <div class="arch-block">graphviz · matplotlib · pikepdf (system deps)</div>
-          </div>
+    <!-- ===== LEGAL ===== -->
+    <section id="legal" class="section">
+      <div class="section-head">
+        <span class="section-tag">법을 지키는 방식</span>
+        <h2>"본인이 직접 출원하는 것"은 <span class="text-em">법이 허용합니다</span></h2>
+        <p class="section-lead">
+          변리사법은 변리사가 아닌 사람이 남의 출원을 대신해 주는 것을 금지합니다. 그러나 같은 법이
+          <b>본인이 자신의 발명을 직접 출원하는 것</b>은 분명히 허용합니다.
+          PatentForge는 이 경계를 정확히 지키도록 설계되었습니다 — 서류 작성을 돕되,
+          누구를 대신해 출원하지 않고, 법률 판단을 내리지 않으며, 출원 위임 계약을 맺지 않습니다.
+        </p>
+      </div>
+
+      <div class="legal-table">
+        <div class="legal-col allowed neu-raised">
+          <h3><span class="marker">✓</span>PatentForge가 하는 일 (합법)</h3>
+          <ul>
+            <li>발명 내용을 바탕으로 서류 초안 작성 (도구 제공)</li>
+            <li>서류의 형식 오류를 찾아 알려주기</li>
+            <li>새로움 · 실현 가능성 등 참고용 자동 평가 제공</li>
+            <li>본인이 직접 출원할 수 있게 안내서 제공</li>
+            <li>변리사와 함께 진행하도록 연결 (소개비 없음)</li>
+          </ul>
+        </div>
+        <div class="legal-col forbidden neu-raised">
+          <h3><span class="marker">✗</span>PatentForge가 하지 않는 일 (위법 소지)</h3>
+          <ul>
+            <li>사용자를 대신해 특허청에 자동 출원</li>
+            <li>"이 발명은 등록됩니다" 같은 단정적 법률 의견</li>
+            <li>"AI 변리사" · "변리사 대체" 같은 표현</li>
+            <li>"등록 보장" · "100% 등록" 같은 약속</li>
+            <li>변리사 소개 대가로 수수료 받기</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="banner neu-raised warn" style="margin-top: 28px;">
+        <div class="banner-icon">⚠</div>
+        <div class="banner-body">
+          <h4>책임의 경계도 분명합니다</h4>
+          <p>
+            변리사와 함께 진행하면(방법 A·C) 검토한 변리사가 전문가로서 책임을 지고,
+            본인이 직접 출원하면(방법 B) 그 결과는 <b>본인의 책임</b>입니다.
+            이 차이를 시작 전에 분명히 안내하고, 동의를 받은 뒤에만 진행합니다.
+            발명 내용의 비밀 유지 의무는 어떤 방법에서든 PatentForge가 집니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DISCLAIMER ===== -->
+    <section id="disclaimer" class="section">
+      <div class="section-head">
+        <span class="section-tag">직접 출원 전 확인 절차</span>
+        <h2>직접 출원을 선택하면 거치는 <span class="text-am">6단계 확인</span></h2>
+        <p class="section-lead">
+          "내가 직접 출원"(방법 B)을 선택하면, 서류를 받기 전에 아래 확인 절차를 반드시 거칩니다.
+          충분히 알고 선택했다는 것을 확실히 하기 위한 과정이며, 건너뛸 수 없습니다.
+        </p>
+      </div>
+
+      <div class="flow">
+        <div class="flow-step neu-raised">
+          <div class="flow-num">01</div>
+          <h4>점검 결과 확인</h4>
+          <p>서류의 자동 점검 결과와 남은 문제점을 있는 그대로 보여 드립니다.</p>
+        </div>
+        <div class="flow-step neu-raised is-warn">
+          <div class="flow-num">02</div>
+          <h4>위험 안내</h4>
+          <p>변리사 검토를 거치지 않으면 등록 가능성이 낮아질 수 있음을 명확히 알립니다.</p>
+        </div>
+        <div class="flow-step neu-raised is-warn">
+          <div class="flow-num">03</div>
+          <h4>변리사 검토 권유</h4>
+          <p>"변리사와 함께"로 바꾸는 선택지를 먼저 제시합니다. 거절해야만 다음으로 넘어갑니다.</p>
+        </div>
+        <div class="flow-step neu-raised is-warn">
+          <div class="flow-num">04</div>
+          <h4>안내문 끝까지 읽기</h4>
+          <p>책임과 한계를 담은 안내문을 끝까지 읽어야 동의 버튼이 활성화됩니다.</p>
+        </div>
+        <div class="flow-step neu-raised is-warn">
+          <div class="flow-num">05</div>
+          <h4>본인 인증</h4>
+          <p>휴대폰 간편인증 또는 문자 인증으로 본인임을 확인합니다.</p>
+        </div>
+        <div class="flow-step neu-raised is-warn">
+          <div class="flow-num">06</div>
+          <h4>전자 서명</h4>
+          <p>동의 내용에 전자 서명합니다. 서명 기록은 위조할 수 없는 방식으로 보관되고, 사본을 보내 드립니다.</p>
         </div>
       </div>
     </section>
@@ -1561,600 +699,130 @@
     <!-- ===== SECURITY ===== -->
     <section id="security" class="section">
       <div class="section-head">
-        <span class="section-tag">Security</span>
-        <h2>영업비밀과 audit log를 <span class="text-pk">암호학적으로 보호</span></h2>
+        <span class="section-tag">발명 아이디어 보호</span>
+        <h2>출원 전 발명은 <span class="text-pk">가장 중요한 비밀</span>입니다</h2>
         <p class="section-lead">
-          발명은 출원 전까지 영업비밀입니다. PatentForge는 외부 LLM 호출 시 자동 마스킹, ZDR(Zero Data Retention) 계약 모델만 사용,
-          모든 호출의 SHA-256 hash chain 보존으로 사후 변조를 암호학적으로 차단합니다.
+          발명은 출원하기 전까지 새어 나가면 안 되는 비밀입니다.
+          PatentForge는 발명 내용의 보관과 전송을 엄격하게 관리하고, 필요한 최소한만 다루며, 약속한 기간이 지나면 지웁니다.
         </p>
       </div>
 
       <div class="grid-2">
         <div class="list-card neu-raised sec">
-          <h3>인증 · 권한 <span class="pill">RBAC</span></h3>
+          <h3>계정과 접근 관리 <span class="pill">누가 볼 수 있나</span></h3>
           <ul>
-            <li><b>JWT 24h TTL</b><span>모든 API 호출에 Bearer 토큰 필요. 만료 시 재로그인.</span></li>
-            <li><b>RBAC 3-Role</b><span>inventor / reviewer(변리사) / admin. 운영 환경에서 reviewer/admin만 최종 승인 가능.</span></li>
-            <li><b>fetch+blob 다운로드</b><span>다운로드 요청에도 인증 헤더 자동 첨부. 다이렉트 URL 차단.</span></li>
-            <li><b>Squid 단일 IP</b><span>외부 API(KIPRIS/USPTO 등)는 단일 프록시 경유. quota 관리 + 감사 추적.</span></li>
+            <li><b>본인만 접근</b><span>내 사건은 로그인한 본인만 볼 수 있습니다.</span></li>
+            <li><b>역할 구분</b><span>발명자 · 검토 변리사 · 관리자의 권한이 분리되어 있고, 최종 승인은 검토 권한이 있는 사람만 할 수 있습니다.</span></li>
+            <li><b>안전한 다운로드</b><span>문서 다운로드에도 본인 확인이 붙습니다. 링크가 새어 나가도 남이 받을 수 없습니다.</span></li>
           </ul>
         </div>
 
         <div class="list-card neu-raised sec">
-          <h3>영업비밀 · 데이터 보호 <span class="pill">Zero Data Retention</span></h3>
+          <h3>발명 내용 보호 <span class="pill">어떻게 지키나</span></h3>
           <ul>
-            <li><b>confidential_terms</b><span>IDF 입력 시 발명자가 직접 표시한 용어는 외부 LLM 호출 시 자동 마스킹.</span></li>
-            <li><b>ZDR 모델만 사용</b><span>Anthropic 엔터프라이즈 ZDR 계약 모델만 confidential 처리에 사용. 학습·검토 보존 없음.</span></li>
-            <li><b>Redis 24h 캐시</b><span>PriorArt 검색 결과 캐싱. 발명 본문은 캐시 키에 들어가지 않음.</span></li>
-            <li><b>5년 보존 → 삭제</b><span>사건 종료 후 5년 보존(특허 심사 대응). 그 이후 자동 삭제. 사용자 요청 시 즉시 삭제(right to erasure).</span></li>
-            <li><b>SHA-256 hash chain</b><span>변리사 결정·LLM 호출·비용은 hash chain으로 영구 보존. 사후 변조 시 chain 깨짐.</span></li>
+            <li><b>민감 용어 가림 처리</b><span>비밀로 표시한 용어는 외부 시스템에 보낼 때 자동으로 가려집니다.</span></li>
+            <li><b>학습 · 재사용 금지</b><span>발명 내용을 보관하거나 학습에 쓰지 않기로 계약된 서비스만 사용합니다.</span></li>
+            <li><b>기업은 완전 내부 처리</b><span>회사 설치형(방법 C)은 발명 내용이 회사 밖으로 아예 나가지 않습니다.</span></li>
+            <li><b>기간이 지나면 삭제</b><span>사건 종료 후 심사 대응에 필요한 기간 동안 보관하고 그 후 삭제합니다. 요청하시면 즉시 삭제합니다.</span></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- ===== ROADMAP ===== -->
-    <section id="roadmap" class="section">
+    <!-- ===== JOURNEY ===== -->
+    <section id="journey" class="section">
       <div class="section-head">
-        <span class="section-tag">Evolution</span>
-        <h2>v1 → v2 → <span class="text-em">v3</span> 로 진화한 검증 체계</h2>
+        <span class="section-tag">이용 절차</span>
+        <h2>처음이라도 <span class="text-em">8단계</span>면 충분합니다</h2>
         <p class="section-lead">
-          1차 시험 산출물에서 발견된 명세서 본문 부재 BLOCKER 4건과 단락 [0073] 절단부터, v3에서 KIPO-NUMERIC-001/002 + KIPO-REFNUM-DUP
-          자동 검증과 reference_numerals SSOT, 면책 조항 동적 생성까지 — 단계적으로 강화된 검증 규칙의 진화 이력입니다.
+          앞의 다섯 단계는 내용을 입력하는 과정이고, 나머지는 자동 진행과 확인, 그리고 다운로드입니다.
+          화면의 안내를 따라가기만 하면 됩니다.
         </p>
       </div>
 
-      <div class="timeline">
-        <div class="tl-item neu-raised">
-          <div class="tl-tag">v0 · 1차 시험</div>
-          <h4>출원 불가</h4>
-          <p>명세서 본문 부재 <b>BLOCKER 4건</b>, 단락 [0073] 절단, 청구항-도면 부호 불일치. 출원 자체가 거부되는 상태.</p>
+      <div class="journey">
+        <div class="journey-step neu-raised">
+          <div class="step-no">01</div>
+          <h4>회원가입 · 로그인</h4>
+          <p>서비스에 접속해 회원가입하고 로그인합니다.</p>
         </div>
-        <div class="tl-item neu-raised">
-          <div class="tl-tag">v1·v2 · Remediation</div>
-          <h4>출원 가능 수준</h4>
-          <p>9가지 Issue 중 7건 완전·2건 부분 해결. 잔존: 청구항 7 논리 모순 BLOCKER, 참조부호 이중 체계 MAJOR.</p>
+        <div class="journey-step neu-raised">
+          <div class="step-no">02</div>
+          <h4>새 사건 만들기</h4>
+          <p>'+ 새 사건' 버튼을 누르고 발명의 제목과 내용을 자유롭게 적습니다.</p>
         </div>
-        <div class="tl-item neu-raised">
-          <div class="tl-tag">v3 · 2026.05.05</div>
-          <h4>KIPO 완성 + Mode A/B/C</h4>
-          <p>KIPO-NUMERIC + REFNUM-DUP 자동 검증. SSOT, 동적 면책 조항. v3.1: <b>Mode A/B/C + SHA-256 disclaimer + 5-deep interrupt_before</b>.</p>
+        <div class="journey-step neu-raised">
+          <div class="step-no">03</div>
+          <h4>이용 방법 선택</h4>
+          <p>변리사와 함께(A) · 내가 직접(B) · 회사 안에서(C) 중 상황에 맞는 방법을 고릅니다.</p>
         </div>
-        <div class="tl-item neu-raised pulse-card">
-          <div class="tl-tag tl-current">v3.4 · NOW · 2026.05.29</div>
-          <h4>4-관할 양식 + Critic</h4>
-          <p><b>USPTO + EPO + PCT 추가</b>. 4-engine figure pipeline. CriticAgent 게이트 추가. 43 routes. 26 templates.</p>
+        <div class="journey-step neu-raised">
+          <div class="step-no">04</div>
+          <h4>출원인 정보 입력</h4>
+          <p>출원인과 발명자 정보를 한 번만 입력합니다. 모든 서식에 자동으로 반영됩니다.</p>
         </div>
-        <div class="tl-item neu-raised">
-          <div class="tl-tag">v4 · planned</div>
-          <h4>ResponseAgent + KIPA API</h4>
-          <p>OA 응답(KIPO §29/§42 + USPTO §102/§103/§112 + EPO Art.54/56/83/84). KIPA license API. SMS/PASS/카카오 본인 인증. ePAS XSD. KIPRIS 자동 추적. KO→EN full LLM.</p>
+        <div class="journey-step neu-raised">
+          <div class="step-no">05</div>
+          <h4>발명 내용 보완</h4>
+          <p>시스템이 되묻는 질문에 답하며 발명 내용을 함께 다듬습니다.</p>
         </div>
-      </div>
-
-      <div class="status-grid" style="margin-top: 32px;">
-        <div class="status-pill neu-raised ok">
-          <div class="num">70</div>
-          <div class="lbl">Spec 단락</div>
+        <div class="journey-step neu-raised">
+          <div class="step-no">06</div>
+          <h4>자동 작성 진행</h4>
+          <p>진행 표시줄을 보며 기다립니다. 확인이 필요한 순간에만 알림이 옵니다.</p>
         </div>
-        <div class="status-pill neu-raised ok">
-          <div class="num">4</div>
-          <div class="lbl">USD · $4.53</div>
+        <div class="journey-step neu-raised">
+          <div class="step-no">07</div>
+          <h4>확인 · 검토</h4>
+          <p>변리사의 검토 또는 본인의 확인 절차를 거칩니다. 끝나면 최종 문서가 만들어집니다.</p>
         </div>
-        <div class="status-pill neu-raised note">
-          <div class="num">43</div>
-          <div class="lbl">FastAPI Routes</div>
+        <div class="journey-step neu-raised">
+          <div class="step-no">08</div>
+          <h4>다운로드 · 출원</h4>
+          <p>완성된 서류를 내려받아 특허청에 제출합니다. 직접 출원은 안내서가 함께 제공됩니다.</p>
         </div>
       </div>
     </section>
 
-    <!-- ===== ADVERTISING ===== -->
-    <section id="advertising" class="section">
+    <!-- ===== RESPONSE ===== -->
+    <section id="response" class="section">
       <div class="section-head">
-        <span class="section-tag">Advertising Guidelines</span>
-        <h2>광고 표현 — <span class="text-pk">합법 vs 위법</span></h2>
+        <span class="section-tag">심사 결과 받은 후에도</span>
+        <h2>특허청에서 <span class="text-am">보완 요청</span>이 와도 함께합니다</h2>
         <p class="section-lead">
-          한국 변리사법 §21 위반 시 5년 이하 징역 또는 5천만원 이하 벌금(§54). 표시광고법 §3 부당광고 금지.
-          PatentForge 운영자가 사용 가능한 표현과 절대 사용 금지 표현을 1:1 대조표로 정리합니다. <b>모든 마케팅·웹사이트·SNS 카피는 본 가이드를 준수해야 합니다.</b>
+          출원하면 특허청 심사관이 서류를 심사하고, 문제가 있으면 "이런 이유로 이대로는 등록이 어렵다"는
+          통지서를 보냅니다. 처음 받으면 당황스럽지만, 정해진 기간 안에 답변하면 되는 정상적인 절차입니다.
+          PatentForge는 이 답변 준비도 도와드립니다.
         </p>
       </div>
 
-      <div class="ad-table neu-raised">
-        <div class="ad-row ad-head">
-          <div class="ok-h">✓ 합법 표현 (사용 가능)</div>
-          <div class="no-h">✗ 위법 가능성 (절대 금지)</div>
+      <div class="grid-3">
+        <div class="card neu-raised card-hover">
+          <div class="card-icon neu-pressed"><span class="ico-am">📥</span></div>
+          <h3>1 · 통지서 올리기</h3>
+          <p>특허청에서 받은 통지서 파일을 올리면, 어떤 이유로 어떤 부분이 지적되었는지 자동으로 읽어 정리해 드립니다.</p>
         </div>
-        <div class="ad-row neu-pressed">
-          <div class="ok">"AI 기반 특허 명세서 작성 도구"</div>
-          <div class="no">"AI 변리사"</div>
+        <div class="card neu-raised card-hover">
+          <div class="card-icon neu-pressed"><span class="ico-am">🔍</span></div>
+          <h3>2 · 차이점 찾기</h3>
+          <p>원래 출원 서류와 대조해, 지적된 기존 기술과 내 발명의 차이점을 찾아내고 보완 방향을 제안합니다.</p>
         </div>
-        <div class="ad-row neu-pressed">
-          <div class="ok">"변리사 협업 플랫폼"</div>
-          <div class="no">"변리사 대체 서비스"</div>
-        </div>
-        <div class="ad-row neu-pressed">
-          <div class="ok">"특허 명세서 자동 생성 보조 도구"</div>
-          <div class="no">"변리사 없이 출원 가능" (강조 시)</div>
-        </div>
-        <div class="ad-row neu-pressed">
-          <div class="ok">"셀프 출원 지원 플랫폼"</div>
-          <div class="no">"전문가 수준 출원 보장"</div>
-        </div>
-        <div class="ad-row neu-pressed">
-          <div class="ok">"변리사 검토 시간을 단축합니다"</div>
-          <div class="no">"변리사보다 정확합니다"</div>
-        </div>
-        <div class="ad-row neu-pressed">
-          <div class="ok">"발명자가 직접 출원할 수 있도록 돕습니다"</div>
-          <div class="no">"PatentForge가 출원해드립니다"</div>
-        </div>
-        <div class="ad-row neu-pressed">
-          <div class="ok">"한국 변리사법 §21 단서에 따라 본인 직접 출원이 가능합니다"</div>
-          <div class="no">"특허 등록 보장" / "100% 등록 가능"</div>
-        </div>
-      </div>
-
-      <div class="grid-2" style="margin-top: 28px; gap: 22px;">
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">📣</span></div>
-          <h3>권장 메인 슬로건</h3>
-          <p style="font-size:14px; line-height:1.75;">
-            <b>"PatentForge — AI가 작성하고, 변리사가 검토하고, 당신이 출원하는 특허 플랫폼"</b><br/><br/>
-            본 슬로건은 ① "AI 변리사" 표현 회피 ② 변리사 역할 명시 ③ "당신이 출원" 으로 §21 단서 암시 ④ 도구 성격 강조 — 4가지 안전 요소를 모두 충족.
-          </p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-pk">🚫</span></div>
-          <h3>표시광고법 §3 부당광고 회피</h3>
-          <p style="font-size:14px; line-height:1.75;">
-            • 등록률 통계 인용 시 <b>출처 명시</b> ("KIPO 통계 2024년 기준")<br/>
-            • "추정" 수치는 <b>"추정(estimated)"</b> 표시 강제<br/>
-            • 변리사 사무소와의 비교 시 <b>객관적 사실만</b><br/>
-            • 사용자 후기 인용 시 사실 검증 후 게재
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== COUNTRIES ===== -->
-    <section id="countries" class="section">
-      <div class="section-head">
-        <span class="section-tag">International</span>
-        <h2>국가별 <span class="text-em">셀프 출원 합법성</span></h2>
-        <p class="section-lead">
-          PatentForge Mode B(셀프 출원)는 한국에서 변리사법 §21 단서로 합법이지만, 국가마다 셀프 출원 법규가 다릅니다.
-          진출 우선순위는 한국(Phase 1) → 일본·미국(Phase 3) → 유럽(Phase 3 변리사 강제) → 중국(Phase 4 외국인 제한)입니다.
-        </p>
-      </div>
-
-      <div class="countries">
-        <div class="country neu-raised ok">
-          <div class="country-head">
-            <div class="country-flag">KR</div>
-            <h4>한국 KIPO</h4>
-            <span class="country-status">PHASE 1</span>
-          </div>
-          <p>변리사법 §21 단서 ("본인이 직접 행하는 경우") 명시적 허용. PatentForge 1차 진출 시장.</p>
-          <div class="country-meta">근거: 변리사법 §21 단서</div>
-        </div>
-        <div class="country neu-raised ok">
-          <div class="country-head">
-            <div class="country-flag">US</div>
-            <h4>미국 USPTO</h4>
-            <span class="country-status">PHASE 3</span>
-          </div>
-          <p>"Pro se" 출원 적극 장려. small entity 50% / micro entity 75% 출원료 할인. Pro Bono 변리사 매칭 프로그램 운영.</p>
-          <div class="country-meta">근거: 35 U.S.C. §111</div>
-        </div>
-        <div class="country neu-raised ok">
-          <div class="country-head">
-            <div class="country-flag">JP</div>
-            <h4>일본 JPO</h4>
-            <span class="country-status">PHASE 3</span>
-          </div>
-          <p>弁理士法 §75 단서로 셀프 출원 합법. 한국과 유사한 단서 구조.</p>
-          <div class="country-meta">근거: 弁理士法 §75 단서</div>
-        </div>
-        <div class="country neu-raised ok">
-          <div class="country-head">
-            <div class="country-flag">PCT</div>
-            <h4>PCT 국제출원</h4>
-            <span class="country-status">PHASE 3</span>
-          </div>
-          <p>PCT Rule 90.4(d) 위임장 면제. 한국 KIPO를 수리관청으로 한국어 출원 가능. 우선권 자동 주장.</p>
-          <div class="country-meta">근거: PCT Rule 90</div>
-        </div>
-        <div class="country neu-raised partial">
-          <div class="country-head">
-            <div class="country-flag">EU</div>
-            <h4>유럽 EPO</h4>
-            <span class="country-status">PHASE 3</span>
-          </div>
-          <p>EPC §133에 따라 비EPC 회원국 거주자(한국인)는 European Patent Attorney 강제. <b>Mode A 한정 지원.</b></p>
-          <div class="country-meta">근거: EPC §133 — Mode A only</div>
-        </div>
-        <div class="country neu-raised blocked">
-          <div class="country-head">
-            <div class="country-flag">CN</div>
-            <h4>중국 CNIPA</h4>
-            <span class="country-status">PHASE 4</span>
-          </div>
-          <p>专利法 §19에 따라 외국인은 중국 등록 변리사 강제. 셀프 출원 사실상 불가능.</p>
-          <div class="country-meta">근거: 专利法 §19</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== MARKET ===== -->
-    <section id="market" class="section">
-      <div class="section-head">
-        <span class="section-tag">Market Expansion · 페르소나 시장 규모</span>
-        <h2>3 페르소나 × 정량 시장 = <span class="text-am">한국 연 약 24억원</span></h2>
-        <p class="section-lead">
-          Hero에서 정의한 3 페르소나의 정량 시장을 합산. <b>개인 발명가 13K~20K</b>(KIPO 통계 기반) ·
-          <b>기업 R&amp;D 약 2,500개사</b>(중견 2,000 + 대기업 500) · <b>AI 친화 변리사 약 3,600명</b>(변리사 12,000 × 30%).
-          국내 경쟁 서비스(D 제품, E 제품, F 제품)는 모두 Mode A만 제공 — <b>PatentForge는 한국 유일의 모드 분기형 플랫폼</b>입니다.
-        </p>
-      </div>
-
-      <div class="market">
-        <div class="market-seg neu-raised s-b">
-          <span class="seg-tag">PERSONA 1 · MODE B</span>
-          <h4>👤 개인 발명가 (B2C)</h4>
-          <div class="seg-target">국내 13,000~20,000명 (KIPO 연 개인 출원 30,000건 중 디지털 친화)</div>
-          <div class="seg-revenue">연 1.7<small>억원</small></div>
-          <p>ARPU 사건당 5~10만원 · 시장 점유율 20% · 연 1건 가정. 17,000 × 0.20 × 5만원 = <b>약 1.7억원</b>. 진입 장벽 200만원 → 5만원으로 시장 5~10배 확장.</p>
-        </div>
-        <div class="market-seg neu-raised s-c">
-          <span class="seg-tag">PERSONA 2 · MODE C</span>
-          <h4>🏢 기업 R&amp;D (B2B Enterprise)</h4>
-          <div class="seg-target">중견 2,000 + 대기업 500 = 약 2,500개사 (잠재 약 250개)</div>
-          <div class="seg-revenue">연 2.5<small>억원</small></div>
-          <p>ARPU 연 1,000만원 · 시장 점유율 10% 가정. 250 × 0.10 × 1,000만원 = <b>약 2.5억원</b>. <b>국내 어떤 경쟁사도 온프레미스 특허 작성 플랫폼 미보유</b> — 강력한 차별화 카드.</p>
-        </div>
-        <div class="market-seg neu-raised s-a">
-          <span class="seg-tag">PERSONA 3 · MODE A</span>
-          <h4>⚖ AI 우호 변리사 (B2B)</h4>
-          <div class="seg-target">한국 변리사 12,000명 × AI 친화 30% = 약 3,600명</div>
-          <div class="seg-revenue">월 1.8<small>억원</small></div>
-          <p>ARPU 월 50만원 · 시장 점유율 10% · 1년 12개월 = <b>연 약 21.6억원</b>. 형식 작업 자동화로 사무소 처리량 3~5배 향상이 핵심 가치 제안.</p>
+        <div class="card neu-raised card-hover">
+          <div class="card-icon neu-pressed"><span class="ico-am">📤</span></div>
+          <h3>3 · 답변서 초안 받기</h3>
+          <p>의견서와 보정서 초안을 만들어 드립니다. 본인이 검토한 뒤 직접 제출하거나, 변리사와 상의할 수 있습니다.</p>
         </div>
       </div>
 
       <div class="banner neu-raised warn" style="margin-top: 28px;">
-        <div class="banner-icon">★</div>
+        <div class="banner-icon">⚠</div>
         <div class="banner-body">
-          <h4>기업 R&amp;D 특허 담당자를 위한 Mode C — 영업비밀 보호 일급 자산</h4>
+          <h4>초안은 참고 자료입니다</h4>
           <p>
-            <b>vLLM 로컬 서빙 + Squid 프록시 강제 차단</b>으로 외부 LLM API 호출 0건 ·
-            <b>온프레미스 배포 검증기</b>로 영업비밀 외부 송신 0건 audit 자동 검증 ·
-            <b>사내 변리사 등록 + 사내 검토 페이지</b>로 기업 내부 결재 흐름 그대로 적용 ·
-            <b>법인 명의 출원 강제</b>로 기업 IP 자산 일관 관리.
-            중견·대기업 R&amp;D 부서가 외부 클라우드에 발명을 노출하지 않고 자체 인프라에서 4-관할 출원 패키지를 생성할 수 있는 국내 유일의 옵션입니다.
+            이 초안은 일반적인 정보 제공 목적의 참고 자료이며, 법률 자문이 아닙니다.
+            <b>제출 전 반드시 본인이 검토하고, 중요한 사건이라면 변리사와 상의하세요.</b>
+            답변 마감일(보통 2개월)은 꼭 지켜야 합니다.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== COMPETITORS ===== -->
-    <section id="competitors" class="section">
-      <div class="section-head">
-        <span class="section-tag">Competitive Analysis · 6번째 가이드</span>
-        <h2>국내 3 + 해외 7 + PatentForge = <span class="text-em">11×N 매트릭스</span></h2>
-        <p class="section-lead">
-          <code>PatentForge-Competitive-Analysis.md</code> 의 11종 비교를 6개 핵심 차원으로 압축한 매트릭스.
-          PatentForge는 <b>멀티에이전트 + 적대적 검증 + 셀프 출원 + 온프레미스 + 4-관할 + 변리사법 §21 단서 활용</b>의 6중 결합으로
-          국내·해외 어떤 단일 제품도 갖지 못한 차별 자산을 보유합니다.
-        </p>
-      </div>
-
-      <div class="compet-table neu-raised">
-        <div class="compet-row compet-head">
-          <div>차원</div>
-          <div class="pf">PatentForge</div>
-          <div>A 제품</div>
-          <div>B 제품</div>
-          <div>C 제품</div>
-          <div>D 제품</div>
-          <div>E 제품</div>
-          <div>F 제품</div>
-        </div>
-        <div class="compet-row neu-pressed">
-          <div>멀티에이전트 (3-tier)</div>
-          <div class="pf-cell">★ Unique</div>
-          <div class="n">✗</div>
-          <div class="p">△</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-        </div>
-        <div class="compet-row neu-pressed">
-          <div>청구범위 적대적 검증</div>
-          <div class="pf-cell">★ AutoGen RT</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-        </div>
-        <div class="compet-row neu-pressed">
-          <div>신규성 다중 합의 (3 페르소나)</div>
-          <div class="pf-cell">★ CrewAI</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-        </div>
-        <div class="compet-row neu-pressed">
-          <div>셀프 출원 모드 (Mode B)</div>
-          <div class="pf-cell">★ §21 단서</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-        </div>
-        <div class="compet-row neu-pressed">
-          <div>완전 온프레미스 (Mode C)</div>
-          <div class="pf-cell">★ vLLM 강제</div>
-          <div class="n">✗</div>
-          <div class="p">△ hybrid</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-        </div>
-        <div class="compet-row neu-pressed">
-          <div>4-관할 (KIPO+USPTO+EPO+PCT)</div>
-          <div class="pf-cell">✓ v3.2</div>
-          <div class="p">USPTO</div>
-          <div class="p">USPTO+</div>
-          <div class="p">USPTO</div>
-          <div class="y">KIPO</div>
-          <div class="y">KIPO</div>
-          <div class="y">KO+JP+CN</div>
-        </div>
-        <div class="compet-row neu-pressed">
-          <div>도면 자동 생성 품질</div>
-          <div class="p">△ 4-engine</div>
-          <div class="y">★★★</div>
-          <div class="y">★★★</div>
-          <div class="p">△</div>
-          <div class="p">△</div>
-          <div class="p">△</div>
-          <div class="n">✗</div>
-        </div>
-        <div class="compet-row neu-pressed">
-          <div>의견제출통지서 대응 (OA)</div>
-          <div class="p">△ Phase 4</div>
-          <div class="n">✗</div>
-          <div class="y">5× faster</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-          <div class="n">✗</div>
-        </div>
-        <div class="compet-row neu-pressed">
-          <div>가격 (개인 1건)</div>
-          <div class="pf-cell">$5–10 Mode B</div>
-          <div>$99–599/mo</div>
-          <div>Enterprise</div>
-          <div>~$200</div>
-          <div>B2B only</div>
-          <div>B2B only</div>
-          <div>~$100</div>
-        </div>
-      </div>
-
-      <div class="grid-3" style="margin-top: 28px;">
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">🏆</span></div>
-          <h3>차별 자산 7종</h3>
-          <p style="font-size:13px;">① 멀티에이전트 (LangGraph+CrewAI+AutoGen) ② KIPO+한국어 특화 ③ Mode B 셀프 출원 ④ Mode C 온프레미스 ⑤ 6-소스 선행기술 검색 ⑥ 40+ QA 규칙 ⑦ 기업급 보안 생태계 (vLLM 로컬 + ZDR + 영업비밀 0건 송신).</p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-am">😅</span></div>
-          <h3>약점 7종 (솔직 인정)</h3>
-          <p style="font-size:13px;">① 출시 시점 후발(경쟁 2~8년 앞섬) ② 도면 품질 A 제품·B 제품 대비 단순 ③ OA 대응 미구현(B 제품 5× faster) ④ ~~글로벌 양식 미지원~~ <b>v3.2 해소</b> ⑤ 사용자 검증 데이터 부족 ⑥ 사내 R&amp;D 영업 채널 ⑦ 다국가 도면 호환성.</p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">📈</span></div>
-          <h3>비용 비교 — 개인 발명가 1건</h3>
-          <p style="font-size:13px;">변리사 사무소 200~500만원 vs <b>PatentForge Mode B 5~10만원</b> = <b>95~98% 비용 절감</b>. 단, 등록률 75% → 45~55%로 감소(자기 책임). <b>13K~20K 개인 발명가</b>의 진입 장벽 200만원 → 5만원으로 시장 5~10배 확장.</p>
-        </div>
-      </div>
-
-      <div class="banner neu-raised warn" style="margin-top: 28px;">
-        <div class="banner-icon">★</div>
-        <div class="banner-body">
-          <h4>4분면 매트릭스 — PatentForge가 유일하게 점유하는 영역</h4>
-          <p>
-            <b>한국 시장</b>: 멀티에이전트 + 변리사 강제 분면 = PatentForge 유일.
-            Mode B는 멀티에이전트 + 도구 제공 분면으로 확장. ·
-            <b>글로벌 시장</b>: 멀티에이전트 + <b>온프레미스</b> 분면 = PatentForge 유일.
-            B 제품이 멀티에이전트 영역에 가깝지만 완전 온프레미스가 아닙니다.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SELF-FILING META ===== -->
-    <section id="self-filing" class="section">
-      <div class="section-head">
-        <span class="section-tag">Recursive Self-Filing · v3-spec-final-review</span>
-        <h2><span class="text-em">PatentForge가 PatentForge를 출원했다</span></h2>
-        <p class="section-lead">
-          v3.0~v3.2 개발 과정에서 PatentForge는 자신의 핵심 기술 3건을 자기 도구로 명세서를 생성·검증·셀프 출원하는 <b>재귀적 셀프 테스트</b>를 거쳤습니다.
-          이는 마케팅 카피가 아니라 <b>시스템 신뢰성의 결정적 입증</b>입니다 — NoveltyAgent의 자기 확신 편향 차단,
-          SSOT의 자기 일관성, v1→v2→v3의 자기 개선 능력이 한 사건에서 동시 검증됩니다.
-        </p>
-      </div>
-
-      <div class="meta-card neu-raised">
-        <div class="meta-row">
-          <div class="meta-score">93<small>/100</small></div>
-          <div class="meta-body">
-            <h3>v3 명세서 종합 점수 — "출원 가능 형태 95% 도달"</h3>
-            <p>
-              PatentForge가 자기 자신의 핵심 발명 (다중 페르소나 격리 합의 + SSOT 분할 호출) 을
-              자기 도구로 작성·검증한 결과. <b>v2의 BLOCKER 1건 + MAJOR 12건이 v3에서 모두 해결</b>되었으며,
-              KIPO 양식 95/100 · 청구항-명세서 정합성 98/100 · 정량 수치 일관성 100/100 · 청구항 강건성 90/100을 달성.
-              P0 3건 보완 후 즉시 KIPO Mode B 셀프 출원 가능.
-            </p>
-          </div>
-        </div>
-
-        <div class="meta-grid">
-          <div class="meta-tile">
-            <div class="num">19</div>
-            <div class="lbl">Claims (3 + 16)</div>
-          </div>
-          <div class="meta-tile">
-            <div class="num">72</div>
-            <div class="lbl">Spec [0001]~[0072]</div>
-          </div>
-          <div class="meta-tile">
-            <div class="num">15</div>
-            <div class="lbl">Variant Options 정의</div>
-          </div>
-          <div class="meta-tile">
-            <div class="num">100</div>
-            <div class="lbl">Numeric Consistency %</div>
-          </div>
-          <div class="meta-tile">
-            <div class="num">5</div>
-            <div class="lbl">Drawings (각 3회 균등)</div>
-          </div>
-          <div class="meta-tile">
-            <div class="num">0</div>
-            <div class="lbl">BLOCKER 잔존</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-3" style="margin-top: 28px;">
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">🧠</span></div>
-          <h3>메타 검증 1 — 객관성 입증</h3>
-          <p>NoveltyAgent의 3 페르소나 격리 합의가 <b>자기 자신의 신규성을 평가하는 상황</b>에서도 자기 확신 편향에 빠지지 않고 객관적 판단을 도출. 시스템 신뢰성의 강력한 증거.</p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">🔄</span></div>
-          <h3>메타 검증 2 — 일관성 입증</h3>
-          <p>SSOT(140) + 단락 번호 검증기(200) + 토큰 절단 감지기(210)가 정상 작동. v3에서 <b>BLOCKER 0건 + 단락 [0001]~[0072] 연속 + 마지막 단락 정상 종결</b> 달성.</p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">⬆</span></div>
-          <h3>메타 검증 3 — 자기 개선 능력</h3>
-          <p>v1 BLOCKER 4건 → v2 BLOCKER 1건 → <b>v3 BLOCKER 0건</b>. 시스템이 자기 산출물의 결함을 식별하고 차기 버전에서 해결한 사실은 자기 개선 능력의 입증.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== KPI ===== -->
-    <section id="kpi" class="section">
-      <div class="section-head">
-        <span class="section-tag">v3.2 KPI · Internal Run</span>
-        <h2>최종 v3 사건 <span class="text-em">1건 자체 처리</span></h2>
-        <p class="section-lead">
-          clean reset 후 동일 사건을 PatentForge가 자체 처리한 결과. 13 stages · ~50 min · <b>$4.53 USD</b> · spec 70 paragraphs.
-        </p>
-      </div>
-
-      <div class="status-grid">
-        <div class="status-pill neu-raised ok">
-          <div class="num">13</div>
-          <div class="lbl">Stages (12 + Critic)</div>
-        </div>
-        <div class="status-pill neu-raised ok">
-          <div class="num">50</div>
-          <div class="lbl">Min · clean reset</div>
-        </div>
-        <div class="status-pill neu-raised ok">
-          <div class="num">4</div>
-          <div class="lbl">USD · $4.53</div>
-        </div>
-        <div class="status-pill neu-raised warn">
-          <div class="num">2</div>
-          <div class="lbl">BLOCKER detected ↑</div>
-        </div>
-      </div>
-
-      <div class="grid-3" style="margin-top: 28px;">
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">📐</span></div>
-          <h3>4-관할 sheet 정규화</h3>
-          <p>한 PNG → KIPO 2481×3507@300dpi · USPTO 5100×6600@600dpi (FIG.+Sheet) · EPO 2481×3507@300dpi mono · PCT 2481×3507@300dpi mono. End-to-end smoke 통과.</p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">🎯</span></div>
-          <h3>BLOCKER 검출률 ↑</h3>
-          <p>v2 검출 1건 → <b>v3 검출 2건</b> (KIPO-NUMERIC + REFNUM-DUP 신규 룰로). MAJOR는 v2 12건 → v3 9건으로 감소. 검증 강화 + 결함 감소 동시 달성.</p>
-        </div>
-        <div class="card neu-raised">
-          <div class="card-icon neu-pressed"><span class="ico-em">💾</span></div>
-          <h3>회귀 가드</h3>
-          <p>모든 PR에서 <code>tests/test_kipo_validators.py + tests/test_graph_builds.py</code> 그린 강제. KIPO 골든 사건 docx hash 차이 0건 = PR 차단. v3.2에서 KIPO 회귀 0건.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== COMPARE ===== -->
-    <section id="compare" class="section">
-      <div class="section-head">
-        <span class="section-tag">Filing vs Review</span>
-        <h2>두 산출물의 <span class="text-em">의도적 분리</span></h2>
-        <p class="section-lead">
-          같은 사건에서 두 종의 docx가 산출되는 이유는 <b>독자가 다르기 때문</b>입니다.
-          KIPO 심사관에게는 발명만 깔끔히, 변리사·내부 검토자에게는 시스템이 어떻게 도달했는지 모두.
-        </p>
-      </div>
-
-      <div class="compare neu-raised">
-        <div class="compare-row compare-head">
-          <div>구분</div>
-          <div>Filing — KIPO 출원용</div>
-          <div>Review — 변리사·검토용</div>
-        </div>
-        <div class="compare-row neu-pressed">
-          <div>대상 독자</div>
-          <div class="hi">KIPO 심사관 / 변리사 명의 출원</div>
-          <div class="lo">변리사 / 개발팀 / 발명자</div>
-        </div>
-        <div class="compare-row neu-pressed">
-          <div>본문 구성</div>
-          <div class="hi">7섹션 + 청구범위 + 요약서 + 도면</div>
-          <div class="lo">7섹션 + 청구범위 + 요약서 + 도면 (동일)</div>
-        </div>
-        <div class="compare-row neu-pressed">
-          <div>자동 검증 부록</div>
-          <div class="lo">제외 — 깔끔</div>
-          <div class="hi">포함 — QA 보고서 + Critic 점수</div>
-        </div>
-        <div class="compare-row neu-pressed">
-          <div>비용 · 시간 분석</div>
-          <div class="lo">제외</div>
-          <div class="hi">포함 — 단계별 breakdown</div>
-        </div>
-        <div class="compare-row neu-pressed">
-          <div>면책 조항</div>
-          <div class="hi">변리사 audit log 반영</div>
-          <div class="hi">동일 + 변리사 코멘트 history</div>
-        </div>
-        <div class="compare-row neu-pressed">
-          <div>스타일</div>
-          <div class="hi">WDLAB H1 #1F3864, 본문 11pt 맑은 고딕</div>
-          <div class="hi">동일 + 검증 부록 회색조</div>
-        </div>
-        <div class="compare-row neu-pressed">
-          <div>출원 직접 사용</div>
-          <div class="hi">✓ 가능 — Filing 버전을 KIPO에 제출</div>
-          <div class="lo">✗ 검토용 — 출원에 사용 금지</div>
         </div>
       </div>
     </section>
@@ -2162,46 +830,43 @@
     <!-- ===== FUTURE ===== -->
     <section id="future" class="section">
       <div class="section-head">
-        <span class="section-tag">Roadmap · Vision</span>
-        <h2>PatentForge의 <span class="text-am">최종 목표</span></h2>
+        <span class="section-tag">우리의 약속</span>
+        <h2>PatentForge가 <span class="text-am">약속드리는 것</span></h2>
         <p class="section-lead">
-          단기는 KIPO 출원 안정성, 중기는 거절이유통지 후속 워크플로우(의견서·보정서) 자동화, 장기는 PCT·USPTO·EPO 다국 출원 지원.
-          <b>궁극적으로는 변리사가 법적 판단에만 시간을 쓰도록 하는 표준 협업 도구</b>가 되는 것이 목표입니다.
+          특허를 내고 싶은 사람이 비용 때문에 포기하지 않도록, 기업의 기밀이 안전하게 지켜지도록,
+          변리사가 더 중요한 일에 시간을 쓸 수 있도록 — 이 세 가지가 PatentForge의 존재 이유입니다.
         </p>
       </div>
 
       <div class="grid-3">
         <div class="card neu-raised">
           <div class="card-icon neu-pressed"><span class="ico-am">👤</span></div>
-          <h3>개인 발명가에게 약속</h3>
+          <h3>개인 발명가에게</h3>
           <p style="font-size:13px; line-height:1.75;">
-            • <b>비용 95~98% 절감</b> — 200만원 → 5만원<br/>
-            • <b>KIPOnet 셀프 출원 가이드</b> 6단계 PDF 자동 동봉<br/>
-            • <b>면책 동의서 + SHA-256</b> — 법적 보호<br/>
-            • <b>의견제출 대응 ResponseAgent</b> — 거절이유통지서 OCR + 의견서 초안<br/>
-            • 13,000~20,000명 잠재 사용자
+            • 200만원 → 5만원대, 비용 부담을 크게 낮춥니다<br/>
+            • 직접 출원 방법을 차근차근 안내합니다<br/>
+            • 확인 절차와 기록으로 안전하게 보호합니다<br/>
+            • 심사 결과를 받은 후의 대응도 돕습니다
           </p>
         </div>
         <div class="card neu-raised">
           <div class="card-icon neu-pressed"><span class="ico-cy">🏢</span></div>
-          <h3>기업 R&amp;D 담당자에게 약속</h3>
+          <h3>기업에게</h3>
           <p style="font-size:13px; line-height:1.75;">
-            • <b>외부 LLM 호출 0건</b> — vLLM 로컬 + Squid 프록시 강제<br/>
-            • <b>영업비밀 외부 송신 0건</b> audit 자동 검증<br/>
-            • <b>4-관할 일괄 출원</b> (KIPO+USPTO+EPO+PCT)<br/>
-            • <b>법인 명의 강제</b> + 사내 변리사 등록<br/>
-            • 약 2,500개사 잠재 고객
+            • 발명 내용이 회사 밖으로 나가지 않습니다<br/>
+            • 나간 데이터가 없음을 기록으로 증명합니다<br/>
+            • 국내외 출원 서류를 한 번에 준비합니다<br/>
+            • 사내 승인 절차를 그대로 따릅니다
           </p>
         </div>
         <div class="card neu-raised">
           <div class="card-icon neu-pressed"><span class="ico-em">⚖</span></div>
-          <h3>AI 우호 변리사에게 약속</h3>
+          <h3>변리사에게</h3>
           <p style="font-size:13px; line-height:1.75;">
-            • <b>처리량 3~5배 향상</b> — 형식 작업 자동화<br/>
-            • <b>측정 가능한 metric</b> — 정규식·AST·LLM 출력<br/>
-            • <b>3 점수 표시</b> — 진보성·실시가능성·강건성<br/>
-            • <b>5년 audit log</b> — 변리사법 §2 입증 자료<br/>
-            • 약 3,600명 잠재 사용자
+            • 반복적인 형식 작업을 덜어 드립니다<br/>
+            • 판단 근거를 정리해 함께 제시합니다<br/>
+            • 검토 이력이 기록으로 남아 안심입니다<br/>
+            • 사무소 처리량을 3~5배 높입니다
           </p>
         </div>
       </div>
@@ -2209,37 +874,34 @@
       <div class="grid-2" style="margin-top: 28px;">
         <div class="card neu-raised">
           <div class="card-icon neu-pressed"><span class="ico-em">▲</span></div>
-          <h3>5대 기여 영역</h3>
+          <h3>앞으로 해나갈 일</h3>
           <p style="font-size:13px; line-height:1.75;">
-            ① 변리사 시간 단축 — 형식 작업 자동화로 법적 판단에 집중 ·
-            ② BLOCKER 자동 차단 — 출원 거부 사항을 사전 방지 ·
-            ③ 영업비밀 보호 표준 — ZDR + 마스킹 기본 내장 ·
-            ④ 법적 traceability — 5년 hash-chained audit ·
-            ⑤ 변리사·발명자 협업 UX — 검토 페이지 anchor 코멘트
+            심사 대응 지원을 더 정교하게 다듬고, 해외 출원 지원 범위를 넓히며,
+            변리사와 발명자가 한 화면에서 협업하는 경험을 계속 개선하겠습니다.
+            목표는 <b>변리사가 전문적 판단에만 시간을 쓰게 하는 표준 협업 도구</b>가 되는 것입니다.
           </p>
         </div>
         <div class="card neu-raised">
           <div class="card-icon neu-pressed"><span class="ico-pk">⊘</span></div>
-          <h3>의도적으로 *하지 않을* 일</h3>
+          <h3>결코 하지 않을 일</h3>
           <p style="font-size:13px; line-height:1.75;">
-            ❌ 변리사 대체 (변리사법 §2 저촉) ·
-            ❌ 무인 출원 (HITL 게이트 우회 불가) ·
-            ❌ 발명 본문을 외부 학습에 제공 ·
-            ❌ KIPOnet 시스템 자동 출원 (책임 분리) ·
-            ❌ <b>3 페르소나 외 사용자 (분쟁 중 발명·핵심 IP) 자동화</b>
+            ❌ 변리사를 대체한다고 말하는 것<br/>
+            ❌ 사람의 확인 없이 서류를 완성하는 것<br/>
+            ❌ 발명 내용을 다른 목적에 쓰는 것<br/>
+            ❌ 사용자를 대신해 자동으로 출원하는 것
           </p>
         </div>
       </div>
 
       <div class="quote-banner neu-raised" style="margin-top: 36px;">
         <blockquote>
-          PatentForge는 모든 사람을 위한 도구가 아닙니다.<br/>
-          <b class="text-am">개인 발명가 13K~20K</b>가 변리사 비용 200만원 대신 5만원으로 본인 발명을 보호할 수 있도록,
-          <b class="text-cy">기업 R&amp;D 특허 담당자</b>가 영업비밀을 외부 클라우드에 보내지 않고 사내에서 4-관할 출원 패키지를 만들 수 있도록,
-          <b class="text-em">AI 우호적 변리사</b>가 형식 작업에서 해방되어 법적 판단에 시간을 쓸 수 있도록 — <br/>
-          이 <b>3가지 일을 가장 잘 돕는 도구</b>가 되는 것이 PatentForge의 목표입니다.
+          좋은 발명이 비용의 벽에 막히지 않도록.<br/>
+          <b class="text-am">개인 발명가</b>는 부담 없이 도전하고,
+          <b class="text-cy">기업</b>은 기밀 걱정 없이 출원하고,
+          <b class="text-em">변리사</b>는 전문가의 일에 집중하도록 —<br/>
+          이 세 가지를 가장 잘 돕는 도구가 되겠습니다.
         </blockquote>
-        <cite>— WDLAB · 2026-05-29</cite>
+        <cite>— WDLAB</cite>
       </div>
     </section>
 
@@ -2254,7 +916,7 @@
           </div>
           <div>
             <div class="brand-title">PatentForge</div>
-            <div class="brand-subtitle">v3.2 · 4-Juris (KIPO·USPTO·EPO·PCT) · 3-Mode (A·B·C) · 화이트박스</div>
+            <div class="brand-subtitle">특허 출원 문서 자동 작성 서비스</div>
           </div>
         </div>
         <div class="footer-meta">
