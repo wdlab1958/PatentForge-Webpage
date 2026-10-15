@@ -1,6 +1,6 @@
 # PatentForge — 소개 웹페이지
 
-> **Multi-Agent Multi-Jurisdiction Patent Application Platform — Invention to Filing-Ready Specification (v3.4 · 2026-05-29).**
+> **Multi-Agent Multi-Jurisdiction Patent Application Platform — Invention to Filing-Ready Specification (대문 v2 소비자 친화형 · 2026-10-15).**
 > 3개의 명확한 타겟 페르소나를 위한 도구입니다:
 > - 👤 **개인 발명가 (13,000~20,000명)** → Mode B 셀프 출원, 비용 5만원
 > - 🏢 **기업 R&D 특허 담당자 (~2,500개사)** → Mode C 온프레미스, 영업비밀 외부 송신 0건
@@ -13,7 +13,7 @@
 > [Over-Competitor.md (Phase A–F)](../PatentForge/documents/Over-Competitor.md) +
 > [PatentForge-Competitive-Analysis.docx (11종 비교)](../PatentForge/documents/PatentForge-Competitive-Analysis.docx) +
 > [v3-spec-final-review.md (재귀적 셀프 출원)](../PatentForge/documents/v3-spec-final-review.md)
-> 의 6개 출처 문서를 30개 섹션으로 재구성한 정적 웹사이트입니다.
+> 의 6개 출처 문서를 바탕으로 만든 정적 웹사이트입니다. 2026-08-27 부터 대문은 개발자·변리사용 30개 섹션 구성(v3.2) 대신 **일반 소비자 친화형 14개 섹션(v2)** 으로 교체되었습니다 — 전문 용어 대신 "발명 내용을 이야기하듯 적으면 특허청에 낼 수 있는 서류를 만들어 준다" 는 한 문장 설명과 "AI가 초안을 만들고, 변리사가 검토하고, 출원은 당신이 합니다" 를 중심으로 구성합니다.
 
 🌐 **Live**: https://wdlab1958.github.io/PatentForge-Webpage/
 
@@ -30,7 +30,9 @@
 | 반응형 | 1280 / 1024 / 720px 3 breakpoint |
 | 접근성 | 시멘틱 HTML5 · `aria-label` · 키보드 스크롤 |
 | 배포 | GitHub Pages (`main` branch root) |
-| 섹션 수 | **30** (v1: 12 → v2: 24 → v3.2: 30) |
+| 섹션 수 | **14** (v1: 12 → v2: 24 → v3.2: 30 → 소비자 친화형 v2(2026-08-27): 14) |
+| 진입 동선 | `js/portal.js` — `data-launch` 버튼을 운영에서는 `https://app.patentforge.co.kr`, 로컬(localhost · `*.local`)에서는 `http://localhost:3700` 으로 자동 분기 |
+| 푸터 | 유디포엠㈜ 사업자·법인·통신판매업 신고번호, 본사·서울사무소 연락처 + 이용약관 · 환불 정책 · 개인정보처리방침 링크(`app.patentforge.co.kr/legal/*`) |
 
 ---
 
@@ -64,45 +66,28 @@ PatentForge의 위험 시그널은 AlphaForge와 의미가 다릅니다.
 
 ---
 
-## 2. 페이지 구조 (31 sections)
+## 2. 페이지 구조 (14 sections · 소비자 친화형 v2)
 
-PatentForge 6개 출처 문서를 다음과 같이 매핑 (✦ = v3.2 신규 섹션, ◆ = 페르소나 중심 신규):
+2026-08-27 `index.html` 을 통째로 교체했다(514 추가 / 1,852 삭제). 사이드바는 4개 그룹(소개 · 서비스 · 안심 포인트 · 이용 안내), 본문은 14개 섹션이며 모든 제목이 비전문가 문장이다. 숫자·테스트 수·경쟁사명·API 코드·KPI 섹션은 싣지 않는다.
 
-| § | 섹션 ID | 출처 | 핵심 컴포넌트 |
+| § | 섹션 ID | 사이드바 | 제목 / 핵심 내용 |
 | --- | --- | --- | --- |
-| 1 | `#hero` | README v3.2 + 페르소나 정의 | 5 chip + Hero tagline (개인 발명가/기업 R&D/AI 우호 변리사 명시) + 6 통계 |
-| 2 | `#identity` | Guide + Legal | 6 카드 (도구 vs 대리 / 3-Mode 게이팅 / metric / audit / 비용 / 오케스트라) |
-| **3** | **`#personas`** ◆ | **타겟 사용자 정의** | **3 페르소나 카드 (👤 개인 발명가 13K~20K · 🏢 기업 R&D 2.5K개사 · ⚖ AI 우호 변리사 3.6K) + 모드 매핑** |
-| **4** | **`#jurisdictions`** ✦ | **README §1·§9 + Over-Competitor B–D** | **4-국가 카드 (KIPO/USPTO/EPO/PCT) + 산출물 목록 + FilingProfile SSOT banner** |
-| **4** | **`#engines`** ✦ | **README §1 + Over-Competitor A** | **4-엔진 도면 파이프라인 (mermaid + GraphViz + Matplotlib + Pillow) + 관할별 sheet 정규화** |
-| **5** | **`#multibuild`** ✦ | **README §9** | **POST `/export/{id}/multi/build` API 코드 + 관할별 ZIP 일람표** |
-| 6 | `#modes` | Legal §3~§6 | 3 운영 모드 매트릭스 (A/B/C) + Mode B 활성화 5조건 banner |
-| 7 | `#legal` | Legal §2 | 변리사법 §2/§21 법문 + 합법 vs 위법 행위 7+7 표 |
-| 8 | `#disclaimer` | Legal §8 | 6단계 면책 서명 흐름 + SHA-256 무결성 + 책임 분리 매트릭스 |
-| 9 | `#principles` | Guide 안전 장치 | 6대 설계 원칙 — Mode-aware 게이팅 강제 |
-| 10 | `#safeguards` | Guide 안전 장치 | 5단계 안전 장치 (Novelty / Robustness / BLOCKER / 검토 / Audit) |
-| 11 | `#pipeline` | README §3 + Workflow-Detailed | **13-stage 파이프라인 (12 visible + 1 hidden Critic)** + post_qa_mode_router |
-| 12 | `#agents` | README §1 | **10 Specialists + Critic + Translator (KO→EN)** + Tier 1/2/3 |
-| 13 | `#cost` | 부록 C | 단계별 비용·시간 분포 (애니메이션 가로 막대) |
-| 14 | `#tiers` | 부록 B | 위반 등급 4단계 (BLOCKER/MAJOR/MINOR/INFO) |
-| 15 | `#lawmap` | 부록 A | KIPO 특허법 §29·§42 1:1 매핑 |
-| 16 | `#hitl` | Guide §6 | 변리사 검토 페이지 UX (APPROVE/REVISE/ABANDON) |
-| 17 | `#response` | Legal §11 | ResponseAgent (Phase 4) — 의견서 초안 + 강제 면책 |
-| 18 | `#journey` | Guide §1~§7 | 8단계 사용자 여정 |
-| 19 | `#outputs` | Guide §7 + Legal §9 | 모드별 표지 페이지 분기 (A/B/C) + Filing/Review |
-| 20 | `#architecture` | README §4·§5 | **6-layer 아키텍처** (Frontend·Backend·LLM·Data·Documents·External) |
-| 21 | `#security` | 부록 D | JWT + RBAC + ZDR + Squid + SHA-256 |
-| 22 | `#roadmap` | README §11 | **v0 → v1·v2 → v3 → v3.2 NOW → v4 planned** |
-| 23 | `#advertising` | Legal §12 | 광고 표현 합법 vs 위법 7+7 표 |
-| 24 | `#countries` | Legal §14 | 6 국가 셀프 출원 (KR/US/JP/PCT ok · EU partial · CN blocked) |
-| 25 | `#market` | Legal §17 | 3-Tier 시장 (개인 발명가 13K~20K + 기업 R&D + AI-친화 변리사) |
-| **26** | **`#competitors`** ✦ | **Competitive-Analysis (6번째 가이드)** | **11×N 매트릭스 (PatentForge + 6 경쟁) + 차별 자산 7 + 약점 7 + 4분면 banner** |
-| **27** | **`#self-filing`** ✦ | **v3-spec-final-review.md** | **PatentForge가 PatentForge 출원 — Score 93/100 + 6 메타 타일 + 메타 검증 3종** |
-| **28** | **`#kpi`** ✦ | **README §11 v3.2** | **13 stages · ~50 min · $4.53 · 68 tests pass (Figures 17 + USPTO 14 + EPO 11 + PCT 10)** |
-| 29 | `#compare` | Guide §7 | Filing vs Review docx 비교표 |
-| 30 | `#future` | 부록 E + Legal §17 | 5대 기여 + 사회적 책임 + 의도적으로 *하지 않을* 일 |
+| 1 | `#hero` | 소개 · 홈 | 3 chip(개인 발명가·기업·변리사 / 한국·미국·유럽·국제출원 / 변리사법 준수) + 한 문장 설명 + **서비스 시작하기 →** (`data-launch`) · 나에게 맞는 서비스 찾기 · 어떻게 만들어지나요? + 4 통계(5만원부터 · 4곳 특허청 · 3가지 이용 방법 · 40여 자동 점검) |
+| 2 | `#identity` | PatentForge란? | "변리사를 대신하는 서비스가 아니라 서류 작성을 돕는 도구" — 완성 파일만 전달, 출원은 본인 또는 변리사, **무인 자동 출원 없음** |
+| 3 | `#personas` | 누구를 위한 서비스인가 | 세 부류의 사용자 — 개인 발명가(5~10만원대, 직접 출원 안내서) · 기업 R&D · 변리사, 각각 이용 방법 A/B/C 로 연결 |
+| 4 | `#modes` | 서비스 · 세 가지 이용 방법 | 이용 방법 A(변리사 검토 후 출원) · B(내가 직접 출원) · C(사내 설치) 선택 안내 |
+| 5 | `#pipeline` | 문서가 만들어지는 과정 | "발명 이야기가 출원 서류가 되기까지 8단계" — 사용자 눈높이 단계 설명 |
+| 6 | `#jurisdictions` | 해외 출원도 한 번에 | 발명 1건 → 한국·미국·유럽·국제출원 4곳 특허청 서류 |
+| 7 | `#outputs` | 받아보는 문서 | 같은 내용, 쓰임이 다른 두 가지 문서(출원용 / 검토용) |
+| 8 | `#safeguards` | 안심 포인트 · 5중 안전장치 | 잘못된 출원을 막는 5중 안전장치 |
+| 9 | `#legal` | 법을 지키는 방식 | "본인이 직접 출원하는 것"은 법이 허용합니다 — 변리사법 쉬운 설명 |
+| 10 | `#disclaimer` | 직접 출원 전 확인 절차 | 직접 출원을 선택하면 거치는 6단계 확인 |
+| 11 | `#security` | 발명 아이디어 보호 | 출원 전 발명은 가장 중요한 비밀 — 데이터 보호 설명 |
+| 12 | `#journey` | 이용 안내 · 이용 절차 | 처음이라도 8단계면 충분합니다 |
+| 13 | `#response` | 심사 결과 받은 후에도 | 특허청 보완 요청(의견제출통지) 대응도 함께 |
+| 14 | `#future` | 우리의 약속 | PatentForge가 약속드리는 것 |
 
-✦ = v3.2 implementation update로 신규 추가된 섹션 (총 5 섹션)
+이전 v3.2 대문(30 섹션 — 4-관할 카드, 4-엔진 도면 파이프라인, Multi-Build API, 경쟁 매트릭스, 메타 셀프 출원, KPI 등)은 git 이력(`5248a7d` 이전)에 보존되어 있으며, 디자인 토큰과 CSS 컴포넌트 클래스는 그대로 남아 있다.
 
 ---
 
@@ -110,11 +95,12 @@ PatentForge 6개 출처 문서를 다음과 같이 매핑 (✦ = v3.2 신규 섹
 
 ```
 PatentForge-Webpage/
-├── index.html         # 2178 lines — 30 sections + sidebar nav
+├── index.html         # 947 lines — 14 sections (소비자 친화형 v2) + sidebar nav + 회사정보 푸터
 ├── css/
-│   └── style.css      # 1854 lines — neumorphism + 4-juris + 3-mode visual language
+│   └── style.css      # 1978 lines — neumorphism + 4-juris + 3-mode visual language + .footer-legal
 ├── js/
-│   └── app.js         # 145 lines — scroll spy / counters / bar animation / mobile menu
+│   ├── app.js         # 146 lines — scroll spy / counters / bar animation / mobile menu
+│   └── portal.js      # 62 lines — data-launch CTA → app.patentforge.co.kr (운영) / localhost:3700 (로컬) 자동 분기
 ├── assets/            # (reserved)
 ├── DESIGN.md          # DTCG 호환 디자인 시스템 문서 (Stitch / Figma plugin 호환)
 └── README.md
@@ -122,7 +108,8 @@ PatentForge-Webpage/
 
 ### 3.1 `index.html`
 - 시멘틱 `<aside class="sidebar">` + `<main class="content">` 2-pane 레이아웃
-- 사이드바 11개 그룹: 시작 / **4 관할** / 3 운영 모드 / 철학 / 파이프라인 / 컴플라이언스 / 사용자 / 시스템 / 시장 / **메타** / 패러다임
+- 사이드바 4개 그룹(v2): **소개** (홈 · PatentForge란? · 누구를 위한 서비스인가) / **서비스** (세 가지 이용 방법 · 문서가 만들어지는 과정 · 해외 출원도 한 번에 · 받아보는 문서) / **안심 포인트** (5중 안전장치 · 법을 지키는 방식 · 직접 출원 전 확인 절차 · 발명 아이디어 보호) / **이용 안내** (이용 절차 · 심사 결과 받은 후에도 · 우리의 약속)
+- `<footer class="footer">` — 유디포엠㈜ 회사정보(사업자·법인·통신판매업 신고번호, 본사·서울사무소) + `.footer-legal` 법적 링크 3종(이용약관 · 환불 정책 · 개인정보처리방침 → `app.patentforge.co.kr/legal/*`)
 - 모바일 < 720px 에서는 햄버거 토글로 슬라이드 인
 
 ### 3.2 `css/style.css`
@@ -235,6 +222,15 @@ GitHub Pages는 정적 파일만 호스팅하므로 빌드 단계 없음.
 - Figma Design Tokens 플러그인이 그대로 import
 - 8 카테고리 고정: 색상 / 타이포그래피 / 간격 / 모서리 / 그림자 / 아이콘 / 모션 / 기타
 - AlphaForge 백엔드 [`design.md`](../PatentForge/design.md) 와 호환되는 구조
+
+---
+
+## 최근 업데이트 (2026-10-15 기준)
+
+- **2026-06-03 — 푸터 회사정보 · 경쟁사 익명화**: 푸터의 버전·테스트 수·법규 나열을 유디포엠㈜ 사업자등록번호 · 법인등록번호 · 통신판매업 신고번호 · 대표자 · 본사/서울사무소 주소·전화로 교체. 경쟁 매트릭스와 본문의 실제 경쟁사명(국내 3 · 해외 3)을 "A~F 제품"으로 익명화.
+- **2026-06-03 — 테스트 수 표기 제거**: hero chip · stat card · 관할 카드 meta · 로드맵 · KPI 섹션의 "68 tests pass", 관할별 테스트 수(14/11/10) 등 테스트 수 표기를 전역 제거(KPI 섹션은 "Internal Run · 사건 1건 자체 처리"로 축소).
+- **2026-06-25 — 푸터 법적 링크**: 이용약관 · 환불 정책 · 개인정보처리방침 링크(`.footer-legal`, `app.patentforge.co.kr/legal/tos|refund|privacy`) 추가, 통신판매업 신고번호 확정값으로 수정.
+- **2026-08-27 — 대문 v2 소비자 친화형 교체**: `index.html` 2,178 → 947줄. 30 섹션 → 14 섹션, 사이드바 11 → 4 그룹. `<title>` · meta description 을 "특허 출원 문서 자동 작성 서비스"로, 모든 섹션 제목을 비전문가 문장으로 교체("발명 이야기가 출원 서류가 되기까지 8단계", "잘못된 출원을 막는 5중 안전장치" 등). hero 는 **서비스 시작하기 →** CTA(`js/portal.js` 운영/로컬 자동 분기) + 4 통계(5만원부터 · 4곳 특허청 · 3가지 이용 방법 · 40여 자동 점검). 4-관할·엔진·Multi-Build API·경쟁·메타·KPI·시장·광고 섹션 삭제, 안심 포인트(안전장치 · 법 · 직접 출원 확인 · 아이디어 보호)와 이용 안내(절차 · 심사 대응 · 약속) 그룹으로 재편.
 
 ---
 
